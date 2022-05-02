@@ -1,0 +1,17 @@
+#project-grid {
+    display: flex!important;
+    flex-direction: column!important;
+}
+
+/** DESKTOP **/
+@media only screen and (min-width: 600px) {
+#project-grid {
+    display: grid!important;
+    grid-template-columns: repeat(2, 1fr)!important;
+}
+
+h5{
+    margin-bottom: var(--S2)!important;
+}
+
+}

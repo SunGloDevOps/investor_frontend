@@ -1,0 +1,11 @@
+h2 {
+    margin-bottom: var(--S1) !important;
+}
+
+#welcomenav{
+    margin-bottom: var(--S3) !important;
+}
+
+.notification {
+    padding: var(--S1) var(--S3) !important
+}
