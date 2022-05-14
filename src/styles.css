@@ -350,10 +350,10 @@ input:focus {
 
 /** DASHBOARD **/
 #setprofile{
-    border-radius: var(--S1);
+    border-radius: var(--f8);
     background-color: var(--primary-two);
     border: none;
-    padding: var(--S1) !important;
+    padding: var(--f10) !important;
     position: relative;
     height: auto !important;
     margin-bottom: var(--S1)
@@ -369,9 +369,9 @@ input:focus {
 }
 
 #setprofile p {
-    font-size: var(--f5)!important;
+    font-size: var(--f9)!important;
     font-weight: 500!important;
-    line-height: 26px!important;
+    line-height: 20px!important;
     color: var(--black)
 }
 
@@ -635,6 +635,21 @@ input:focus {
         margin-bottom: var(--S4);
     }
 
+    #setprofile{
+        border-radius: var(--f10);
+        padding: var(--f8) !important;
+        position: relative;
+        height: auto !important;
+        margin-bottom: var(--S1)
+    }
+
+    #setprofile p {
+        font-size: var(--f7)!important;
+        font-weight: 500!important;
+        line-height: 26px!important;
+        color: var(--black)
+    }
+
     #stats {
         margin-top: 0 !important;
     }
@@ -748,8 +763,6 @@ input:focus {
     .navigation .logo {
         display: flex !important;
     }
-
-
 
     .navigation .nav-link .nav-link-label{
         display: flex !important;
