@@ -1,11 +1,31 @@
 h2 {
-    margin-bottom: var(--S1) !important;
+    margin-bottom: var(--f10);
+    font-size: var(--f6) !important;
+    line-height: 28px !important;
+    font-weight: 500;
 }
 
 #welcomenav{
-    margin-bottom: var(--S3) !important;
+    margin-bottom: var(--f5) !important;
 }
 
 .notification {
     padding: var(--S1) var(--S3) !important
+}
+
+/** DESKTOP **/
+@media only screen and (min-width: 600px) {
+
+#welcomenav{
+    margin-bottom: var(--f4) !important;
+}
+
+h2 {
+    font-size: var(--f4) !important;
+    font-weight: 36px !important;
+    line-height: 26px  !important;
+    margin-bottom: var(--f7)
+}
+
+
 }

@@ -1,0 +1,15 @@
+.desktop {
+    display: none;
+}
+
+/** DESKTOP **/
+@media only screen and (min-width: 600px) {
+    .desktop {
+        display: flex;
+    }
+
+    .nav-link {
+        margin-bottom: 10px;
+    }
+
+}

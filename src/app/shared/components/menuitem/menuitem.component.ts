@@ -16,6 +16,7 @@ export class MenuitemComponent implements OnInit {
 
   @Input() url?: string;
 
+  @Input() mobile?: boolean;
 
   constructor() { }
 

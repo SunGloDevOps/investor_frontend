@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/app"
+  to = "/app/dashboard"
+  status = 301
+  force = true
+  query = {path = ":path"} #  apply this rule for /old-path?path=example
+  conditions = {Language = ["en","es"], Country = ["US"]}
+
+[[redirects]]
+  from = "/news"
+  to = "/blog"
