@@ -9,6 +9,14 @@
     flex-direction: column!important;
 }
 
+#productcards small {
+    font-size: var(--f9) !important
+}
+
+#productcards h5 {
+    font-size: var(--f7) !important
+}
+
 #productcards input {
     width: 100% !important;
 }
@@ -23,8 +31,8 @@
 
 #productcards .thumbnail {
     position: relative;
-    border-top-left-radius: var(--S1) !important;
-    border-top-right-radius: var(--S1) !important;
+    border-top-left-radius: var(--f8) !important;
+    border-top-right-radius: var(--f8) !important;
 }
 
 #productcards .thumbnail img {
@@ -32,6 +40,8 @@
     height: 200px;
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;
+    border-top-left-radius: var(--f8) !important;
+    border-top-right-radius: var(--f8) !important;
 }
 
 #productcards .thumbnail .label {
@@ -41,17 +51,17 @@
     background-color: var(--black);
     color: var(--white);
     padding: var(--s1) var(--s3);
-    border-top-right-radius: var(--s1);
-    border-bottom-right-radius: var(--s1);
-    font-size: var(--f7)
+    border-top-right-radius: var(--f8);
+    border-bottom-right-radius: var(--f8);
+    font-size: var(--f9) !important
 }
 
 #productcards .card-content {
     padding: var(--S1);
     text-align: center;
     background-color: #F1F0F0;
-    border-bottom-left-radius: var(--s1);
-    border-bottom-right-radius: var(--s1);
+    border-bottom-left-radius: var(--f8);
+    border-bottom-right-radius: var(--f8);
 }
 
 #productcards h5, #productcards small {
@@ -69,7 +79,7 @@
 #productcards #yield {
     margin-left: var(--S2) !important;
     margin-right: var(--S2) !important;
-    margin-bottom: var(--S1) !important;
+    margin-bottom: var(--f2) !important;
 }
 
 #yield input,
@@ -144,5 +154,6 @@
 
 #productcards #calltoaction .btn-primary {
     padding: var(--s1) var(--s3) !important;
-    margin-right: var(--s2)
+    margin-right: var(--s2);
+    font-size: var(--f9) !important
 }

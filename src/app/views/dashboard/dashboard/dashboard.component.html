@@ -2,9 +2,9 @@
 
 <app-welcomeheader></app-welcomeheader>
 
-<div class="row " id="top-cards">
+<div id="top-cards">
 
-    <div class="col-lg-6 col-md-12">
+    
 
         <div class="card " id="setprofile">
             <p>
@@ -25,8 +25,7 @@
 
         </div>
 
-    </div>
-    <div class="col-lg-6 col-md-12">
+   
 
         <div class="card" id="activity">
 
@@ -45,19 +44,18 @@
             </div>
 
             <ul>
-                <li><a href="#"><small>Kuala University Solar panel 187.92 sold out at 23.10 USD</small></a></li>
-                <li><a href="#"><small>Kuala University Solar panel 187.92 added to available project 3 secs ago at 23.10 USD</small></a></li>
-                <li><a href="#"><small>You bought 5 cells of Lagos state university solar project at 230 USD</small></a></li>
+                <li><a href="#">Kuala University Solar panel 187.92 sold out at 23.10 USD</a></li>
+                <li><a href="#">Kuala University Solar panel 187.92 added to available project 3 secs ago at 23.10 USD</a></li>
+                <li><a href="#">You bought 5 cells of Lagos state university solar project at 230 USD</a></li>
             </ul>
 
         </div>
 
-    </div>
+   
 </div>
 
-<div class="row" id="bottom-cards">
-
-    <div class="col-lg-3 col-md-6  col-sm-6">
+<div id="bottom-cards">
+ 
         <div class="card" id="wallet-balance">
             <p>
                 Wallet Balance
@@ -73,11 +71,10 @@
 
             <a class="btn btn-black" routerLink=""><small> Fund Wallet  </small> </a>
         </div>
-    </div>
-    <div class="col-lg-3 col-md-6  col-sm-6">
+
         <div class="card" id="earnings">
             <p>
-                Investment Earnings
+                Earnings
             </p>
 
             
@@ -91,9 +88,6 @@
 
             <a class="btn btn-primary-light" routerLink=""> Invest Now </a>
         </div>
-    </div>
-
-    <div class="col-lg-3  col-sm-6">
 
         <div class="card" id="projects">
             <P>Projects</P>
@@ -110,10 +104,6 @@
             <a class="btn btn-black" routerLink=""> View projects</a>
         </div>
 
-    </div>
-
-    <div class="col-lg-3 col-sm-6">
-
         <div class="card" id="cells">
             <p>Cells Bought</p>
 
@@ -121,8 +111,6 @@
 
             <a class="btn btn-primary-light" routerLink=""> View projects</a>
         </div>
-
-    </div>
 
 </div>
 
@@ -145,7 +133,7 @@
     </div>
 
     <div class="col-12" id="allproject-btn">
-        <a class="btn btn-black" routerLink="../projects"> View All projects</a>
+        <app-button classes="btn btn-black" label="View All projects"></app-button>
     </div>
 
 </div>

@@ -356,7 +356,7 @@ input:focus {
     padding: var(--f10) !important;
     position: relative;
     height: auto !important;
-    margin-bottom: var(--S1)
+    margin-bottom: var(--f6)
 }
 
 
@@ -579,7 +579,11 @@ input:focus {
 #bottom-cards {
     display: grid!important;
     grid-template-columns: repeat(2, 1fr)!important;
- 
+    gap: var(--f9)
+}
+
+#bottom-cards div {
+    height: 100%;
 }
 
 .available-project{
@@ -627,20 +631,28 @@ input:focus {
     }
 
     #top-cards {
-      
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--f6) !important;
+      height: 209px;
+      margin-bottom: var(--f4);
     }
 
     #bottom-cards {
-        display: flex!important;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: var(--f7) !important;
         margin-bottom: var(--S4);
+        height: 209px;
     }
 
     #setprofile{
         border-radius: var(--f10);
         padding: var(--f8) !important;
         position: relative;
-        height: auto !important;
-        margin-bottom: var(--S1)
+        height: 209px!important;
+        margin-bottom: 0px;
+
     }
 
     #setprofile p {
@@ -659,27 +671,28 @@ input:focus {
     }
 
     #activity {
-        padding: var(--S1) !important;
+        padding: var(--f10)  !important;
         background-color: var(--black);
         color: var(--white);
         margin-bottom: 0px!important;
         display: flex!important;
+        height: 209px !important;
     }
     
     #activity .title {
-        font-size: var(--f5) !important;
+        font-size: var(--f7) !important;
         font-weight: 500 !important;
         line-height: 24px !important;
     }
     
     #activity .date {
-        font-size: var(--f7) !important;
+        font-size: var(--f10) !important;
         font-weight: 400 !important;
         line-height: 18px !important;
     }
 
     #activity-header {
-        margin-bottom: var(--S1) !important;
+        margin-bottom: var(--f10) !important;
     }
     
     #activity ul {
@@ -710,6 +723,7 @@ input:focus {
         border: none!important;
         font-weight: 400 !important;
         line-height: 20px !important;
+        font-size: var(--f9)!important;
     }
 
     #cells {

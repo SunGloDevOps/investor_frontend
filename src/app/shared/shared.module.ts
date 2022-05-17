@@ -18,7 +18,7 @@ import { SingletopnavComponent } from './components/singletopnav/singletopnav.co
 import { StatsdisplayComponent } from './components/statsdisplay/statsdisplay.component';
 import { ProjectinfocardComponent } from './components/projectinfocard/projectinfocard.component';
 import { IntevestmentcardComponent } from './components/intevestmentcard/intevestmentcard.component';
-
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     TopnavComponent,
@@ -41,7 +41,8 @@ import { IntevestmentcardComponent } from './components/intevestmentcard/inteves
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ButtonModule
   ],
   exports: [
     TopnavComponent,
@@ -60,7 +61,8 @@ import { IntevestmentcardComponent } from './components/intevestmentcard/inteves
     SingletopnavComponent,
     StatsdisplayComponent,
     ProjectinfocardComponent,
-    IntevestmentcardComponent
+    IntevestmentcardComponent,
+    ButtonModule
   ]
 })
 export class SharedModule { }
