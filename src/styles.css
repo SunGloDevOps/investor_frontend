@@ -596,7 +596,8 @@ input:focus {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    margin-bottom: var(--S1) !important
+    margin-bottom: var(--S1) !important;
+    column-gap: var(--f8)
 }
 
 .scrolling-wrapper::-webkit-scrollbar {

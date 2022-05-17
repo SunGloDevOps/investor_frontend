@@ -1,12 +1,6 @@
+
 #productcards {
-    width: 441px !important;
-    margin-right: var(--s2) !important;
-    padding: 0px !important;
-    border: none;
-    border-radius: var(--S1) !important;
-    margin-bottom: var(--s3) !important;
-    display: flex!important;
-    flex-direction: column!important;
+    width: 100%!important
 }
 
 #productcards small {
@@ -156,4 +150,19 @@
     padding: var(--s1) var(--s3) !important;
     margin-right: var(--s2);
     font-size: var(--f9) !important
+}
+
+@media screen and (min-width: 600px){
+#productcards {
+    width: 441px !important;
+    padding: 0px !important;
+    border: none;
+    border-radius: var(--S1) !important;
+   
+    display: flex!important;
+    flex-direction: column!important;
+}
+
+
+
 }
