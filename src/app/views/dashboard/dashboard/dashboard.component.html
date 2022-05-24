@@ -12,11 +12,11 @@
             </p>
 
             <div class="wp-container ">
-                <div>
+                <div (click)="gotoWallet()">
                     <img src="../../../../assets/images/icons/Wallet.png" alt="wallet">
                 </div>
 
-                <div>
+                <div (click)="gotoProfile()">
                     <img src="../../../../assets/images/icons/Profile.png" alt="profile">
                 </div>
             </div>
@@ -44,9 +44,9 @@
             </div>
 
             <ul>
-                <li><a href="#">Kuala University Solar panel 187.92 sold out at 23.10 USD</a></li>
-                <li><a href="#">Kuala University Solar panel 187.92 added to available project 3 secs ago at 23.10 USD</a></li>
-                <li><a href="#">You bought 5 cells of Lagos state university solar project at 230 USD</a></li>
+                <li><a routerLink="../projects/i">Kuala University Solar panel 187.92 sold out at 23.10 USD</a></li>
+                <li><a routerLink="../projects/i">Kuala University Solar panel 187.92 added to available project 3 secs ago at 23.10 USD</a></li>
+                <li><a routerLink="../projects/i">You bought 5 cells of Lagos state university solar project at 230 USD</a></li>
             </ul>
 
         </div>
@@ -69,7 +69,7 @@
                 0.00 NGN
             </small>
 
-            <a class="btn btn-black" routerLink=""><small> Fund Wallet  </small> </a>
+            <a class="btn btn-black" routerLink="../wallet"><small> Fund Wallet  </small> </a>
         </div>
 
         <div class="card" id="earnings">
@@ -90,7 +90,7 @@
         </div>
 
         <div class="card" id="projects">
-            <P>Projects</P>
+            <p>Projects</p>
 
             
             <h5>
@@ -101,7 +101,7 @@
                 0.00 NGN
             </small>
 
-            <a class="btn btn-black" routerLink=""> View projects</a>
+            <a class="btn btn-black" routerLink="../projects"> View projects</a>
         </div>
 
         <div class="card" id="cells">
@@ -109,7 +109,7 @@
 
             <h5>0</h5>
 
-            <a class="btn btn-primary-light" routerLink=""> View projects</a>
+            <a class="btn btn-primary-light" routerLink="../investment"> View projects</a>
         </div>
 
 </div>

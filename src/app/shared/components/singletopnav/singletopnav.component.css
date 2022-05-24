@@ -28,6 +28,8 @@
 @media only screen and (min-width: 600px) {
     .notification {
         display: flex!important;
+        flex-direction: row;
+        padding: var(--S1) var(--f3) !important
     }
 
     .search {

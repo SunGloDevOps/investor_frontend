@@ -19,6 +19,8 @@ import { StatsdisplayComponent } from './components/statsdisplay/statsdisplay.co
 import { ProjectinfocardComponent } from './components/projectinfocard/projectinfocard.component';
 import { IntevestmentcardComponent } from './components/intevestmentcard/intevestmentcard.component';
 import { ButtonModule } from 'primeng/button';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     TopnavComponent,
@@ -42,7 +44,8 @@ import { ButtonModule } from 'primeng/button';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule
   ],
   exports: [
     TopnavComponent,
@@ -62,7 +65,8 @@ import { ButtonModule } from 'primeng/button';
     StatsdisplayComponent,
     ProjectinfocardComponent,
     IntevestmentcardComponent,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

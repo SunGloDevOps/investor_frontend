@@ -1,17 +1,35 @@
-#single-title div div:nth-child(1){
-    font-size: var(--f3) !important;
+
+
+#single-title p{
+    font-size: var(--f8) !important;
     font-weight: 500 !important;
     line-height: 30px !important;
+    margin: 0px !important
 }
 
-#single-title div div:nth-child(2){
+#single-title small{
     display: none!important;
 }
 
 #thumbnail img{
     width: 100%;
-    height: 263px !important;
+    height: 214px !important;
     border-radius: var(--s1);
+    padding: 0px !important;
+}
+
+.project-details h5{
+    padding-top: var(--f8)!important;
+    font-size: var(--f7)!important;
+}
+
+.project-details small {
+    font-size: var(--f9)!important
+}
+
+.information-cards {
+    display: flex;
+    flex-direction: column;
 }
 
 #btn-opportunity img{
@@ -47,14 +65,46 @@
 
 @media only screen and (min-width: 600px) {
 
-    #single-title div div:nth-child(2){
-        font-size: var(--f1) !important;
+    #single-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 7px!important;
+    }
+
+    #single-title p{
+        font-size: var(--f3) !important;
         font-weight: 500 !important;
         line-height: 30px !important;
+    }
+
+    #single-title small{
+        font-size: var(--f7) !important;
+        font-weight: 500 !important;
+        line-height: 22px !important;
         display: flex !important;
     }
 
-    
+    #thumbnail img{
+        
+        height: 263px !important;
+       
+    } 
+
+    .project-details h5{
+        padding-top: var(--f5)!important;
+        font-size: var(--f7)!important;
+    }
+
+    .project-details small {
+        font-size: var(--f9)!important
+    }
+
+    .information-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     #information-cards {
         margin-top: 0!important;
         display: grid!important;

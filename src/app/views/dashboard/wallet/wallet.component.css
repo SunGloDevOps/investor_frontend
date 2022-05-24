@@ -17,32 +17,69 @@
 }
 
 #wallet-cards {
-    row-gap: var(--S1)
+  
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--f10)
+}
+
+.deposit-cards {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--f10)
 }
 
 #wallet {
-    padding: var(--S1);
-    border: 1px solid var(--primary);
-    background-color:  rgba(1, 255, 255, 0.25);
-    border: none;
+    padding: var(--f10);
+    border: 1px solid #05C3DD!important;
+    background-color:  #BFFFFF;
     height: 100%;
-
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-#wallet .circle-container{
-    width: 50px;
-    height: 50px;
+#wallet .title, #crypto-wallet .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#wallet .title h5, #crypto-wallet .title h5 {
+    font-size: var(--f10)!important;
+    align-self: center;
+    margin: 0px !important
+}
+
+#wallet .stat, #crypto-wallet .stat {
+    margin-top: var(--f8)!important
+}
+
+#wallet .stat p, #crypto-wallet .stat p {
+    font-size:  var(--f8)!important;
+    margin-bottom: 8px !important;
+}
+
+#wallet .stat small, #crypto-wallet .stat small {
+    font-size: var(--f10)!important;
+}
+
+
+#wallet .circle-container, #crypto-wallet .circle-container{
+    width: 28px;
+    height: 16px;
     position: relative;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
-#wallet .circle-container #blue-circle, #wallet .circle-container #black-circle {
-    height: 30px;
-    width: 30px;
+#wallet .circle-container #blue-circle, #wallet .circle-container #black-circle,
+#crypto-wallet .circle-container #blue-circle, #crypto-wallet .circle-container #black-circle 
+{
+    height: 16px;
+    width: 16px;
 }
 
 #wallet .circle-container #blue-circle{
@@ -59,41 +96,34 @@
     right: 0;
 }
 
-#wallet #footer a {
+#wallet #footer, #crypto-wallet #footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#wallet #footer a, #crypto-wallet #footer a {
     border-bottom: none!important;
     color: var(--black)!important;
-    font-size: var(--f7)!important;
+    font-size: var(--f10)!important;
+
 }
 
 #wallet #footer .btn{
     background-color: var(--white);
-    padding: 10px var(--S2);
+    padding: 9px var(--f6);
     border: 1px solid rgba(11, 11, 11, 0.3)!important;
-    border-radius: var(--s1);
+    border-radius: 8px;
 }
 
 #crypto-wallet {
-    padding: var(--S1);
+    padding: var(--f10);
     background-color:  var(--white);
     border: 1px solid #05C3DD;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
-}
-
-#crypto-wallet .circle-container{
-    width: 50px;
-    height: 50px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-}
-
-#crypto-wallet .circle-container #blue-circle, #crypto-wallet .circle-container #black-circle {
-    height: 30px;
-    width: 30px;
 }
 
 #crypto-wallet .circle-container #blue-circle{
@@ -110,20 +140,22 @@
     right: 0;
 }
 
+
+
 #crypto-wallet #footer a {
     border-bottom: none!important;
     color: var(--black)!important;
-    font-size: var(--f7)!important;
+    font-size: var(--f10)!important;
 }
 
 #crypto-wallet #footer .btn{
 
-    padding: 10px var(--S2);
+    padding: 9px var(--f6)!important;
     background: #01FFFF;
     border: 1px solid rgba(6, 182, 202, 0.5)!important;
     box-sizing: border-box;
     box-shadow: 9px 13px 28px rgba(5, 195, 221, 0.24);
-    border-radius: var(--s1);
+    border-radius: 8px!important;
 }
 
 .btn-primary {
@@ -236,6 +268,142 @@
 
 @media only screen and (min-width: 600px) {
     
+    #wallet-cards {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: var(--f8);
+        height: 223px !important;
+    }
+
+    #wallet-cards .card{
+        height: 223px !important;
+    }
+
+    .deposit-cards {
+        column-gap: var(--f8) !important
+    }
+
+    
+#wallet {
+    padding: var(--f4) var(--f7);
+    border: 1px solid #05C3DD!important;
+    background-color:  #BFFFFF;
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#crypto-wallet {
+    padding: var(--f4) var(--f7);
+    background-color:  #FFFFFF;
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#investment-card .stat {
+    margin-top: 24px !important;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+#investment-card {
+    padding: var(--f4) var(--f7);
+}
+
+#wallet .title, #crypto-wallet .title, #investment-card .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#wallet .title h5, #crypto-wallet .title h5, #investment-card .title h5 {
+    font-size: var(--f7)!important;
+    font-weight: 400!important;
+    align-self: center;
+    margin: 0px !important
+}
+
+#wallet .stat, #crypto-wallet .stat {
+    margin-top: var(--f4)!important
+}
+
+#wallet .stat p, #crypto-wallet .stat p {
+    font-size:  var(--f5)!important;
+    margin-bottom: var(--f7) !important;
+}
+
+#wallet .stat small, #crypto-wallet .stat small {
+    font-size: var(--f7)!important;
+}
+
+
+#wallet .circle-container, #crypto-wallet .circle-container{
+    width: 55px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#wallet .circle-container #blue-circle, #wallet .circle-container #black-circle,
+#crypto-wallet .circle-container #blue-circle, #crypto-wallet .circle-container #black-circle,
+#investment-card .circle-container #blue-circle, #investment-card .circle-container #black-circle
+{
+    height: 30px;
+    width: 30px;
+}
+
+#wallet .circle-container #blue-circle{
+    background-color: var(--primary)!important;
+    border-radius: 50%;
+}
+
+#wallet .circle-container #black-circle{
+    background-color: var(--white)!important;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#wallet #footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#wallet #footer a, #crypto-wallet #footer a {
+    border-bottom: none!important;
+    color: var(--black)!important;
+    font-size: var(--f9)!important;
+}
+
+#wallet #footer .btn{
+    background-color: var(--white);
+    padding: 9px var(--f2);
+    border: 1px solid rgba(11, 11, 11, 0.3)!important;
+    border-radius: 8px;
+}
+
+#crypto-wallet #footer .btn{
+    
+    padding: 9px var(--f2)!important;
+ 
+    border-radius: 8px;
+}
+
+    .deposit-cards {
+        height: 223px !important;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--f3)
+    }
 
     #investment-card{
         margin-top: 0 !important;

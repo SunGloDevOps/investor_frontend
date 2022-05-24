@@ -13,6 +13,8 @@ export class InputtextComponent implements OnInit {
 
   @Input() icon?: string;
 
+  @Input() formControlName?: any;
+
   path: string = "../../../../assets/images/icons/";
 
   constructor() { }
