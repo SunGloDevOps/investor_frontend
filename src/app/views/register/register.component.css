@@ -20,6 +20,13 @@ input:focus, input:active
     align-items: center;
 }
 
+
+.form-nav .signin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .form-nav p, .form-nav a {
     font-size: 16px!important;
     font-weight: 400;
