@@ -198,17 +198,36 @@ input {
 }
 
 /** form **/
-.input-group {
+.auth-form-border{
     border-top: none !important;
     border-right: none !important;
-    border-left: 1px solid var(--primary-two) !important;
-    border-bottom: 1px solid var(--primary-two) !important;
+    border-left: 1px solid #05C3DD !important;
+    border-bottom: 1px solid #05C3DD !important;
     border-bottom-left-radius: var(--s1);
+    height: 25px;
+    position: relative;
+    margin-top: 40px !important;
+}
+
+.auth-form-border:first-child {
+    margin-top: 0px;
+}
+
+.input-group {
+    position: absolute;
+    bottom: 2px;
+    padding-top: 1px!important;
+    display: flex;
+    flex-direction: row;
 }
 
 .input-group-text {
     background: transparent !important;
     border: none !important;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    padding: 0px 20px;
 }
 
 .form-control {
