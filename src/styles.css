@@ -275,6 +275,10 @@ input:focus {
     border-radius: 50%;
     height: 50px;
     width: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 /** Utilities **/

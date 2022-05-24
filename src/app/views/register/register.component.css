@@ -22,9 +22,14 @@ input:focus, input:active
 
 
 .form-nav .signin {
-    display: flex;
+    display: flex!important;
     flex-direction: row;
     align-items: center;
+   
+}
+
+.form-nav .signin p {
+    margin-bottom: 0px!important;
 }
 
 .form-nav p, .form-nav a {
@@ -111,6 +116,8 @@ input:focus, input:active
     .main-container {
         display: flex;
         flex-direction: column;
+        background: linear-gradient(180deg, #F9F9F9 0%, rgba(255, 255, 255, 0) 100%);
+backdrop-filter: blur(140px);
     }
 
     .form-area {
