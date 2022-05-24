@@ -1,0 +1,387 @@
+/** desktop **/
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    padding: 0px 126px;
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    z-index: 100;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    column-gap: 27px;
+}
+
+.menu ul a {
+    font-size: 20px !important;
+    font-weight: 300;
+    line-height: 23.87px;
+    border: none!important;
+    color: black!important
+}
+
+.auth ul {
+    display: flex;
+    list-style: none;
+    column-gap: 16px;
+}
+
+.auth .signin {
+    color: black!important;
+    border: none!important;
+    font-size: 18px!important;
+    font-weight: 400;
+    line-height: 21.48px;
+}
+
+nav .font{
+    font-size: 14px!important
+}
+
+nav .btn-primary {
+    padding: 16px 37px !important;
+}
+
+.showMenu {
+    display: none;
+}
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+    width: 100%;
+    margin-top: 15vh;
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 126px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.hero-content h1 {
+    font-size: 46px !important;
+    font-weight: 500;
+    line-height: 60px;
+    margin-bottom: 20px
+}
+
+.hero-content p {
+    font-size: 18px !important;
+    font-weight: 500;
+    line-height: 26px;
+    margin-bottom: 48px;
+}
+
+.hero-buttons{
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+}
+
+.hero-buttons .btn-dark {
+    font-size: 14px !important;
+    border: none!important;
+    background-color: #000 !important;
+    color: #fff !important;
+    padding: 16px 57px;
+    border-radius: 12px;
+    box-shadow: 9px 23px 34px rgba(147, 223, 234, 0.31);
+}
+
+.hero-buttons .btn-primary, .get-started .btn-primary {
+    font-size: 14px !important;
+    font-weight: 500!important;
+    border: none!important;
+    background-color: #01FFFF !important;
+    color: #000 !important;
+    padding: 16px 57px !important;
+    border-radius: 12px;
+    box-shadow: 9px 23px 34px rgba(5, 195, 221, 0.31);
+}
+
+.illustration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.hero img {
+    width: 938px;
+    height: 625px;
+    position: absolute;
+    bottom: 10;
+   
+}
+
+.why {
+    padding: 124px 136px;
+    background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why h3 {
+    font-size: 38px!important;
+    font-weight: 600;
+    line-height: 57px;
+    margin-bottom: 16px;
+}
+
+.why p {
+    font-size: 20px!important;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 131px;
+    text-align: center;
+}
+
+.why .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.why .card {
+    background-color: #fff;
+    border-radius: 9px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 8px 8px 15px rgba(54, 219, 241, 0.15);
+}
+
+.why .card h4 {
+    margin-top: 36px;
+    margin-bottom:  24px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+}
+
+.why .card p {
+    margin: 0px 0px 40px 0px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(11, 11, 11, 0.8);
+    letter-spacing: 0.02em;
+}
+
+.get-started {
+    background-color: #fff;
+    padding: 126px 136px 75px 136px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.get-started h3 {
+    font-size: 24px!important;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 16px;
+}
+
+.get-started p {
+    font-size: 16px!important;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: rgba(11, 11, 11, 0.8);
+    margin-bottom: 42px;
+}
+
+.get-started div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/** mobile **/
+@media screen and (max-width: 600px){
+    nav {
+        flex-direction: column;
+        padding: 0px 16px;
+        height: 10vh;
+        justify-content: center;
+        align-items: space-between;
+    }
+    .menu {
+        display: none;
+    }
+
+    .auth {
+        display: none;
+    }
+
+    .logo-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .showMenu {
+        display: flex;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 90vh;
+        margin-top: 10vh;
+    }
+
+    .hero-content{
+        padding: 32px 16px;
+        right: unset;
+        bottom: unset;
+        top: 0;
+        justify-content: flex-start;
+    }
+
+    .hero-content h1 {
+        font-size: 28px !important;
+        font-weight: 700;
+        line-height: 38px;
+        margin-bottom: 12px
+    }
+    
+    .hero-content p {
+        font-size: 12px !important;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 18px;
+    }
+
+    .hero-buttons .btn-dark {
+        display: none;
+    }
+
+    .hero-buttons .btn-primary, .get-started .btn-primary  {
+        font-size: 12px;
+        padding: 11px 40px!important;
+    }
+
+    .hero img {
+        width: 100%;
+        height: 237px;
+        position: absolute;
+        bottom: 10;
+       
+    }
+
+    .why {
+        padding: 24px 28px;
+    }
+
+    .why h3 {
+        font-size: 18px!important;
+        font-weight: 600;
+        line-height: 27px;
+        margin-bottom: 12px;
+    }
+
+    .why p {
+        font-size: 12px!important;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 52px;
+        text-align: center;     
+        color: rgba(11, 11, 11, 0.8);
+    }
+
+    .why .cards-grid {
+        grid-template-columns:  1fr;
+        gap: 24px;
+    }
+    .why .card {
+        border-radius: 9px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 8px 8px 15px rgba(54, 219, 241, 0.15);
+    }
+    
+    .why .card h4 {
+        margin-top: 29px;
+        margin-bottom:  12px;
+        font-size: 16px!important;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: center;
+    }
+    
+    .why .card p {
+        margin: 0px 0px 20px 0px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        color: rgba(11, 11, 11, 0.8);
+        letter-spacing: 0.02em;
+    }
+
+    .why #card2 img{
+        margin-bottom: 40px;
+        margin-top: 47px;
+    }
+
+    .get-started {
+        background-color: #fff;
+        padding: 28px 28px 85px 28px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .get-started h3 {
+        font-size: 16px!important;
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 8px;
+    }
+
+    .get-started p {
+        font-size: 12px!important;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+        color: rgba(11, 11, 11, 0.8);
+        margin-bottom: 16px;
+    }
+}
