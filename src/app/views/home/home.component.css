@@ -37,6 +37,7 @@
 .why .card {
     background-color: #fff;
     border-radius: 9px;
+    border: none;
     padding: 30px;
     display: flex;
     flex-direction: column;
