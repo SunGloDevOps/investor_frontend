@@ -4,91 +4,6 @@
     flex-direction: column;
 }
 
-.hero {
-    display: flex;
-    flex-direction: row;
-    height: 85vh;
-    width: 100%;
-    margin-top: 15vh;
-    position: relative;
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 126px;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-}
-
-.hero-content h1 {
-    font-size: 46px !important;
-    font-weight: 500;
-    line-height: 60px;
-    margin-bottom: 20px
-}
-
-.hero-content p {
-    font-size: 18px !important;
-    font-weight: 500;
-    line-height: 26px;
-    margin-bottom: 48px;
-}
-
-.hero-buttons{
-    display: flex;
-    flex-direction: row;
-    column-gap: 24px;
-}
-
-.hero-buttons .btn-dark {
-    font-size: 14px !important;
-    border: none!important;
-    background-color: #000 !important;
-    color: #fff !important;
-    padding: 16px 57px;
-    border-radius: 12px;
-    box-shadow: 9px 23px 34px rgba(147, 223, 234, 0.31);
-}
-
-.hero-buttons .btn-primary, .get-started .btn-primary {
-    font-size: 14px !important;
-    font-weight: 500!important;
-    border: none!important;
-    background-color: #01FFFF !important;
-    color: #000 !important;
-    padding: 16px 57px !important;
-    border-radius: 12px;
-    box-shadow: 9px 23px 34px rgba(5, 195, 221, 0.31);
-}
-
-.illustration {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.hero img {
-    width: 938px;
-    height: 625px;
-    position: absolute;
-    bottom: 10;
-   
-}
 
 .why {
     padding: 124px 136px;
@@ -181,52 +96,7 @@
 @media screen and (max-width: 600px){
  
 
-    .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        height: 90vh;
-        margin-top: 10vh;
-    }
-
-    .hero-content{
-        padding: 32px 16px;
-        right: unset;
-        bottom: unset;
-        top: 0;
-        justify-content: flex-start;
-    }
-
-    .hero-content h1 {
-        font-size: 28px !important;
-        font-weight: 700;
-        line-height: 38px;
-        margin-bottom: 12px
-    }
-    
-    .hero-content p {
-        font-size: 12px !important;
-        font-weight: 400;
-        line-height: 20px;
-        margin-bottom: 18px;
-    }
-
-    .hero-buttons .btn-dark {
-        display: none;
-    }
-
-    .hero-buttons .btn-primary, .get-started .btn-primary  {
-        font-size: 12px;
-        padding: 11px 40px!important;
-    }
-
-    .hero img {
-        width: 100%;
-        height: 237px;
-        position: absolute;
-        bottom: 10;
-       
-    }
+   
 
     .why {
         padding: 24px 28px;
