@@ -1,4 +1,9 @@
 /** Desktop **/
+input:focus, input:active
+ {
+    outline: none!important;
+    border: none!important;
+}
 .main-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -109,6 +114,13 @@
         font-size: 12px!important;
         font-weight: 400;
         line-height: 24px;
+        margin-bottom: 0px!important
+    }
+
+    .form-nav .signin {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     .form-container {
