@@ -20,6 +20,7 @@ import { ProjectinfocardComponent } from './components/projectinfocard/projectin
 import { IntevestmentcardComponent } from './components/intevestmentcard/intevestmentcard.component';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
+import { LandingNavComponent } from './components/landing-nav/landing-nav.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     SingletopnavComponent,
     StatsdisplayComponent,
     ProjectinfocardComponent,
-    IntevestmentcardComponent
+    IntevestmentcardComponent,
+    LandingNavComponent
   ],
   imports: [
     CommonModule,
@@ -66,7 +68,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProjectinfocardComponent,
     IntevestmentcardComponent,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    LandingNavComponent
   ]
 })
 export class SharedModule { }
