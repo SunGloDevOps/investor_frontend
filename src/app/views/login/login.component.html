@@ -1,54 +1,74 @@
-<div class="container">
-    <div class="row h-fullscreen d-flex flex-row align-content-center">
+<div class="main-container">
 
         <!-- Illustration area -->
-        <div class="col-lg-6 d-sm-none d-lg-flex">
-            1
+        <div class="illustration">
+            <div>
+                <img class="image1" src="../../../assets/images/illustrations/login/Rectangle 1137.png"/>
+                <div>
+                    <img class="image2" src="../../../assets/images/illustrations/login/Rectangle 1138.png"/>
+                <img class="image3" src="../../../assets/images/illustrations/login/Rectangle 1140.png"/>
+                <img class="image4" src="../../../assets/images/illustrations/login/Rectangle 1139.png"/>
+                <img class="image5" src="../../../assets/images/illustrations/login/Rectangle 1141.png"/>
+                </div>
+            </div>
+            <img class="image6" src="../../../assets/images/illustrations/login/Investment data-rafiki 1.png"/>
         </div>
 
         <!-- form area-->
-        <div class="col-lg-6">
+        <div class="form-area">
             <!-- Navigation-->
-            <div class="mb-3 d-flex justify-content-between align-content-center">
+            <div class="form-nav">
 
                 
-                    <app-backbutton></app-backbutton>
+                <app-backbutton></app-backbutton>
              
                 
-                <div class="d-flex align-self-center">
-                    <p> Not a member yet? <a routerLink="#">Sign Up</a></p>
+                <div class="sigup">
+                    <p> Not a member yet? <a routerLink="/register">Sign Up</a></p>
                 </div>
 
             </div>
 
             <!-- Form -->
-            <div>
+            <div class="form-container">
 
-                <h2 class="mb-2">Welcome Back,</h2>
+                <h2>Welcome Back,</h2>
 
-                <p class="mb-4">Invest in something new.</p>
+                <p>Invest in something new.</p>
 
                 <form>
 
+                    <div class="auth-form-border">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">
+                                <img src="../../../assets/images/icons/mail.jpg" >
+                            </span>
+                            <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
+                        </div>
+                    </div>
 
+                    <div class="auth-form-border">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">
+                                <img src="../../../assets/images/icons/password 1.jpg" >
+                            </span>
+                            <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+                        </div>
+                    </div>
 
-                    <app-inputtext type="text" placeholder="Email" icon="mail.jpg"></app-inputtext>
-
-                    <app-inputtext type="text" placeholder="Password" icon="password 1.jpg"></app-inputtext>
-
-                    <div class="d-flex flex-row justify-content-end">
+                    <div class="forgot">
                         <a routerLink="#">Forgot password?</a>
                     </div>
 
                     <div class="mt-3"></div>
 
-                    <app-button label="Sign In"></app-button>
+                    <div>
+                        <input class="w-100 btn btn-primary" type="submit"  value="Sign In">
+                    </div>
 
                 </form>
 
             </div>
         </div>
 
-      
-    </div>
 </div>
