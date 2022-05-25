@@ -22,6 +22,8 @@ import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingNavComponent } from './components/landing-nav/landing-nav.component';
 import { LandingheroComponent } from './components/landinghero/landinghero.component';
+import { LandingwhyComponent } from './components/landingwhy/landingwhy.component';
+import { LandinginvestComponent } from './components/landinginvest/landinginvest.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { LandingheroComponent } from './components/landinghero/landinghero.compo
     ProjectinfocardComponent,
     IntevestmentcardComponent,
     LandingNavComponent,
-    LandingheroComponent
+    LandingheroComponent,
+    LandingwhyComponent,
+    LandinginvestComponent
   ],
   imports: [
     CommonModule,
@@ -72,7 +76,9 @@ import { LandingheroComponent } from './components/landinghero/landinghero.compo
     ButtonModule,
     HttpClientModule,
     LandingNavComponent,
-    LandingheroComponent
+    LandingheroComponent,
+    LandingwhyComponent,
+    LandinginvestComponent
   ]
 })
 export class SharedModule { }
