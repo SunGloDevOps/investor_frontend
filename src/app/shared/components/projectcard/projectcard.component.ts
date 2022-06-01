@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-projectcard',
@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projectcard.component.css']
 })
 export class ProjectcardComponent implements OnInit {
+
+  @Input() title?: string;
+
+  @Input() description?: string;
+
+  @Input() cost?: number;
+
+  value: string = "~ USD " + this.cost;
 
   constructor() { }
 

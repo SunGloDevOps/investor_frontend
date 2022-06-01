@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-landing-nav',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingNavComponent implements OnInit {
 
+  @Input() show: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showMenu(): void {
+    this.show = true
+  }
+
+  hideMenu(): void {
+    this.show = false
   }
 
 }

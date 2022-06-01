@@ -5,28 +5,20 @@ import { ForgotpasswordComponent } from './views/forgotpassword/forgotpassword.c
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-
+import { AuthenticationRoutingModule } from './views/authentication/authentication-routing.module';
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '',
+  //   redirectTo: '/',
+  //   pathMatch: 'full'
+  // },
   {
     path: 'home',
     component: HomeComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'forgotpassword',
-    component: ForgotpasswordComponent
+    path: 'auth',
+    loadChildren: () => import('../app/views/authentication/authentication.module').then(m => m.AuthenticationModule)
   },
   {
     path: 'app',
@@ -37,7 +29,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    AuthenticationRoutingModule
   ],
   exports: [RouterModule]
 })

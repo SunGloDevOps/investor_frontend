@@ -36,7 +36,7 @@
 
                 <p>Invest in something new.</p>
 
-                <form>
+                <form [formGroup]="loginForm">
 
                     <div class="auth-form-border">
                         <div class="input-group">
@@ -63,7 +63,7 @@
                     <div class="mt-3"></div>
 
                     <div>
-                        <input class="w-100 btn btn-primary" type="submit"  value="Sign In">
+                        <input class="w-100 btn btn-primary" type="submit" (click)="login()" value="Sign In">
                     </div>
 
                 </form>

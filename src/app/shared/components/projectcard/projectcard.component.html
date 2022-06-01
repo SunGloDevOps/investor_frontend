@@ -8,16 +8,16 @@
     </div>
     <div class="card-content">
         <h5>
-            Kuala University | 187.92 kW | Lagos, Nigeria
+            {{title}}
         </h5>
 
         <small class="">
-            Avondrust Court is located in the leafy suburb of Rondebosch in Cape Town, South Africa, and ...
+            {{description}}
         </small>
             
             <div class="row" id="yield">
                 <div class="col-12">
-                    <app-statsdisplay label="Cost per cell" value="~ USD 7.12"></app-statsdisplay>
+                    <app-statsdisplay label="Cost per cell" [value]=value ></app-statsdisplay>
                 </div>
                
             </div>
@@ -27,7 +27,7 @@
                     <a class="btn btn-black-share">
                         <img src="../../../../assets/images/icons/download.png">
                     </a>
-                   <app-button classes="btn btn-primary" label="View Details"></app-button>
+                   <button classes="btn btn-primary" label="View Details"></button>
                 </div>
             </div>
     </div>

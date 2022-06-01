@@ -11,7 +11,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class RegisterComponent implements OnInit {
 
   registerForm = this.fb.group({
-    fullname: ['', Validators.required],
+    firstname: ['', Validators.required],
+    lastname: ['', Validators.required],
     email: ['', Validators.required],
     phone: ['', Validators.required],
     password: ['', Validators.required],
@@ -25,14 +26,10 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.registerForm.controls['fullname'].value)
+    
   }
 
-  hello(): void{
-    console.log(this.registerForm.controls['fullname'].value)
-  }
-
-  registerUser(): void {
+  register(): void {
     
    
     const payload = {
@@ -44,13 +41,19 @@ export class RegisterComponent implements OnInit {
       role: "INVESTOR"
     };
 
-    this.authService.registerInvestor(payload).subscribe(
+    this.authService.register(payload).subscribe(
       res => {
-        if(res === 200) {
+        if(res.status === 200) {
           this.router.navigate(['/login']);
         }
 
-        console.log(res)
+        if(res.status === 500) {
+
+        }
+
+        if(res.status === 400){
+
+        }
       }
     )
     

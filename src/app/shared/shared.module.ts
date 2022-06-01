@@ -24,6 +24,12 @@ import { LandingNavComponent } from './components/landing-nav/landing-nav.compon
 import { LandingheroComponent } from './components/landinghero/landinghero.component';
 import { LandingwhyComponent } from './components/landingwhy/landingwhy.component';
 import { LandinginvestComponent } from './components/landinginvest/landinginvest.component';
+import { LandingfeatureComponent } from './components/landingfeature/landingfeature.component';
+import { LandingprotectComponent } from './components/landingprotect/landingprotect.component';
+import { LandingsolarassetComponent } from './components/landingsolarasset/landingsolarasset.component';
+import { LandingbankComponent } from './components/landingbank/landingbank.component';
+import { LandingfooterComponent } from './components/landingfooter/landingfooter.component';
+import { AuthguardService } from '../services/authguard/authguard.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +52,12 @@ import { LandinginvestComponent } from './components/landinginvest/landinginvest
     LandingNavComponent,
     LandingheroComponent,
     LandingwhyComponent,
-    LandinginvestComponent
+    LandinginvestComponent,
+    LandingfeatureComponent,
+    LandingprotectComponent,
+    LandingsolarassetComponent,
+    LandingbankComponent,
+    LandingfooterComponent
   ],
   imports: [
     CommonModule,
@@ -54,6 +65,9 @@ import { LandinginvestComponent } from './components/landinginvest/landinginvest
     ReactiveFormsModule,
     ButtonModule,
     HttpClientModule
+  ],
+  providers: [
+    AuthguardService
   ],
   exports: [
     TopnavComponent,
@@ -78,7 +92,12 @@ import { LandinginvestComponent } from './components/landinginvest/landinginvest
     LandingNavComponent,
     LandingheroComponent,
     LandingwhyComponent,
-    LandinginvestComponent
+    LandinginvestComponent,
+    LandingfeatureComponent,
+    LandingprotectComponent,
+    LandingsolarassetComponent,
+    LandingbankComponent,
+    LandingfooterComponent,
   ]
 })
 export class SharedModule { }

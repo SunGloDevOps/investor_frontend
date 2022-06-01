@@ -864,7 +864,7 @@ input:focus {
 #currency-header {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center ;
     margin-top: var(--s2);
     margin-bottom: var(--s2);
@@ -1166,15 +1166,6 @@ input:focus {
     flex-direction: column;
 }
 
-#investment-card .stat {
-    margin-top: 24px !important;
-    display: grid;
-    grid-template-columns: 1fr auto;
-}
-
-#investment-card {
-    padding: var(--f4) var(--f7);
-}
 
 #wallet .title, #crypto-wallet .title, #investment-card .title {
     display: flex;
@@ -1270,5 +1261,26 @@ input:focus {
 
     #investment-card{
         margin-top: 0 !important;
+        border-radius: 12px!important;
+        padding: var(--f4) var(--f7);
     }
+
+    
+#investment-card .stat {
+    margin-top: 24px !important;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+#investment-card .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#investment-card  h5{
+    font-weight: 400;
+    font-size: 14px!important;
+    line-height: 21px;
+}
 }

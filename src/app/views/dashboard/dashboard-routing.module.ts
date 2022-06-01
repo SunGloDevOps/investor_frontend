@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthguardService } from 'src/app/services/authguard/authguard.service';
 import { StarterComponent } from 'src/app/shared/components/starter/starter.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {
     path: 'app',
     component: StarterComponent,
+    
     children: [
       {
         path: '',
@@ -23,39 +25,48 @@ const routes: Routes = [
       },
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthguardService],
       },
       {
         path: 'projects',
-        component: ProjectsComponent
+        component: ProjectsComponent,
+        canActivate: [AuthguardService],
       },
       {
-        path: 'projects/i',
-        component: ProjectComponent
+        path: 'projects/:id',
+        component: ProjectComponent,
+        canActivate: [AuthguardService],
       },
       {
         path: 'wallet',
-        component: WalletComponent
+        component: WalletComponent,
+        canActivate: [AuthguardService],
       },
       {
         path: 'investment',
-        component: InvestmentComponent
+        component: InvestmentComponent,
+        canActivate: [AuthguardService],
       },
       {
         path: 'investment/i',
-        component: InvestmentdetailComponent
+        component: InvestmentdetailComponent,
+        canActivate: [AuthguardService],
       },
       {
         path: 'order',
-        component: OrderComponent
+        component: OrderComponent,
+        canActivate: [AuthguardService],
       },
       {
         path: 'checkout',
-        component: CheckoutComponent
+        component: CheckoutComponent,
+        canActivate: [AuthguardService],
       },
       {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        canActivate: [AuthguardService],
       }
     ]
   }

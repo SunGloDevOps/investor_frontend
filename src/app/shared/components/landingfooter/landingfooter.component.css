@@ -1,0 +1,196 @@
+.footer {
+    background: #F6F6F6;
+}
+
+.join-sunglo form {
+    padding: 58px 136px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.join-sunglo label {
+    
+    font-weight: 500;
+    font-size: 24px !important;
+    line-height: 36px;
+}
+
+.form-border {
+    background: linear-gradient(to right, #05C3DD  0%, #29B32F 100%)!important;
+    padding: 1px;
+    border-radius: 8px;
+    width: auto!important
+}
+
+input[type=email] {
+    border: none;
+    border-radius: 8px;
+    padding: 13px 0px 13px 24px!important;
+    width: 100%;
+}
+
+.footer-menu-container {
+    padding: 46px 136px 182px 136px;
+}
+
+.footer-menu-container .footer-menu{
+    margin-top: 80px;
+}
+
+.footer-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-menu-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-menu-list ul {
+    list-style: none;
+}
+
+.footer-menu-list a {
+    font-weight: 400;
+    font-size: 20px !important;
+    line-height: 28px;
+    border: none !important;
+    color: rgba(11, 11, 11, 0.9)!important;
+    margin-bottom: 18px!important;
+}
+
+.footer-menu-list a:last-child {
+    margin-bottom: 0px;
+}
+
+.footer-menu form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-menu form h3 {
+    font-weight: 600;
+    font-size: 42px!important;
+    line-height: 57px;
+    margin-bottom: 16px;
+}
+
+.footer-menu form .form-border {
+    margin-bottom: 24px;
+    width: 324px!important;
+}
+
+.footer-menu input {
+    width: 322px;
+}
+
+.social-media {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 28px;
+}
+
+.social-media div {
+    height: 40px;
+    width: 40px;
+    background-color: #000;
+    display: flex;
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .join-sunglo form{
+        padding: 24px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 14px;
+    }
+
+    .join-sunglo label {
+        margin-right: 0px;
+        margin-bottom: 14px;
+        font-weight: 500;
+        font-size: 14px !important;
+        line-height: 21px;
+    }
+
+    .footer-menu-container {
+        padding: 0px 28px 159px 28px;
+    }
+
+    .footer-menu {
+        display: flex;
+        flex-direction: column;
+        row-gap: 65px;
+        margin-top: 32px!important;
+    }
+
+    .footer-menu-list a {
+        font-weight: 400;
+        font-size: 14px !important;
+        line-height: 20px;
+        border: none !important;
+        color: rgba(11, 11, 11, 0.9)!important;
+        margin-bottom: 18px!important;
+    }
+
+    .footer-menu form {
+        display: unset;
+        
+    }
+
+    .footer-menu form h3 {
+        font-weight: 600;
+        font-size: 16px!important;
+        line-height: 28px;
+        margin-bottom: 12px;
+    }
+
+    .footer-menu form .form-border {
+        margin-bottom: 16px;
+        width: 100%!important;
+    }
+
+    .footer-menu form .form-border input {
+        width: 100%;
+    }
+
+    .footer-menu input[type=submit] {
+        width: 100%;
+    }
+
+    .social-media {
+        margin-top: 24px;
+    }
+
+    .social-media div {
+        height: 32px;
+        width: 32px;
+        background-color: #000;
+        display: flex;
+        place-items: center;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+    }
+
+    .social-media div img {
+        height: 16px;
+        width: 16px
+    }
+}
