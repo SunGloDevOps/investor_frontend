@@ -1,0 +1,1286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    /** Colors **/
+    --primary: #01FFFF;
+    --primary-two: rgba(5, 195, 221, 0.2);
+    --primary-light: rgba(30, 189, 208, 0.3);
+    --pink: rgba(255, 190, 157, 0.3);
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #0b0b0b;
+    --light-grey: #D1D1D3;
+
+    /** Sizes **/
+    --S1: 14px;
+    --S2: 23px;
+    --S3: 28px;
+    --S4: 32px;
+    --S5: 38px;
+    --S6: 0px;
+    --S7: 0px;
+    --S8: 53px;
+    --S9: 0px;
+    --S10: 54px;
+    --S11: 60px;
+
+    --s1: 10px;
+    --s2: 15px;
+    --s2-5: 30px;
+    --s3: 35px;
+    --s4: 70px;
+    --s5: 160px;
+
+    /** Font sizes **/
+    --f1: 46px;
+    --f2: 42px;
+    --f3: 34px;
+    --f4: 28px;
+    --f5: 24px;
+    --f6: 20px;
+    --f7: 18px;
+    --f8: 16px;
+    --f9: 14px;
+    --f10: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: var(--f7)!important;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    
+}
+
+
+
+a {
+    font-size: var(--f6)!important;
+    text-decoration: none;
+    color: var(--primary)!important;
+    border-bottom: 1px solid var(--primary) !important;
+    line-height: 24px;
+    font-weight: 500!important;
+}
+
+p {
+    color: var(--grey)!important;
+    font-weight: 400!important;
+    font-size: var(--f6)!important;
+}
+
+h1 {
+    font-size: var(--f1)
+}
+
+h2{
+    font-size: var(--f2)!important;
+    font-weight: 500;
+    line-height: 48px;
+    color: var(--black)!important;
+}
+
+h3 {
+    font-size: var(--f3) !important;
+}
+
+h4 {
+    font-size: var(--f4)!important;
+    font-weight: 500 !important;
+    line-height: 26px!important;
+}
+
+h5{
+    font-size: var(--f5) !important;
+}
+
+
+small {
+    -font-size: var(--f7) !important;    
+}
+
+input {
+    padding: var(--s1) var(--s2)!important;
+}
+
+/** Layouts **/
+.h-fullscreen {
+    min-height: 100vh !important;
+    min-width: 100% !important;
+}
+
+.dashboard-wrapper {
+    position: relative;
+    background-color: rgb(94, 93, 93)!important;
+    padding: 0 !important;
+}
+
+.navigation {
+    background-color: var(--white);
+    min-width: 100% !important;
+    height: auto !important;
+    position: fixed!important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: var(--S1);
+    box-shadow: 0px -3px 16px rgba(30, 189, 208, 0.2);
+}
+
+.navigation .menu-list {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr)!important;
+    grid-template-rows: 1fr;
+}
+
+.navigation .logo {
+    display: none !important;
+}
+
+.navigation .nav-link{
+    border: none!important;
+    padding: var(--s2) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navigation .nav-link .nav-link-label{
+    display: flex !important;
+    font-size: 10px !important;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--black) !important;
+    margin-top: 10px!important;
+}
+
+
+.navigation .nav-link .nav-link-label:active{
+    color: var(--primary)!important;
+}
+
+
+.menu-link:hover {
+    background-color: var(--primary-two);
+    width: auto!important;
+}
+
+.menu-link-active, .menu-link:hover {
+    border-radius: var(--f7);
+    
+}
+
+.main-content {
+    background-color: var(--white);
+    min-width: 100% !important;
+    min-height: 100vh !important;
+    padding: var(--s3) var(--s2) var(--s5) var(--s2) !important;
+    
+}
+
+#mobiletopnav {
+    display: flex!important;
+    padding-bottom: var(--s1) !important;
+}
+
+#mobiletopnav .menu-items img:first-child{
+    border-right: 1px solid var(--black);
+    padding-right: var(--s1)
+}
+
+#mobiletopnav .menu-items img:last-child{
+    padding-left: var(--s1)
+}
+
+/** form **/
+.auth-form-border{
+    border-top: none !important;
+    border-right: none !important;
+    border-left: 1px solid #05C3DD !important;
+    border-bottom: 1px solid #05C3DD !important;
+    border-bottom-left-radius: var(--s1);
+    height: 25px;
+    position: relative;
+    margin-top: 40px !important;
+}
+
+.auth-form-border:first-child {
+    margin-top: 0px;
+}
+
+.input-group {
+    position: absolute;
+    bottom: 2px;
+    padding-top: 1px!important;
+    display: flex;
+    flex-direction: row;
+}
+
+.input-group-text {
+    background: transparent !important;
+    border: none !important;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    padding: 0px 20px;
+}
+
+.form-control {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+input:focus {
+    border: none!important;
+    outline: none!important;
+}
+
+.btn-primary{
+    background-color: var(--primary) !important;
+    color: var(--black) !important;
+    border: none !important;
+    font-weight: 500 !important;
+    padding: var(--s2) !important;
+    border-radius: var(--s1) !important;
+    box-shadow: 9px 23px 34px rgba(5, 195, 221, 0.31);
+}
+
+.btn-primary-outline{
+    background-color: var(--white) !important;
+    color: var(--black) !important;
+    border: 1px solid var(--primary) !important;
+    font-weight: 500 !important;
+    padding: var(--s2) !important;
+    border-radius: var(--s1) !important;
+    width: 100% !important;
+}
+
+.btn-black-outline{
+    background-color: var(--white) !important;
+    color: var(--black) !important;
+    border: 1px solid var(--black) !important;
+    font-weight: 500 !important;
+    padding: var(--s1) var(--s2) !important;
+    border-radius: var(--s1) !important;
+}
+
+.btn-black{
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+    border: none !important;
+    font-weight: 500 !important;
+    font-size: var(--f2) !important;
+    padding: var(--s2) var(--s3) !important;
+    border-radius: var(--s1) !important;
+}
+
+.btn-primary-light{
+    background-color: var(--primary-light) !important;
+    color: var(--black) !important;
+    border: none !important;
+    font-weight: 500 !important;
+    font-size: var(--f2) !important;
+    padding: var(--s2) var(--s1) !important;
+    border-radius: var(--s1) !important;
+}
+
+.btn-back{
+    border: 1px solid var(--light-grey)!important;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/** Utilities **/
+
+.mb-1{
+    margin-bottom: var(--S1) !important;
+}
+
+.mb-2{
+    margin-bottom: var(--s2) !important;
+}
+
+.mb-3{
+    margin-bottom: var(--s3) !important;
+}
+
+.mb-4{
+    margin-bottom: var(--s4) !important;
+}
+
+.mr-1{
+    margin-bottom: var(--s1) !important;
+}
+
+.mr-2{
+    margin-bottom: var(--s2) !important;
+}
+
+.mr-3{
+    margin-bottom: var(--s3) !important;
+}
+
+.mr-4{
+    margin-bottom: var(--s4) !important;
+}
+
+.ml-1{
+    margin-bottom: var(--s1) !important;
+}
+
+.ml-2{
+    margin-bottom: var(--s2) !important;
+}
+
+.ml-3{
+    margin-bottom: var(--s3) !important;
+}
+
+.ml-4{
+    margin-bottom: var(--s4) !important;
+}
+
+.mt-3{
+    margin-bottom: var(--s3) !important;
+}
+
+/** Components **/
+.notification {
+    display: none !important;
+}
+
+.card {
+    border-radius: var(--S1) !important;
+}
+
+#profileform {
+    margin-top: var(--S1)!important
+}
+#profileform input {
+    width: 100%
+}
+
+
+/** DASHBOARD **/
+#setprofile{
+    border-radius: var(--f8);
+    background-color: var(--primary-two);
+    border: none;
+    padding: var(--f10) !important;
+    position: relative;
+    height: auto !important;
+    margin-bottom: var(--f6)
+}
+
+
+
+#setprofile .time-img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+   
+}
+
+#setprofile p {
+    font-size: var(--f9)!important;
+    font-weight: 500!important;
+    line-height: 20px!important;
+    color: var(--black)
+}
+
+#setprofile .wp-container {
+    width: 85px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end!important;
+    margin-bottom: 0px !important;
+    margin-top: var(--S4) !important;
+    position: relative;
+}
+
+
+#setprofile .wp-container div:nth-child(1){
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(37, 194, 216, 0.7);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+}
+
+#setprofile .wp-container div:nth-child(1) img {
+    width: 20px;
+    height: 20px;
+}
+
+#setprofile .wp-container div:nth-child(2){
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+}
+
+#setprofile .wp-container div:nth-child(2) img {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+#twocolumns{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--S3) !important;
+    padding: 0px var(--S1);
+}
+
+#wallet-balance {
+    padding: var(--S1) !important;
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#wallet-balance p {
+    margin-bottom: var(--s2);
+    color: var(--black);
+    font-weight: 400;
+}
+
+#wallet-balance h5 {
+    margin-bottom: var(--s2);
+ 
+    color: var(--black);
+    font-weight: 500 !important;
+}
+
+#wallet-balance small {
+    margin-bottom: var(--s2);
+}
+
+#wallet-balance .btn {
+    font-size: 16px !important;
+    padding: 13px  !important
+}
+
+#earnings {
+    padding: var(--S1) !important;
+    border-color: var(--primary-light) !important;
+    margin-bottom: var(--S1);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#earnings p {
+    margin-bottom: var(--s2);
+    color: var(--black);
+    font-weight: 400;
+}
+
+#earnings h5 {
+    margin-bottom: var(--s2);
+ 
+    color: var(--black);
+    font-weight: 500 !important;
+}
+
+#earnings small {
+    margin-bottom: var(--s2);
+}
+
+#earnings .btn {
+    font-size: 16px !important;
+    padding: 13px  !important
+}
+
+#activity {
+    display: none !important;
+}
+
+#projects {
+    padding: var(--S1) !important;
+    background-color: var(--primary-light) !important;
+    border: none!important;
+    min-height: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#projects p {
+    margin-bottom: var(--S2);
+    color: var(--black);
+    font-weight: 400;
+}
+
+#projects h5 {
+    margin-bottom: var(--s2);
+ 
+    color: var(--black);
+    font-weight: 500 !important;
+}
+
+#projects small {
+    margin-bottom: var(--s2);
+}
+
+#projects .btn {
+    font-size: var(--f7) !important;
+    padding: 13px  !important;
+    
+}
+
+#cells {
+    padding: var(--S1) !important;
+    min-height: 100% !important;
+    background-color: var(--pink) !important;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+#cells p {
+    
+}
+
+#cells h5 {
+  
+ 
+    color: var(--black);
+    font-weight: 500 !important;
+}
+
+#cells small {
+ 
+}
+
+#cells .btn {
+    font-size: var(--f7) !important;
+    padding: 13px  !important;
+    
+}
+
+#cells h4 {
+    margin-bottom: var(--s2)!important;
+}
+
+#stats {
+    margin-top: var(--s3) !important;
+}
+
+#bottom-cards {
+    display: grid!important;
+    grid-template-columns: repeat(2, 1fr)!important;
+    gap: var(--f9)
+}
+
+#bottom-cards div {
+    height: 100%;
+}
+
+.available-project{
+    font-size: var(--f5) !important;
+    margin-bottom: var(--S1) !important;
+}
+
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: var(--S1) !important;
+    column-gap: var(--f8)
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+      display: none;
+    
+  }
+
+  .available-project{
+      margin-top: var(--S2)!important;
+  }
+
+  #allproject-btn {
+      margin-top: var(--S1) !important;
+  }
+
+  #allproject-btn .btn-black {
+      padding: var(--S1) var(--S3) !important;
+      font-size: var(--f7) !important
+  }
+
+
+/** DESKTOP **/
+@media only screen and (min-width: 600px) {
+
+    .navigation .nav-link .nav-link-label{
+        display: flex !important;
+        font-size: var(--f7) !important;
+        line-height: 26px;
+        font-weight: 400;
+        color: var(--black) !important;
+        margin-top: 0px!important;
+    }
+
+    #top-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--f6) !important;
+      height: 209px;
+      margin-bottom: var(--f4);
+    }
+
+    #bottom-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: var(--f7) !important;
+        margin-bottom: var(--S4);
+        height: 209px;
+    }
+
+    #setprofile{
+        border-radius: var(--f10);
+        padding: var(--f8) !important;
+        position: relative;
+        height: 209px!important;
+        margin-bottom: 0px;
+
+    }
+
+    #setprofile p {
+        font-size: var(--f7)!important;
+        font-weight: 500!important;
+        line-height: 26px!important;
+        color: var(--black)
+    }
+
+    #stats {
+        margin-top: 0 !important;
+    }
+
+    #earnings {
+        min-height: 100% !important;
+    }
+
+    #activity {
+        padding: var(--f10)  !important;
+        background-color: var(--black);
+        color: var(--white);
+        margin-bottom: 0px!important;
+        display: flex!important;
+        height: 209px !important;
+    }
+    
+    #activity .title {
+        font-size: var(--f7) !important;
+        font-weight: 500 !important;
+        line-height: 24px !important;
+    }
+    
+    #activity .date {
+        font-size: var(--f10) !important;
+        font-weight: 400 !important;
+        line-height: 18px !important;
+    }
+
+    #activity-header {
+        margin-bottom: var(--f10) !important;
+    }
+    
+    #activity ul {
+        list-style: none;
+        padding: 0;
+      
+    }
+
+    #wallet-balance {
+        margin-bottom: 0px!important;
+        min-height: 100%;
+    }
+    
+    #activity ul li {
+        border-bottom: 1px solid var(--white) !important;
+        padding-bottom: 3px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    #activity ul li:last-child {
+        border-bottom: none !important;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    
+    #activity a{
+        color: var(--white) !important;
+        border: none!important;
+        font-weight: 400 !important;
+        line-height: 20px !important;
+        font-size: var(--f9)!important;
+    }
+
+    #cells {
+        min-height: 100% !important;
+    }
+
+    /** layout **/
+
+    #mobiletopnav {
+        display: none !important;
+    }
+    
+    .dashboard-wrapper {
+        position: static;
+        display: grid;
+        grid-template-columns: 300px auto!important;
+        background-color: var(--white)!important;
+        padding: 0 !important;
+    }
+
+    .navigation {
+        background-color: var(--white) !important;
+        border-right: 1px solid #F3F9FA;
+        min-height: 100vh !important;
+        max-width: 300px !important;
+        min-width: unset!important;
+        position: relative;
+        padding-left: var(--s3);
+        padding-right: var(--s3);
+    }
+
+ 
+    .navigation .menu-list{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .main-content {
+        background-color: var(--white);
+        min-width: 100% !important;
+        min-height: 100vh !important;
+        padding: var(--s4) !important;
+    }
+
+    /** Navigation **/
+
+    .navigation {
+        box-shadow: none;
+    }
+
+    .navigation .logo {
+        display: flex !important;
+    }
+
+    .navigation .nav-link .nav-link-label{
+        display: flex !important;
+    }
+
+    .nav-link{
+        border: none!important;
+        padding: var(--s3) !important;
+        
+        color: var(--black) !important;
+        transition: 0.4s;
+        font-size: var(--f6);
+        font-weight: 400;
+        line-height: 26px;
+        display: flex;
+        flex-direction: row!important;
+        align-items: center;
+    }
+
+    .nav-link img {
+        margin-right: var(--s2) !important;
+        width: 28px !important;
+        height: 28px !important;
+     
+    }
+
+    .nav-link p {
+        margin: 0px !important
+    }
+
+    .menu-link-active {
+        background-color: var(--primary);
+    }
+
+    .menu-link {
+        padding: 0px !important;
+        margin: 0px !important
+    }
+
+    .menu-link:hover {
+        background-color: var(--primary-two);
+    }
+
+    .menu-link-active, .menu-link:hover {
+        border-radius: var(--s1);
+    }
+
+    /** Components **/
+    .notification {
+        border: 1px solid rgba(54, 219, 241, 0.4);
+        box-sizing: border-box;
+        box-shadow: -4px -4px 10px rgba(30, 189, 208, 0.25), 4px 4px 10px rgba(30, 189, 208, 0.25);
+        padding: var(--s1);
+        border-radius: var(--s1);
+        display: flex!important;
+    }
+
+}
+
+/** wallet View **/
+#currency-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center ;
+    margin-top: var(--s2);
+    margin-bottom: var(--s2);
+}
+
+#currency-header .dropdown {
+   margin-left: var(--s2);
+   font-size: var(--f2) !important;
+}
+
+#currency-header .btn-black {
+    padding: var(--s1) var(--s2)!important
+}
+
+#wallet-cards {
+  
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--f10)
+}
+
+.deposit-cards {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--f10)
+}
+
+#wallet {
+    padding: var(--f10);
+    border: 1px solid #05C3DD!important;
+    background-color:  #BFFFFF;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#wallet .title, #crypto-wallet .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#wallet .title h5, #crypto-wallet .title h5 {
+    font-size: var(--f10)!important;
+    align-self: center;
+    margin: 0px !important
+}
+
+#wallet .stat, #crypto-wallet .stat {
+    margin-top: var(--f8)!important
+}
+
+#wallet .stat p, #crypto-wallet .stat p {
+    font-size:  var(--f8)!important;
+    margin-bottom: 8px !important;
+}
+
+#wallet .stat small, #crypto-wallet .stat small {
+    font-size: var(--f10)!important;
+}
+
+
+#wallet .circle-container, #crypto-wallet .circle-container{
+    width: 28px;
+    height: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#wallet .circle-container #blue-circle, #wallet .circle-container #black-circle,
+#crypto-wallet .circle-container #blue-circle, #crypto-wallet .circle-container #black-circle 
+{
+    height: 16px;
+    width: 16px;
+}
+
+#wallet .circle-container #blue-circle{
+    background-color: var(--primary)!important;
+    border-radius: 50%;
+}
+
+#wallet .circle-container #black-circle{
+    background-color: var(--white)!important;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#wallet #footer, #crypto-wallet #footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#wallet #footer a, #crypto-wallet #footer a {
+    border-bottom: none!important;
+    color: var(--black)!important;
+    font-size: var(--f10)!important;
+
+}
+
+#wallet #footer .btn{
+    background-color: var(--white);
+    padding: 9px var(--f6);
+    border: 1px solid rgba(11, 11, 11, 0.3)!important;
+    border-radius: 8px;
+}
+
+#crypto-wallet {
+    padding: var(--f10);
+    background-color:  var(--white);
+    border: 1px solid #05C3DD;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#crypto-wallet .circle-container #blue-circle{
+    background-color: var(--primary)!important;
+    border-radius: 50%;
+}
+
+#crypto-wallet .circle-container #black-circle{
+    background-color: var(--black)!important;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+#crypto-wallet #footer a {
+    border-bottom: none!important;
+    color: var(--black)!important;
+    font-size: var(--f10)!important;
+}
+
+#crypto-wallet #footer .btn{
+
+    padding: 9px var(--f6)!important;
+    background: #01FFFF;
+    border: 1px solid rgba(6, 182, 202, 0.5)!important;
+    box-sizing: border-box;
+    box-shadow: 9px 13px 28px rgba(5, 195, 221, 0.24);
+    border-radius: 8px!important;
+}
+
+.btn-primary {
+    box-shadow: none !important;
+    padding: var(--s2) var(--s3) !important
+}
+
+#investment-card {
+    padding: var(--s2);
+    background-color: var(--black);
+    color: var(--white);
+    position: relative;
+    height: 100%;
+}
+
+/* #investment-card img {
+    position: absolute;
+    width: 67.5px;
+    height: 25.77px;
+    left: 20px;
+    bottom: 65px;
+} */
+
+#investment-card .circle-container{
+    width: 50px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#investment-card .circle-container #blue-circle, #investment-card .circle-container #white-circle {
+    height: 30px;
+    width: 30px;
+}
+
+#investment-card .circle-container #blue-circle{
+    background-color: var(--primary)!important;
+    border-radius: 50%;
+}
+
+#investment-card .circle-container #white-circle{
+    background-color: var(--white)!important;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#investment-card p{
+    color: var(--light-grey) !important
+}
+
+#investment-card #footer p{
+    color: var(--black) !important
+}
+
+
+#investment-card #footer a {
+    border-bottom: none!important;
+    color: var(--black)!important;
+    font-size: var(--f7)!important;
+}
+
+#investment-card #footer .btn{
+
+    padding: 10px var(--S2);
+    background: #01FFFF;
+    border: 1px solid rgba(6, 182, 202, 0.5)!important;
+    box-sizing: border-box;
+    box-shadow: 9px 13px 28px rgba(5, 195, 221, 0.24);
+    border-radius: var(--s1);
+}
+
+#withdrawal-account-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: var(--s2)
+}
+
+#withdrawal-account-container #black-circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--black);
+    margin-right: var(--s2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#withdrawal-account-container #withdrawal-card{
+    padding: var(--s2) var(--s3);
+    background-color: #EFEFEF;
+    border: none;
+}
+
+#withdrawal-account-container #withdrawal-card p:last-child{
+    margin-bottom: 0px !important;
+}
+
+#transaction .transaction-date{
+    border: 1px solid var(--primary);
+    padding: var(--s2);
+    border-radius: var(--s1);
+}
+
+@media only screen and (min-width: 600px) {
+    
+    #wallet-cards {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: var(--f8);
+        height: 223px !important;
+    }
+
+    #wallet-cards .card{
+        height: 223px !important;
+    }
+
+    .deposit-cards {
+        column-gap: var(--f8) !important
+    }
+
+    
+#wallet {
+    padding: var(--f4) var(--f7);
+    border: 1px solid #05C3DD!important;
+    background-color:  #BFFFFF;
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#crypto-wallet {
+    padding: var(--f4) var(--f7);
+    background-color:  #FFFFFF;
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#wallet .title, #crypto-wallet .title, #investment-card .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#wallet .title h5, #crypto-wallet .title h5, #investment-card .title h5 {
+    font-size: var(--f7)!important;
+    font-weight: 400!important;
+    align-self: center;
+    margin: 0px !important
+}
+
+#wallet .stat, #crypto-wallet .stat {
+    margin-top: var(--f4)!important
+}
+
+#wallet .stat p, #crypto-wallet .stat p {
+    font-size:  var(--f5)!important;
+    margin-bottom: var(--f7) !important;
+}
+
+#wallet .stat small, #crypto-wallet .stat small {
+    font-size: var(--f7)!important;
+}
+
+
+#wallet .circle-container, #crypto-wallet .circle-container{
+    width: 55px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#wallet .circle-container #blue-circle, #wallet .circle-container #black-circle,
+#crypto-wallet .circle-container #blue-circle, #crypto-wallet .circle-container #black-circle,
+#investment-card .circle-container #blue-circle, #investment-card .circle-container #black-circle
+{
+    height: 30px;
+    width: 30px;
+}
+
+#wallet .circle-container #blue-circle{
+    background-color: var(--primary)!important;
+    border-radius: 50%;
+}
+
+#wallet .circle-container #black-circle{
+    background-color: var(--white)!important;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#wallet #footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#wallet #footer a, #crypto-wallet #footer a {
+    border-bottom: none!important;
+    color: var(--black)!important;
+    font-size: var(--f9)!important;
+}
+
+#wallet #footer .btn{
+    background-color: var(--white);
+    padding: 9px var(--f2);
+    border: 1px solid rgba(11, 11, 11, 0.3)!important;
+    border-radius: 8px;
+}
+
+#crypto-wallet #footer .btn{
+    
+    padding: 9px var(--f2)!important;
+ 
+    border-radius: 8px;
+}
+
+    .deposit-cards {
+        height: 223px !important;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--f3)
+    }
+
+    #investment-card{
+        margin-top: 0 !important;
+        border-radius: 12px!important;
+        padding: var(--f4) var(--f7);
+    }
+
+    
+#investment-card .stat {
+    margin-top: 24px !important;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+#investment-card .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#investment-card  h5{
+    font-weight: 400;
+    font-size: 14px!important;
+    line-height: 21px;
+}
+}

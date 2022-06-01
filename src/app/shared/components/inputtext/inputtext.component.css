@@ -1,0 +1,35 @@
+/** desktop **/
+.input-group {
+    margin-top: 38px !important;
+    display: flex;
+    flex-direction: row;
+}
+
+.input-group:first-child {
+    margin-top: 0px;
+}
+
+.input-group-text {
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    padding: 10px 20px;
+}
+
+/** mobile **/
+@media screen and (max-width: 600px) {
+    .input-group {
+        margin-top: 33px;
+    }
+    
+    .input-group:first-child {
+        margin-top: 0px;
+    }
+
+    .input-group-text {
+        display: flex;
+        flex-direction: row;
+        place-items: center;
+        padding: 12px;
+    }
+}

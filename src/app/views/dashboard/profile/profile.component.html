@@ -1,0 +1,44 @@
+<app-mobiletopnav></app-mobiletopnav>
+<h4>Profile Settings</h4>
+
+<form [formGroup]="profileForm">
+<div class="pt-3" id="profileform">
+    <div class="two-column-desktop">
+        <div>
+            <input type="text" formControlName="firstname" placeholder="First name"/>
+        </div>
+    
+        <div>
+            <input type="text" formControlName="lastname" placeholder="Last name"/>
+        </div>
+    </div>
+    
+    <div class="two-column-desktop">
+        <div>
+            <input type="email" formControlName="email" placeholder="Email"/>
+        </div>
+    
+        <div>
+            <input type="text" formControlName="phone" placeholder="Phone number"/>
+        </div>
+    </div>
+    <div class="two-column-desktop">
+        <div>
+            <select formControlName="country">
+                <option>Country</option>
+            </select>
+        </div>
+        <div>
+            <select formControlName="city">
+                <option>City</option>
+            </select>
+        </div>
+    </div>
+
+    <div >
+        <input type="text" formControlName="address" placeholder="Address">
+    </div>
+    
+    <app-button classes="btn btn-primary mt-3" label="Update Profile" (click)="updateProfile()"></app-button>
+</div>
+</form>

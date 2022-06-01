@@ -1,0 +1,37 @@
+#profileform .two-column-desktop{
+    display: flex;
+    flex-direction: column;
+    gap: var(--f7)
+}
+
+#profileform {
+    display: flex;
+    flex-direction: column;
+    gap: var(--f7)
+}
+
+select {
+    width: 100%;
+    
+}
+
+input, select{
+    border-radius: 8px;
+    border: 1px solid#19A5B6 !important;
+    padding: var(--f9) var(--f8)!important;
+    font-size: var(--f9) !important;
+}
+
+input:focus {
+    border-radius: 8px;
+    border: 1px solid#384142;
+}
+
+@media screen and (min-width: 600px) {
+   
+    #profileform .two-column-desktop{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--f7)
+    }
+}

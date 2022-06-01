@@ -1,0 +1,71 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    border-top-right-radius: var(--S1);
+    border-bottom-right-radius: var(--S1);
+    border: none;
+    margin-bottom: var(--S1);
+}
+
+.card img {
+    min-height: 100%;
+    width: 31%;
+    border-top-left-radius: var(--S1);
+    border-bottom-left-radius: var(--S1);
+    background-size: cover;
+}
+
+.card .card-content {
+    padding: var(--S1);
+    min-height: 100%;
+    width: 100%;
+    background-color: #F1F0F0;
+    border-top-right-radius: var(--S1);
+    border-bottom-right-radius: var(--S1);
+}
+
+.card .card-content a {
+    border-bottom: none!important;
+    color: var(--black)!important;
+    display: block;
+}
+
+.card .card-content .title{
+    font-size: var(--f5);
+    margin-bottom: 16px;
+}
+
+.card .card-content .invested {
+    margin-bottom: 8px;
+    font-size: 12px!important;
+}
+
+.card .card-content .USD {
+    margin-bottom: 12px;
+}
+
+.card .card-content .NGN{
+    display: block;
+    margin-bottom: 28px;
+}
+
+.card .card-content .timeline{
+    margin-bottom: 11px;
+}
+
+.card .card-content .progress-bar {
+    height: 8px;
+    width: 100%;
+    background-color: #C4C4C4;
+    border-radius: 8px;
+    position: relative;
+}
+
+.card .card-content .progress{
+    background-color: var(--primary);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 30%;
+    height: 100%;
+}

@@ -1,0 +1,74 @@
+#investment-header h4{
+    margin: var(--S1) 0px;
+}
+
+#investment-header .btn-primary {
+    padding: var(--S1) var(--S3)!important
+}
+
+#money-invested, #bottom-investment #active, #bottom-investment #completed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--S1)!important;
+    color: var(--white)!important;
+    height: 100%;
+}
+
+#money-invested {
+    background-color: var(--black);
+}
+
+#money-invested h5, #bottom-investment #active, #bottom-investment #completed {
+    margin-bottom: var(--S2)!important;
+}
+
+#money-invested h4{
+    margin-bottom: var(--S1)!important;
+}
+
+#bottom-investment{
+    margin-top: var(--S1);
+    display: flex;
+    flex-direction: row; 
+    column-gap: 0px!important;
+}
+
+#bottom-investment #active {
+    border: 1px solid #FFBE9D;
+    background-color: var(--white);
+    color: #000 !important;
+}
+
+#bottom-investment #completed {
+    border: none;
+    background-color:  rgba(54, 219, 241, 0.3);
+    color: #000 !important;
+}
+
+@media only screen and (min-width: 600px) {
+    #money-invested {
+        padding: var(--s3) var(--s3);
+        color: var(--black)!important;
+        background-color: var(--white);
+    }
+
+    #money-invested p {
+        color: var(--black)!important;
+    }
+
+    #bottom-investment{
+        padding: 0px!important;
+        margin: 0px !important;
+        height: 100%;
+        margin-top: 0px!important;
+    }
+
+    #bottom-investment .col-6 {
+        padding: 0px;
+    }
+    
+    #bottom-investment #active {
+        margin-right: var(--S1)
+    }
+}

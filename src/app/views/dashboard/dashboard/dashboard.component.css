@@ -1,0 +1,38 @@
+#wallet-balance p, #earnings p, #projects p, #cells p {
+    font-size: var(--f9)
+}
+
+#wallet-balance h5, #earnings h5, #projects h5, #cells h5 {
+    font-size: var(--f9);
+    font-weight: 500;
+    line-height: 28px;
+}
+
+#wallet-balance small, #earnings small, #projects small, #cells small{
+    font-size: var(--f9);
+    line-height: 20px;
+}
+
+.scrolling-wrapper div {
+    min-width: 441px !important;
+}
+
+/** desktop **/
+@media screen and (min-width: 600px){
+  
+    #projects p {
+        margin-bottom: 15px!important;
+    }
+
+    #wallet-balance p, #earnings p, #projects p, #cells p {
+        font-size: var(--f9)
+    }
+
+    #wallet-balance h5, #earnings h5, #projects h5, #cells h5 {
+        font-size: var(--f7)
+    }
+
+    #wallet-balance small, #earnings small, #projects small, #cells small {
+        font-size: var(--f9)
+    }
+}

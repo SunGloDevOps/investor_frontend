@@ -1,0 +1,36 @@
+<div  id="productcards">
+    <div class="bg-primary thumbnail">
+        <img src="../../../../assets/images/thumbnail.jpg">
+
+        <div class="label">
+            Now Available- 32.90% Sold
+        </div>
+    </div>
+    <div class="card-content">
+        <h5>
+            {{title}}
+        </h5>
+
+        <small class="">
+            {{description}}
+        </small>
+            
+            <div class="row" id="yield">
+                <div class="col-12">
+                    <app-statsdisplay label="Cost per cell" [value]=value ></app-statsdisplay>
+                </div>
+               
+            </div>
+
+            <div class="row" id="calltoaction">
+                <div class="col-12">
+                    <a class="btn btn-black-share">
+                        <img src="../../../../assets/images/icons/download.png">
+                    </a>
+                   <button classes="btn btn-primary" label="View Details"></button>
+                </div>
+            </div>
+    </div>
+    
+
+</div>
