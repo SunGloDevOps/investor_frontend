@@ -1,0 +1,234 @@
+#investment-header h4{
+    margin: 0px 0px 12px 0px;
+    font-size: 20px !important;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+#investment-header p {
+    font-size: 12px!important;
+    line-height: 18px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+#investment-header .btn-primary {
+    
+    font-size: 12px !important;
+    line-height: 18px;
+    font-weight: 500;
+    padding: 12px 35px !important;
+    margin-bottom: 32px;
+}
+
+.investment-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+#money-invested, #bottom-investment #active, #bottom-investment #completed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--white)!important;
+    height: 100%;
+}
+
+#money-invested h5, #bottom-investment #active, #bottom-investment #completed {
+    margin-bottom: var(--S2)!important;
+}
+
+#money-invested {
+    padding: 24px;
+    color: var(--white)!important;
+    background-color: var(--black);
+    border-radius: 16px;
+}
+
+#money-invested small{
+    font-size: 12px!important;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+#money-invested h5 {
+    font-size: 14px!important;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+#money-invested h4 {
+    font-size: 18px!important;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+#bottom-investment{
+    margin-top: var(--S1);
+    display: flex;
+    flex-direction: row; 
+    column-gap: 0px!important;
+}
+
+#bottom-investment #active {
+    border: 1px solid #FFBE9D;
+    background-color: var(--white);
+    color: #000 !important;
+    padding: 20px;
+}   
+
+#bottom-investment #active p {
+    font-size: 14px!important;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+#bottom-investment #active h4 {
+    font-size: 18px!important;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+#bottom-investment #completed {
+    border: none;
+    background-color:  rgba(54, 219, 241, 0.3);
+    color: #000 !important;
+    padding: 24px;
+}
+
+#bottom-investment #completed p {
+    font-size: 14px!important;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+#bottom-investment #completed h4 {
+    font-size: 14px!important;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.empty-investment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0px;
+}
+
+.empty-investment div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/** desktop **/
+@media only screen and (min-width: 600px) {
+    #investment-header h4{
+        margin: 0px 0px 16px 0px;
+        font-size: 24px !important;
+        line-height: 32px;
+        font-weight: 500;
+    }
+
+    #investment-header p {
+        font-size: 18px!important;
+        line-height: 24px;
+        font-weight: 400;
+        margin-bottom: 24px;
+    }
+
+    #investment-header .btn-primary{
+        font-size: 14px !important;
+        line-height: 21px;
+        font-weight: 500;
+        padding: 14px 64px !important;
+        margin-bottom: 24px;
+    }
+
+    .investment-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+        margin-top: 18px;
+    }
+
+    #money-invested {
+        padding: 24px;
+        color: var(--black)!important;
+        background-color: var(--white);
+        border-radius: 16px;
+    }
+
+    #money-invested small{
+        font-size: 14px!important;
+        font-weight: 500;
+        line-height: 20px;
+    }
+
+    #money-invested h5 {
+        font-size: 18px!important;
+        font-weight: 400;
+        line-height: 26px;
+    }
+
+    #money-invested h4 {
+        font-size: 24px!important;
+        font-weight: 400;
+        line-height: 26px;
+    }
+
+    #bottom-investment{
+        padding: 0px!important;
+        margin: 0px !important;
+        height: 100%;
+        margin-top: 0px!important;
+    }
+
+    #bottom-investment .col-6 {
+        padding: 0px;
+    }
+    
+    #bottom-investment #active {
+        margin-right: var(--S1);
+        padding: 24px;
+    }
+
+    #bottom-investment #active p {
+        font-size: 18px!important;
+        line-height: 26px;
+        font-weight: 400;
+    }
+
+    #bottom-investment #active h4 {
+        font-size: 24px!important;
+        line-height: 28px;
+        font-weight: 500;
+    }
+
+    #bottom-investment #completed p {
+        font-size: 18px!important;
+        font-weight: 400;
+        line-height: 26px;
+    }
+    
+    #bottom-investment #completed h4 {
+        font-size: 24px!important;
+        font-weight: 400;
+        line-height: 28px;
+    }
+
+    .empty-investment {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 100px 0px;
+    }
+
+    .empty-investment div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

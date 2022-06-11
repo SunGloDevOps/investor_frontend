@@ -1,0 +1,23 @@
+<app-mobiletopnav></app-mobiletopnav>
+
+<app-topnav></app-topnav>
+
+<div class="row">
+    <div class="col-12">
+        <h5>All available projects {{user_id}}</h5>
+    </div>
+
+    <div class="mt-2" id="project-grid" *ngIf="projects.length > 0">
+        <div *ngFor="let project of projects">
+            <app-projectcard 
+            id={{project.id}}
+            title={{project.title}} 
+            description={{project.description}} 
+            [cost]="project.cost_per_cell"
+            ></app-projectcard>
+        </div>        
+    </div>
+    <div *ngIf="projects.length <= 0">
+        No Available projects
+    </div>
+</div>

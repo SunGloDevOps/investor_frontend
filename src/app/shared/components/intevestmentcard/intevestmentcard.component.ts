@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./intevestmentcard.component.css']
 })
 export class IntevestmentcardComponent implements OnInit {
+
+  @Input() title: string = "untitled";
+
+  @Input() usd: string = "0.0";
+
+  @Input() ngn: string = "0.0";
+
+  @Input() days: string = "0";
+
+  @Input() progress: string = "100"
 
   constructor(private router: Router) { }
 

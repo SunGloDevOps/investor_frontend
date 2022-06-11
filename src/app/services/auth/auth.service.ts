@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Globals } from '../../../app/configs/globals'
+import { api_home_url } from '../../../environments/environment';
+import { TokenService } from '../token/token.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  global = new Globals()
-
-  api_home_url = "http://localhost:5000/api/v1";
+  api_url: string = `${api_home_url}/auth`;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private tokenService: TokenService,
+    private router: Router
   ) { }
 
   login(email: string, password: string): Observable<any> {
@@ -23,13 +25,13 @@ export class AuthService {
       password: password
     }
 
-     return this.http.post(`${this.api_home_url}/auth/login`, payload).pipe(
+     return this.http.post(`${this.api_url}/login`, payload).pipe(
        
      )
   }
 
   register(payload: any): Observable<any> {
-    return this.http.post(`${this.api_home_url}/register`, payload).pipe();
+    return this.http.post(`${this.api_url}/register`, payload).pipe();
   }
 
   forgotpassword(email: string): Observable<any> {
@@ -38,6 +40,11 @@ export class AuthService {
       email: email
     }
 
-    return this.http.post(`${this.api_home_url}/forgotpassword`, payload)
+    return this.http.post(`${this.api_url}/forgotpassword`, payload)
+  }
+
+  logout(): void {
+    this.tokenService.delete();
+    this.router.navigate(['/auth/login'])
   }
 }

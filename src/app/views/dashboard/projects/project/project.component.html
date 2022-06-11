@@ -1,0 +1,96 @@
+<app-mobiletopnav></app-mobiletopnav>
+
+<app-singletopnav></app-singletopnav>
+
+<div id="single-title">
+
+        <div>
+            <p>Available projects</p>
+        </div>
+
+        <div>
+            <small class="text-danger">{{projectsoldpercentage}}% Sold</small>
+        </div>
+
+</div>
+
+<div class="row pt-3">
+    <div class="col-12" id="thumbnail">
+        <img src={{project.thumbnail}} alt={{project.title}}>
+    </div>
+</div>
+
+<div class="project-details">
+        <h5>{{project.title}}</h5>
+        <small>{{project.maintainer}}</small>
+        <div class="information-cards">
+            <div>
+                <div class="stats-display">
+                    <div>Cost per cell</div>
+                    <div>~ USD 7.12 / NGN {{project.cost_per_cell}}</div>
+                </div>
+
+                <div class="stats-display">
+                    <div>Total Cell Bought</div>
+                    <div>{{project.sold_cell}}</div>
+                </div>
+
+                <div>
+                    <button class="w-100 btn-primary">Invest</button>
+                </div>
+
+                <div>
+                    <button type="button" href="#" class="btn btn-primary-outline" id="btn-opportunity">About the opportunity  <img src="../../../../assets/images/icons/Arrow - Left.png"></button>
+                </div>
+
+            </div>
+
+            <div>
+
+                <p class="d-lg-none info-title">Other Information</p>
+
+                <div class="" id="information-cards" >
+                    <div class="">
+                        <app-projectinfocard title="ROI" value={{project.ROI}}></app-projectinfocard>
+                    </div>
+                    <div class="">
+                        <app-projectinfocard title="Carbon Reduced" value={{project.carbon_reduced}}></app-projectinfocard>
+                    </div>
+                    <div class=" ">
+                        <app-projectinfocard title="Year 1 Energy Yield" value={{project.energy_yield}}></app-projectinfocard>
+                    </div>
+                    <div class="">
+                        <app-projectinfocard title="Investment End Date" value={{project.end_date}}></app-projectinfocard>
+                    </div>
+                    <div class="">
+                        <app-projectinfocard title="Current number of Investors" value={{project.no_of_investor}}></app-projectinfocard>
+                    </div>
+                    <div class="">
+                        <app-projectinfocard title="Investment" value="Revenue Generating Asset "></app-projectinfocard>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-12 d-flex flex-row justify-content-end">
+                        <button type="button" (click)="downloadInformation()" class="btn btn-black" id="download-info"> <small>Download Information </small><img src="../../../../assets/images/icons/download (2).png" > </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        
+        <h4 class="mb-3">About Project</h4>
+
+        <small class="mb-3">Read about this investment opportunity below.</small>
+        <br>
+        <small class="mb-">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus
+        </small>
+
+
+
+    </div>
+</div>

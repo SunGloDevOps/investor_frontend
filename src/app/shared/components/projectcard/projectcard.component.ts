@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projectcard',
@@ -7,17 +8,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProjectcardComponent implements OnInit {
 
-  @Input() title?: string;
+  @Input() title: string = "Untitled Project";
 
-  @Input() description?: string;
+  @Input() description: string = "No description provided";
 
-  @Input() cost?: number;
+  @Input() cost: string = "0.0";
+
+  @Input() id: string = "jvufhviufhuubiuh biubf"
 
   value: string = "~ USD " + this.cost;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  viewDetail(id: string): void {
+    this.router.navigate(['/app/projects/', id])
   }
 
 }

@@ -1,79 +1,58 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthguardService } from 'src/app/services/authguard/authguard.service';
+import { AuthguardService } from 'src/app/guards/authguard/authguard.service';
 import { StarterComponent } from 'src/app/shared/components/starter/starter.component';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { InvestmentComponent } from './investment/investment.component';
-import { InvestmentdetailComponent } from './investmentdetail/investmentdetail.component';
-import { OrderComponent } from './order/order.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ProjectComponent } from './project/project.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { WalletComponent } from './wallet/wallet.component';
+import { InvestmentRoutingModule } from './investment/investment-routing.module';
+import { ProjectsRoutingModule } from './projects/projects-routing.module';
+import { UserRoutingModule } from './user/user-routing.module';
+import { WalletRoutingModule } from './wallet/wallet-routing.module';
 
 const routes: Routes = [
   {
-    path: 'app',
+    path: 'dashboard',
     component: StarterComponent,
     
     children: [
       {
         path: '',
-        redirectTo: '/app/dashboard',
+        redirectTo: '/dashboard/overview',
         pathMatch: 'full'
       },
       {
-        path: 'dashboard',
+        path: 'overview',
         component: DashboardComponent,
-        canActivate: [AuthguardService],
+        // canActivate: [AuthguardService],
       },
       {
         path: 'projects',
-        component: ProjectsComponent,
-        canActivate: [AuthguardService],
+        loadChildren: () => import('../dashboard/projects/projects.module').then(m => m.ProjectsModule)
       },
       {
-        path: 'projects/:id',
-        component: ProjectComponent,
-        canActivate: [AuthguardService],
+        path: 'investments',
+        loadChildren: () => import('../dashboard/investment/investment.module').then(m => m.InvestmentModule)
       },
       {
         path: 'wallet',
-        component: WalletComponent,
-        canActivate: [AuthguardService],
+        loadChildren: () => import('../dashboard/wallet/wallet.module').then(m => m.WalletModule)
       },
       {
-        path: 'investment',
-        component: InvestmentComponent,
-        canActivate: [AuthguardService],
+        path: 'user',
+        loadChildren: () => import('../dashboard/user/user.module').then(m => m.UserModule)
       },
-      {
-        path: 'investment/i',
-        component: InvestmentdetailComponent,
-        canActivate: [AuthguardService],
-      },
-      {
-        path: 'order',
-        component: OrderComponent,
-        canActivate: [AuthguardService],
-      },
-      {
-        path: 'checkout',
-        component: CheckoutComponent,
-        canActivate: [AuthguardService],
-      },
-      {
-        path: 'profile',
-        component: ProfileComponent,
-        canActivate: [AuthguardService],
-      }
+     
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes),
+    ProjectsRoutingModule,
+    InvestmentRoutingModule,
+    WalletRoutingModule,
+    UserRoutingModule
+  ],
   exports: [RouterModule]
 })
 export class DashboardRoutingModule { }

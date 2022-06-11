@@ -1,0 +1,41 @@
+h5 {
+    font-size: 18px!important;
+}
+
+#withdrawal-card {
+    border-radius: 12px!important;
+    padding: 16px 24px!important;
+}
+
+#withdrawal-card p {
+    font-size: 16px!important;
+}
+
+.btn-black-outline {
+    font-size: 14px !important;
+    padding: 10px 20px!important;
+}
+
+@media screen and (max-width: 600px) {
+    h5 {
+        font-size: 14px !important
+    }
+
+    #withdrawal-card {
+        border-radius: 10px!important;
+        padding: 16px!important;
+    }
+
+    #withdrawal-card p {
+        font-size: 12px!important;
+    }
+
+    .btn-black-outline {
+        font-size: 12px !important;
+        padding: 10px 20px!important;
+    }
+
+    .transaction-date{
+        display: none;
+    }
+}

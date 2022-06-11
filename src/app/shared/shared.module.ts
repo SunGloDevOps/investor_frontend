@@ -19,7 +19,7 @@ import { StatsdisplayComponent } from './components/statsdisplay/statsdisplay.co
 import { ProjectinfocardComponent } from './components/projectinfocard/projectinfocard.component';
 import { IntevestmentcardComponent } from './components/intevestmentcard/intevestmentcard.component';
 import { ButtonModule } from 'primeng/button';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LandingNavComponent } from './components/landing-nav/landing-nav.component';
 import { LandingheroComponent } from './components/landinghero/landinghero.component';
 import { LandingwhyComponent } from './components/landingwhy/landingwhy.component';
@@ -29,7 +29,13 @@ import { LandingprotectComponent } from './components/landingprotect/landingprot
 import { LandingsolarassetComponent } from './components/landingsolarasset/landingsolarasset.component';
 import { LandingbankComponent } from './components/landingbank/landingbank.component';
 import { LandingfooterComponent } from './components/landingfooter/landingfooter.component';
-import { AuthguardService } from '../services/authguard/authguard.service';
+import { AuthguardService } from '../guards/authguard/authguard.service';
+import { AuthService } from '../interceptor/auth/auth.service';
+import { JwtModule, JwtHelperService, JwtModuleOptions } from '@auth0/angular-jwt';
+import { api_home_url } from 'src/environments/environment';
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 @NgModule({
   declarations: [
@@ -64,10 +70,18 @@ import { AuthguardService } from '../services/authguard/authguard.service';
     RouterModule,
     ReactiveFormsModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: [api_home_url],
+      },
+    }),
   ],
   providers: [
-    AuthguardService
+    AuthguardService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true},
+    JwtHelperService,
   ],
   exports: [
     TopnavComponent,
@@ -98,6 +112,7 @@ import { AuthguardService } from '../services/authguard/authguard.service';
     LandingsolarassetComponent,
     LandingbankComponent,
     LandingfooterComponent,
+    JwtModule
   ]
 })
 export class SharedModule { }

@@ -133,12 +133,14 @@
 }
 
 #productcards #calltoaction .btn-black-share {
-    padding: 10px 12px!important;
+    padding: 0px 12px!important;
     margin-right: var(--s2);
     border-bottom: none!important;
     background-color: var(--black);
-    border-radius: var(--S1);
-    
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #productcards #calltoaction .btn-black-share img{
@@ -149,9 +151,19 @@
 #productcards #calltoaction .btn-primary {
     padding: var(--s1) var(--s3) !important;
     margin-right: var(--s2);
-    font-size: var(--f9) !important
+    font-size: var(--f9) !important;
+    height: 100%!important;
 }
 
+
+
+.product-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/** Desktop **/
 @media screen and (min-width: 600px){
 #productcards {
     width: 441px !important;
@@ -161,8 +173,13 @@
    
     display: flex!important;
     flex-direction: column!important;
+
 }
 
-
+.product-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 }
