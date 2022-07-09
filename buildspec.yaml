@@ -14,7 +14,7 @@ phases:
   post_build:
     commands:
       - echo "Updating files in the s3 bucket...."
-      - aws s3 sync dist/sunglo_ui/ s3://sungloinvestor_frontend --delete
+      - aws s3 sync dist/sunglo_ui/ s3://sunglo.io --delete
 artifacts:
   files:
         - "**/*"
