@@ -1,0 +1,28 @@
+.content {
+    padding: 16px;
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.label {
+    color: rgba(11, 11, 11, 0.8);
+    margin-right: 8px;
+}
+
+.value {
+    color: #05C3DD;
+}
+
+@media screen and (max-width: 600px){
+    .content {
+        padding: 12px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+
+

@@ -1,0 +1,10 @@
+/** desktop **/
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/** mobile **/
+@media screen and (max-width: 600px){
+    
+}

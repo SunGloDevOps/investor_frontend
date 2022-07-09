@@ -1,38 +1,47 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TopnavComponent } from './components/topnav/topnav.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { StarterComponent } from './components/starter/starter.component';
-import { MenuitemComponent } from './components/menuitem/menuitem.component';
 import { RouterModule } from '@angular/router';
 import {  ReactiveFormsModule } from '@angular/forms';
-import { InputtextComponent } from './components/inputtext/inputtext.component';
-import { ButtonComponent } from './components/button/button.component';
-import { BackbuttonComponent } from './components/backbutton/backbutton.component';
-import { WelcomeheaderComponent } from './components/welcomeheader/welcomeheader.component';
-import { MobiletopnavComponent } from './components/mobiletopnav/mobiletopnav.component';
-import { ProjectcardComponent } from './components/projectcard/projectcard.component';
-import { SingletopnavComponent } from './components/singletopnav/singletopnav.component';
-import { StatsdisplayComponent } from './components/statsdisplay/statsdisplay.component';
-import { ProjectinfocardComponent } from './components/projectinfocard/projectinfocard.component';
-import { IntevestmentcardComponent } from './components/intevestmentcard/intevestmentcard.component';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LandingNavComponent } from './components/landing-nav/landing-nav.component';
-import { LandingheroComponent } from './components/landinghero/landinghero.component';
-import { LandingwhyComponent } from './components/landingwhy/landingwhy.component';
-import { LandinginvestComponent } from './components/landinginvest/landinginvest.component';
-import { LandingfeatureComponent } from './components/landingfeature/landingfeature.component';
-import { LandingprotectComponent } from './components/landingprotect/landingprotect.component';
-import { LandingsolarassetComponent } from './components/landingsolarasset/landingsolarasset.component';
-import { LandingbankComponent } from './components/landingbank/landingbank.component';
-import { LandingfooterComponent } from './components/landingfooter/landingfooter.component';
 import { AuthguardService } from '../guards/authguard/authguard.service';
 import { AuthService } from '../interceptor/auth/auth.service';
 import { JwtModule, JwtHelperService, JwtModuleOptions } from '@auth0/angular-jwt';
 import { api_home_url } from 'src/environments/environment';
+import { MainlayoutComponent } from './components/layouts/mainlayout/mainlayout.component';
+import { EmptyComponent } from './components/empty/empty.component';
+import { ModalcardComponent } from './components/cards/modalcard/modalcard.component';
+import { ModalcontainerComponent } from './components/modals/modalcontainer/modalcontainer.component';
+import { DepositWalletComponent } from './components/modals/deposit-wallet/deposit-wallet.component';
+import { VerifyComponent } from './components/buttons/verify/verify.component';
+import { BorderedcardComponent } from './components/cards/borderedcard/borderedcard.component';
+import { LandingfooterComponent } from './components/layouts/landingfooter/landingfooter.component';
+import { LandingbankComponent } from './components/pages/home/landingbank/landingbank.component';
+import { LandingsolarassetComponent } from './components/pages/home/landingsolarasset/landingsolarasset.component';
+import { LandingprotectComponent } from './components/pages/home/landingprotect/landingprotect.component';
+import { LandingfeatureComponent } from './components/pages/home/landingfeature/landingfeature.component';
+import { LandinginvestComponent } from './components/pages/home/landinginvest/landinginvest.component';
+import { LandingwhyComponent } from './components/pages/home/landingwhy/landingwhy.component';
+import { LandingheroComponent } from './components/pages/home/landinghero/landinghero.component';
+import { LandingNavComponent } from './components/navigation/landing-nav/landing-nav.component';
+import { IntevestmentcardComponent } from './components/cards/intevestmentcard/intevestmentcard.component';
+import { ProjectinfocardComponent } from './components/cards/projectinfocard/projectinfocard.component';
+import { StatsdisplayComponent } from './components/cards/statsdisplay/statsdisplay.component';
+import { SingletopnavComponent } from './components/navigation/singletopnav/singletopnav.component';
+import { ProjectcardComponent } from './components/cards/projectcard/projectcard.component';
+import { MobiletopnavComponent } from './components/navigation/mobiletopnav/mobiletopnav.component';
+import { WelcomeheaderComponent } from './components/navigation/welcomeheader/welcomeheader.component';
+import { BackbuttonComponent } from './components/buttons/backbutton/backbutton.component';
+import { ButtonComponent } from './components/buttons/button/button.component';
+import { InputtextComponent } from './components/form/inputtext/inputtext.component';
+import { MenuitemComponent } from './components/layouts/menuitem/menuitem.component';
+import { SidebarComponent } from './components/layouts/sidebar/sidebar.component';
+import { StarterComponent } from './components/layouts/starter/starter.component';
+import { TopnavComponent } from './components/navigation/topnav/topnav.component';
+import { CounterComponent } from './components/form/counter/counter.component';
+import { CardComponent } from './components/cards/card/card.component';
+import { GetstartedComponent } from './components/pages/home/getstarted/getstarted.component';
+
 export function tokenGetter() {
   return localStorage.getItem("token");
 }
@@ -41,8 +50,6 @@ export function tokenGetter() {
   declarations: [
     TopnavComponent,
     StarterComponent,
-    FooterComponent,
-    HeaderComponent,
     SidebarComponent,
     MenuitemComponent,
     InputtextComponent,
@@ -63,7 +70,17 @@ export function tokenGetter() {
     LandingprotectComponent,
     LandingsolarassetComponent,
     LandingbankComponent,
-    LandingfooterComponent
+    LandingfooterComponent,
+    BorderedcardComponent,
+    VerifyComponent,
+    DepositWalletComponent,
+    ModalcontainerComponent,
+    ModalcardComponent,
+    EmptyComponent,
+    MainlayoutComponent,
+    CounterComponent,
+    CardComponent,
+    GetstartedComponent
   ],
   imports: [
     CommonModule,
@@ -86,10 +103,8 @@ export function tokenGetter() {
   exports: [
     TopnavComponent,
     StarterComponent,
-    FooterComponent,
-    HeaderComponent,
     SidebarComponent,
-    MenuitemComponent,
+    MenuitemComponent, 
     ReactiveFormsModule,
     InputtextComponent,
     ButtonComponent,
@@ -112,7 +127,16 @@ export function tokenGetter() {
     LandingsolarassetComponent,
     LandingbankComponent,
     LandingfooterComponent,
-    JwtModule
+    JwtModule,
+    BorderedcardComponent,
+    VerifyComponent,
+    DepositWalletComponent,
+    ModalcontainerComponent,
+    ModalcardComponent,
+    EmptyComponent,
+    MainlayoutComponent,
+    CounterComponent,
+    GetstartedComponent
   ]
 })
 export class SharedModule { }

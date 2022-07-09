@@ -29,7 +29,7 @@ export class TokenService {
 
   decodeToken(): void {
     const decodedToken = this.jwtHelper.decodeToken(this.jwtHelper.tokenGetter());
-    console.log(decodedToken)
+  
     this.user = {
       username: decodedToken.username,
       id: decodedToken.id

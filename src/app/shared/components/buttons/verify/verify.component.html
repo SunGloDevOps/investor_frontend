@@ -1,0 +1,5 @@
+<div class="verify-button" [class.verified]="isVerified" [class.unverified]="!isVerified" >
+    <span *ngIf="isVerified">z</span>
+    <span class="label" *ngIf="isVerified">{{verifiedlabel}}</span>
+    <span class="label" *ngIf="!isVerified">{{label}}</span>
+</div>

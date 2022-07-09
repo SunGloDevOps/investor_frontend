@@ -4,10 +4,15 @@
     gap: var(--f7)
 }
 
+form {
+    width: 100%;
+}
+
 #profileform {
     display: flex;
     flex-direction: column;
-    gap: var(--f7)
+    gap: var(--f7);
+    width: 100%!important;
 }
 
 select {
@@ -19,7 +24,14 @@ input, select{
     border-radius: 8px;
     border: 1px solid#19A5B6 !important;
     padding: var(--f9) var(--f8)!important;
-    font-size: var(--f9) !important;
+    font-size: 12px!important;
+}
+
+.btn .btn-primary {
+    font-weight: 500;
+    font-size: 12px!important;
+    line-height: 20px;
+    width: 291px!important
 }
 
 input:focus {
@@ -28,10 +40,28 @@ input:focus {
 }
 
 @media screen and (min-width: 600px) {
+
+    #profileform {
+        width: 100%!important
+    }
+
+    form {
+        width: 60%!important;
+    }
    
     #profileform .two-column-desktop{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--f7)
+    }
+
+    input, select, button{
+        font-size: 14px!important;
+    }
+
+    .btn .btn-primary {
+        font-weight: 500;
+        font-size: 14px!important;
+        line-height: 20px;
     }
 }

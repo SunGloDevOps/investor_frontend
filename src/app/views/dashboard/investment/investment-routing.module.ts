@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthguardService } from 'src/app/guards/authguard/authguard.service';
-import { StarterComponent } from 'src/app/shared/components/starter/starter.component';
+import { StarterComponent } from 'src/app/shared/components/layouts/starter/starter.component';
 import { InvestmentComponent } from './investment/investment.component';
 import { InvestmentdetailComponent } from './investmentdetail/investmentdetail.component';
 
@@ -21,7 +21,7 @@ const routes: Routes = [
         // canActivate: [AuthguardService],
       },
       {
-        path: 'investment/:id',
+        path: ':id',
         component: InvestmentdetailComponent,
         // canActivate: [AuthguardService],
       },

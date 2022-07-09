@@ -107,6 +107,28 @@ input {
     padding: var(--s1) var(--s2)!important;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fff!important;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #01FFFF;
+    border-radius: 8px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #01FFFF;
+  }
+
 /** Layouts **/
 .h-fullscreen {
     min-height: 100vh !important;

@@ -25,15 +25,20 @@
         <small>{{project.maintainer}}</small>
         <div class="information-cards">
             <div>
-                <div class="stats-display">
-                    <div>Cost per cell</div>
-                    <div>~ USD 7.12 / NGN {{project.cost_per_cell}}</div>
-                </div>
 
-                <div class="stats-display">
-                    <div>Total Cell Bought</div>
-                    <div>{{project.sold_cell}}</div>
-                </div>
+                <app-statsdisplay 
+                    label="Cost per cell" 
+                    value={{project.cost_per_cell}}
+                    [fitcontent]="true"
+                ></app-statsdisplay>
+
+                <app-statsdisplay 
+                    label="Total Cell Bought" 
+                    value={{project.sold_cell}}
+                    [fitcontent]="true"
+                ></app-statsdisplay>
+
+                <app-counter></app-counter>
 
                 <div>
                     <button class="w-100 btn-primary">Invest</button>

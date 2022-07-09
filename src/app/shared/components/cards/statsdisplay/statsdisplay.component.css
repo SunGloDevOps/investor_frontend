@@ -1,0 +1,55 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    background: #FFFFFF;
+    border: 0.5px solid #797979;
+    border-radius: 6px;
+}
+
+.fitcontent {
+    width: fit-content!important
+}
+
+.fullwidth {
+    width: 100%!important;
+}
+
+.cost {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: #000;
+    color: #fff;
+}
+
+.cost, .rate {
+    height: 100%;
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px!important;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        height: 32px;
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .cost {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    .cost, .rate {
+        padding: 8px 12px;
+    }
+}

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthguardService } from 'src/app/guards/authguard/authguard.service';
-import { StarterComponent } from 'src/app/shared/components/starter/starter.component';
+import { StarterComponent } from 'src/app/shared/components/layouts/starter/starter.component';
 import { ProjectComponent } from './project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
 

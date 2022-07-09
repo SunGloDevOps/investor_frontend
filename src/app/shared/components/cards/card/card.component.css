@@ -1,0 +1,11 @@
+.card {
+    border: 1px solid #000;
+}
+
+.fullwidth{
+    width: 100%!important;
+}
+
+.fitcontent{
+    width: fit-content!important;
+}

@@ -1,1 +1,72 @@
-<p>settings works!</p>
+<!-- settings -->
+<div class="main-container">
+    <!-- Documentation -->
+    <div id="documentation">
+        <h2>Documentation</h2>
+        <div class="container">
+            <app-borderedcard>
+                <h5>KYC Verification</h5>
+                <p>Verify your identity with your BVN number</p>
+                <app-verify (click)="verifyBVN()" label="Verify BVN" verifiedlabel="BVN verified" [isVerified]="isBVNVerified ? isBVNVerified : false"></app-verify>
+            </app-borderedcard>
+            <app-borderedcard>
+                <h5>Phone Number Verification</h5>
+                <p *ngIf="!isPhoneVerified">Generate OTP Code by clicking on verify phone number</p>
+                <p *ngIf="isPhoneVerified">Your phone number (09023456789) has been verified</p>
+                <app-verify (click)="verifyPhone()" label="Verify Phone Number" verifiedlabel="Phone Number verified" [isVerified]="isPhoneVerified ? isPhoneVerified : false"></app-verify>
+            </app-borderedcard>
+            <app-borderedcard>
+                <h5>Email Address Verification</h5>
+                <p *ngIf="!isEmailVerified">Check email address for verification code</p>
+                <p *ngIf="isEmailVerified">Your email (Nicole54@gmail.com) has been verified</p>
+                <app-verify (click)="verifyEmail()" label="Verify Email address" verifiedlabel="Email Address verified" [isVerified]="isEmailVerified ? isEmailVerified : false"></app-verify>
+            </app-borderedcard>
+        </div>
+        
+    </div>
+
+    <!-- Others -->
+    <div id="others">
+        <h2>Others</h2>
+        
+            <form>
+                <div class="container">
+                    <app-borderedcard >
+                        <h5>Next of kin</h5>
+                    <div id="nextkin-container" class="container">
+                    <div>
+                        <input class="form-field" type="text" placeholder="Full name">
+                    </div>
+                    <div>
+                        <input class="form-field" type="text" placeholder="Phone number">
+                    </div>
+                    <div>
+                        <input class="form-field" type="email" placeholder="Email">
+                    </div>
+                    <div>
+                        <input class="form-field" type="text" placeholder="Home address">
+                    </div>
+                    </div>
+                    </app-borderedcard>
+        
+                    <app-borderedcard>
+                        <p>Change password</p>
+                        <div class="changepassword-container">
+                            <input type="text" placeholder="Enter current password">
+                            <input type="text" placeholder="Enter new password">
+                        </div>
+                        
+                    </app-borderedcard>
+                </div>
+                <div class="buttons-container">
+                    <a routerLink="#" class="btn-help">Need help?</a> <button type="submit" class="btn btn-primary"> Save</button>
+                </div>
+                <div class="buttons-container">
+                    <button type="submit" class="btn btn-black">Logout</button>
+                </div>
+
+            </form>
+        
+        
+    </div>
+</div>

@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, Observable, throwError } from 'rxjs';
 import { api_home_url } from '../../../environments/environment';
 import { TokenService } from '../token/token.service';
 import { Router } from '@angular/router';
+import { Login } from '../../models/Login';
+import { Register } from 'src/app/models/Register';
+import { ConfigService } from 'src/app/config/config.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,23 +18,26 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private tokenService: TokenService,
-    private router: Router
+    private router: Router,
+    private config: ConfigService
   ) { }
 
-  login(email: string, password: string): Observable<any> {
+ 
+
+  login(email: string, password: string): Observable<Login> {
 
     const payload = {
       email: email,
       password: password
     }
 
-     return this.http.post(`${this.api_url}/login`, payload).pipe(
-       
+     return this.http.post<Login>(`${this.api_url}/login`, payload).pipe(
+      catchError(this.config.handleError)
      )
   }
 
-  register(payload: any): Observable<any> {
-    return this.http.post(`${this.api_url}/register`, payload).pipe();
+  register(payload: any): Observable<Register> {
+    return this.http.post<Register>(`${this.api_url}/register`, payload).pipe();
   }
 
   forgotpassword(email: string): Observable<any> {

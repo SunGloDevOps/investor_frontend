@@ -1,6 +1,6 @@
 <app-mobiletopnav></app-mobiletopnav>
 
-<app-topnav></app-topnav>
+<app-topnav [showSearch]="true"></app-topnav>
 
 <div class="row">
     <div class="col-12">
@@ -18,6 +18,9 @@
         </div>        
     </div>
     <div *ngIf="projects.length <= 0">
-        No Available projects
+        <app-empty
+            label="No Project has been added yet"
+            image="../../../../../assets/images/illustrations/empty.png"
+        ></app-empty>
     </div>
 </div>

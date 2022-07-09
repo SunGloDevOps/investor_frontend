@@ -6,44 +6,70 @@
 
 <div class="row mt-4">
     <div class="col-lg-6 col-md-12">
-        <div class="grey-outline mt-2">
-            Total Solar Cell Purchased <span>500 Solar Cell</span>
-        </div>
-        <div class="grey-outline mt-2">
-            ROI Yield <span>20%</span>
-        </div>
-        <div class="grey-outline mt-2">
-            Total Investment Made <span>$200|| 100,000 naira</span>
-        </div>
-        <div class="grey-outline mt-2">
-            Total Energy Generated <span>2000kw</span>
+        <app-borderedcard
+            label="ROI"
+            value="20%"
+        >
+        </app-borderedcard>
+        
+        <app-borderedcard
+            label="ROI Yield "
+            value="20%"
+        >
+        </app-borderedcard>
+        <app-borderedcard
+            label="Total Investment Made "
+            value="$200|| 100,000 naira"
+        >
+        </app-borderedcard>
+        <app-borderedcard
+            label="Total Energy Generated "
+            value="2000kw"
+        >
+        </app-borderedcard>
+
+        <div>
+            <app-statsdisplay 
+                label="cost per cell" 
+                value=""
+                [fullwidth]="true"
+            ></app-statsdisplay>
         </div>
 
-        <div class="mt-2">
-            <div class="card" id="stats">
-                <div class="cost"><small>Cost per cell</small> </div><div class="rate"><small>~ USD 7.12 / NGN 2,958</small></div>
-            </div>
-        </div>
         
     </div>
     <div class="col-lg-6 col-md-12">
         <div class="mt-2">
-            <div class="card" id="stats">
-                <div class="cost"><small>Investment Interest (20%)</small> </div><div class="rate"><small>13,000</small></div>
-            </div>
+                <app-statsdisplay 
+                    label="Total Cell Bought" 
+                    value=""
+                    [fullwidth]="true"
+                ></app-statsdisplay>
+            
+                <app-borderedcard
+                    label="Investment Date "
+                    value="1/01/2022"
+                >
+                </app-borderedcard>
 
-            <div class="grey-outline mt-2">
-                Investment Date <span>1/01/2022</span>
-            </div>
-            <div class="grey-outline mt-2">
-                Next Payout Date <span>20/08/2022</span>
-            </div>
-            <div class="grey-outline mt-2">
-                Solar Asset Status Contract <span>Active</span>
-            </div>
-            <div class="grey-outline mt-2">
-                Total Reduced C02  <span>~1500kg</span>
-            </div>
+                <app-borderedcard
+                    label="Next Payout Date "
+                    value="20/08/2022"
+                >
+                </app-borderedcard>
+
+                <app-borderedcard
+                    label="Solar Asset Status Contract "
+                    value="Active"
+                >
+                </app-borderedcard>
+
+                <app-borderedcard
+                    label="Total Reduced C02 "
+                    value="~1500kg"
+                >
+                </app-borderedcard>
+          
         </div>
     </div>
 </div>

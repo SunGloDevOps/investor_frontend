@@ -110,18 +110,6 @@
     line-height: 20px;
 }
 
-.empty-investment {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 100px 0px;
-}
-
-.empty-investment div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 /** desktop **/
 @media only screen and (min-width: 600px) {
@@ -219,16 +207,5 @@
         line-height: 28px;
     }
 
-    .empty-investment {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 100px 0px;
-    }
-
-    .empty-investment div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    
 }

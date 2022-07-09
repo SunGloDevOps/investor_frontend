@@ -1,0 +1,44 @@
+.verify-button {
+    background: #F8BC9E;   
+    border-radius: 6px;
+    padding: 9px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-style: normal;
+    
+}
+
+.verify-button:hover {
+    box-shadow: 9px 5px 13px rgba(255, 190, 157, 0.16);
+}
+
+.verified {
+    background: #01FFFF;
+    color: #000
+}
+
+.non-verified {
+    background: #F8BC9E; 
+}
+
+.label {
+    font-weight: 500;
+    font-size: 14px!important;
+    line-height: 20px;
+}
+
+.non-verified .label {
+    color: #fff!important;
+}
+
+@media  screen and (max-width: 600) {
+    .non-verified {
+        background: #F8BC9E; 
+        color: #fff!important;
+        font-size: 12px!important;
+    }
+}

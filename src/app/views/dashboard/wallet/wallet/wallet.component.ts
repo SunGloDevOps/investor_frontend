@@ -22,7 +22,9 @@ export class WalletComponent implements OnInit {
 
   user: any = {};
 
-  transactions: any[] = []
+  transactions: any[] = [];
+
+  showdepositModal: boolean = true;
 
   constructor(
     private userService: UsersService,
@@ -63,6 +65,14 @@ export class WalletComponent implements OnInit {
         }
       }
     )
+  }
+
+  closeDepositModal(): void {
+    this.showdepositModal = false
+  }
+
+  openDepositModal(): void {
+    this.showdepositModal = true
   }
 
 }
