@@ -9,7 +9,7 @@
              
                 
                 <div class="signin">
-                    <p> Already a member? <a routerLink="/login">Sign In</a></p>
+                    <p> Already a member? <a routerLink="/auth/login">Sign In</a></p>
                 </div>
 
             </div>
@@ -21,6 +21,10 @@
 
                 <p>Invest today - Enjoy tomorrow with Sunglo</p>
 
+                <p *ngIf="accountExist">User account already exist</p>
+
+                <p *ngIf="passwordMatch">Password not matching</p>
+
                 <form method="post" [formGroup]="registerForm">
 
                     <div class="auth-form-border">
@@ -28,7 +32,7 @@
                         <span class="input-group-text" id="basic-addon1">
                             <img src="../../../assets/images/icons/user.jpg" >
                         </span>
-                        <input type="text" class="form-control" placeholder="First Name" formControlName="firstname" required>
+                        <input  name="firstname" type="text" class="form-control" placeholder="First Name" formControlName="firstname" required>
                     </div>
                     </div>
 
@@ -80,7 +84,7 @@
                     <div class="mt-3"></div>
 
                     <div>
-                        <input class="w-100 btn btn-primary" type="submit"  (click)="register()" value="Sign Up">
+                        <input class="w-100 btn btn-primary" type="submit"  [disabled]="registerForm.invalid" (click)="register()" value="Sign Up">
                     </div>
 
 

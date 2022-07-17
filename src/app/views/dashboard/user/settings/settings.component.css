@@ -94,6 +94,10 @@ a {
     line-height: 20px;
 }
 
+.padding {
+    padding: 10px;
+}
+
 /** mobile **/
 @media screen and (max-width: 600px) {
     .main-container {

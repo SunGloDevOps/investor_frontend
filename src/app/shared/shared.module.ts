@@ -41,6 +41,14 @@ import { TopnavComponent } from './components/navigation/topnav/topnav.component
 import { CounterComponent } from './components/form/counter/counter.component';
 import { CardComponent } from './components/cards/card/card.component';
 import { GetstartedComponent } from './components/pages/home/getstarted/getstarted.component';
+import { PrimarybtnoneComponent } from './components/buttons/primarybtnone/primarybtnone.component';
+import { PrimarybtntwoComponent } from './components/buttons/primarybtntwo/primarybtntwo.component';
+import { SecondarybtnoneComponent } from './components/buttons/secondarybtnone/secondarybtnone.component';
+import { BorderedbtnoneComponent } from './components/buttons/borderedbtnone/borderedbtnone.component';
+import { VerificationcardComponent } from './components/cards/verificationcard/verificationcard.component';
+import { NotificationComponent } from './components/modals/notification/notification.component';
+import { TabsComponent } from './components/layouts/tabs/tabs.component';
+import { TabsitemComponent } from './components/layouts/tabsitem/tabsitem.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -80,7 +88,15 @@ export function tokenGetter() {
     MainlayoutComponent,
     CounterComponent,
     CardComponent,
-    GetstartedComponent
+    GetstartedComponent,
+    PrimarybtnoneComponent,
+    PrimarybtntwoComponent,
+    SecondarybtnoneComponent,
+    BorderedbtnoneComponent,
+    VerificationcardComponent,
+    NotificationComponent,
+    TabsComponent,
+    TabsitemComponent
   ],
   imports: [
     CommonModule,
@@ -136,7 +152,16 @@ export function tokenGetter() {
     EmptyComponent,
     MainlayoutComponent,
     CounterComponent,
-    GetstartedComponent
+    GetstartedComponent,
+    PrimarybtnoneComponent,
+    PrimarybtntwoComponent,
+    SecondarybtnoneComponent,
+    BorderedbtnoneComponent,
+    CardComponent,
+    VerificationcardComponent,
+    NotificationComponent,
+    TabsComponent,
+    TabsitemComponent
   ]
 })
 export class SharedModule { }

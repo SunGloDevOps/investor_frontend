@@ -1,20 +1,5 @@
 <app-mobiletopnav></app-mobiletopnav>
 
-<!-- <div class="row">
-    <div class="col-12" id="currency-header">
-            Currency
-            <div class="dropdown">
-                <button class="btn btn-black dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  NGN
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </div>
-    </div>
-</div> -->
 <app-topnav [showSearch]="false"></app-topnav>
 
 <div class="" id="wallet-cards">
@@ -210,7 +195,22 @@
 
 <!-- Deposit Modal-->
 <app-modalcontainer [show]="showdepositModal">
-    <app-deposit-wallet>
-
-    </app-deposit-wallet>
+    <app-modalcard (close)="closeDepositModal($event)">
+        <div>
+            <h5>0.0 USD</h5>
+            <p>0 NGN</p>
+        </div>
+        <div class="deposit-content">
+            <div class="deposit-amount">
+                <h5>0.0 USD</h5>
+                <p>0 NGN</p>
+            </div>
+            <div>
+                <form>
+                    <input type="text" class="form-controls" placeholder="Enter deposit amount"/>
+                    <button type="submit" class="btn btn-primary">Continue</button>
+                </form>
+            </div>
+        </div>
+    </app-modalcard>
 </app-modalcontainer>

@@ -56,7 +56,75 @@ html {
     
 }
 
+/** radius **/
+.r1 {
+    border-radius: 12px!important;
+}
 
+@media screen and (max-width: 600px){
+    .r1 {
+        border-radius: 8px!important;
+    }
+}
+
+/** radius ends **/
+
+/** padding starts **/
+.py1 {
+    padding-top: 13px!important;
+    padding-bottom: 13px!important;
+}
+
+.px1 {
+    padding-left: 135px;
+    padding-right: 135px;
+}
+
+.px2 {
+    padding-left: 73px!important;
+    padding-right: 73px!important;
+}
+
+.px3 {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+
+@media screen and (max-width: 600px){
+    .py1 {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .px2 {
+        padding-left: 32px!important;
+        padding-right: 32px!important;
+    }
+}
+/** padding ends **/
+/** buttons starts **/
+/** desktop **/
+
+button {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+
+/** mobile **/
+@media screen and (max-width: 600px){
+    button{
+        font-size: 12px!important;
+        line-height: 18px!important;
+    }
+}
+/** buttons ends **/
 
 a {
     font-size: var(--f6)!important;
@@ -100,7 +168,7 @@ h5{
 
 
 small {
-    -font-size: var(--f7) !important;    
+    font-size: var(--f7) !important;    
 }
 
 input {
@@ -874,10 +942,13 @@ input:focus {
     .notification {
         border: 1px solid rgba(54, 219, 241, 0.4);
         box-sizing: border-box;
-        box-shadow: -4px -4px 10px rgba(30, 189, 208, 0.25), 4px 4px 10px rgba(30, 189, 208, 0.25);
-        padding: var(--s1);
         border-radius: var(--s1);
         display: flex!important;
+        transition: .3s;
+    }
+
+    .notification:hover {
+        box-shadow: -4px -4px 10px rgba(30, 189, 208, 0.25), 4px 4px 10px rgba(30, 189, 208, 0.25);
     }
 
 }

@@ -13,7 +13,7 @@
     align-content: center!important;
     justify-content: center !important;
     width: 100%;
-    border: 1px solid var(--primary) !important;
+    border: 1px solid rgba(54, 219, 241, 0.4) !important;
     border-radius: var(--s1);
     padding-left: var(--f4) !important
 }
@@ -33,11 +33,22 @@
     display: none !important;
 }
 
+.notification-wrapper {
+    position: unset;
+}
+
+/** desktop **/
 @media only screen and (min-width: 600px) {
     .notification {
         display: flex!important;
         flex-direction: row;
-        padding: var(--S1) var(--f3) !important
+        padding: 16px 30px !important
+    }
+
+    .notification-wrapper {
+        position: relative;
+        z-index: 30;
+        display: inline-block;
     }
 
     .search {

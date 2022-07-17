@@ -14,8 +14,8 @@
     justify-content: center !important;
     align-items: center;
     width: 100%;
-    border: 1px solid var(--primary) !important;
-    border-radius: var(--s1);
+    border: 1px solid rgba(54, 219, 241, 0.4) !important;
+    border-radius: 12px;
     padding-left: var(--f4) !important
 }
 
@@ -29,10 +29,20 @@
     display: none !important;
 }
 
+.notification-wrapper {
+    position: unset;
+}
+
 @media only screen and (min-width: 600px) {
     .notification {
         display: flex!important;
         padding: 16px 30px;
+    }
+
+    .notification-wrapper {
+        position: relative;
+        z-index: 30;
+        display: inline-block;
     }
 
     .search {

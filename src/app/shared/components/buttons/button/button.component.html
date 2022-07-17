@@ -1,3 +1,28 @@
 <!-- <p-button [styleClass]=classes >{{label}}</p-button> -->
 
-<button></button>
+<button 
+    class="r1 py1"
+    [class.px1]=size1
+    [class.px2]=size2
+    [class.px3]=size3
+    [class.primarybtnone] = primarybtnone
+
+    [class.fitcontent] = !fullwidth
+
+    [class.parent] = fullwidth
+
+    [ngStyle]="{
+        'border-width': borderWidth,
+        'border-style': borderStyle,
+        'border-color': borderColor, 
+        'background-color': backgroundColor,
+        'border-radius': borderRadius  
+    }"
+
+>
+
+    <span [class.primarybtnone-label]=primarybtnone>
+        {{label}}
+    </span>
+
+</button>

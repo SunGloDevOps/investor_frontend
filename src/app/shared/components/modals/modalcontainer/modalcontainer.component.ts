@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalService } from 'src/app/services/modals/modal.service';
+import { ModalService } from 'src/app/repositories/modals/modal.service';
 @Component({
   selector: 'app-modalcontainer',
   templateUrl: './modalcontainer.component.html',

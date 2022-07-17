@@ -5,8 +5,13 @@
                 <img src="../../../../assets/images/icons/Search.png"><input type="text" class="form-control" placeholder="Search Projects" >
             </div>
 
-            <div class="notification">
-                <img src="../../../../assets/images/icons/Notification.png">
+            <div class="notification-wrapper">
+                <div class="notification" (click)="toggleModal()">
+                    <span class="iconify" data-icon="system-uicons:bell" data-width="30" data-height="30"></span>
+                </div>
+                <app-notification
+                    [showNotification]="showModal"
+                ></app-notification>
             </div>
 
     </div>

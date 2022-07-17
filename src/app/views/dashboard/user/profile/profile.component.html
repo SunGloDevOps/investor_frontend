@@ -1,6 +1,11 @@
 <app-mobiletopnav></app-mobiletopnav>
 <h4>Profile Settings</h4>
-{{user.id}}
+
+<div *ngFor="let country of countries">
+    {{country}}
+</div>
+
+<p *ngIf="isUpdated">Profile Update</p>
 <form [formGroup]="profileForm">
 <div class="pt-3" id="profileform">
     <div class="two-column-desktop">

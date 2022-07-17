@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ModalService } from 'src/app/services/modals/modal.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ModalService } from 'src/app/repositories/modals/modal.service';
 import { ModalcontainerComponent } from '../../modals/modalcontainer/modalcontainer.component';
 
 @Component({
@@ -11,9 +11,7 @@ export class ModalcardComponent implements OnInit  {
 
   @Input() title: string = "Untitled Modal";
 
-  @Input() close: any;
-
-  modal: ModalcontainerComponent = new ModalcontainerComponent(this.modalService);
+  @Output() close = new EventEmitter();
   
   constructor(
     private modalService: ModalService
@@ -24,8 +22,8 @@ export class ModalcardComponent implements OnInit  {
   ngOnInit(): void {
   }
 
-  closeModal(): void {
-    this.modal.show = false
+  closeModal(){
+    this.close.emit(false)
   }
 
 }

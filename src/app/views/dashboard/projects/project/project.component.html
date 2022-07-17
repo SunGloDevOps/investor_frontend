@@ -16,36 +16,44 @@
 
 <div class="row pt-3">
     <div class="col-12" id="thumbnail">
-        <img src={{project.thumbnail}} alt={{project.title}}>
+        <img src={{project?.thumbnail}} alt={{project?.title}}>
     </div>
 </div>
 
 <div class="project-details">
-        <h5>{{project.title}}</h5>
-        <small>{{project.maintainer}}</small>
+        <h5>{{project?.title}}</h5>
+        <small>{{project?.operator}}</small>
         <div class="information-cards">
             <div>
-
+           
                 <app-statsdisplay 
                     label="Cost per cell" 
-                    value={{project.cost_per_cell}}
+                    value={{project?.cost_per_cell}}
                     [fitcontent]="true"
                 ></app-statsdisplay>
-
+             
                 <app-statsdisplay 
                     label="Total Cell Bought" 
-                    value={{project.sold_cell}}
+                    value={{project?.sold_cell}}
                     [fitcontent]="true"
                 ></app-statsdisplay>
 
-                <app-counter></app-counter>
+                <div class="counter-container">
+                    <small>Enter number of cells to invest</small>
+                    <app-counter></app-counter>
+                </div>
+                
 
                 <div>
-                    <button class="w-100 btn-primary">Invest</button>
+                    <app-primarybtntwo
+                        label="Invest"
+                        [fullwidth]="false"
+                        [size1]="true"
+                    ></app-primarybtntwo>
                 </div>
 
                 <div>
-                    <button type="button" href="#" class="btn btn-primary-outline" id="btn-opportunity">About the opportunity  <img src="../../../../assets/images/icons/Arrow - Left.png"></button>
+                    <button type="button" href="#about" class="btn btn-primary-outline" id="btn-opportunity">About the opportunity  <img src="../../../../assets/images/icons/Arrow - Left.png"></button>
                 </div>
 
             </div>
@@ -54,25 +62,20 @@
 
                 <p class="d-lg-none info-title">Other Information</p>
 
-                <div class="" id="information-cards" >
-                    <div class="">
-                        <app-projectinfocard title="ROI" value={{project.ROI}}></app-projectinfocard>
-                    </div>
-                    <div class="">
-                        <app-projectinfocard title="Carbon Reduced" value={{project.carbon_reduced}}></app-projectinfocard>
-                    </div>
-                    <div class=" ">
-                        <app-projectinfocard title="Year 1 Energy Yield" value={{project.energy_yield}}></app-projectinfocard>
-                    </div>
-                    <div class="">
-                        <app-projectinfocard title="Investment End Date" value={{project.end_date}}></app-projectinfocard>
-                    </div>
-                    <div class="">
-                        <app-projectinfocard title="Current number of Investors" value={{project.no_of_investor}}></app-projectinfocard>
-                    </div>
-                    <div class="">
-                        <app-projectinfocard title="Investment" value="Revenue Generating Asset "></app-projectinfocard>
-                    </div>
+                <div id="information-cards" >
+                    
+                    <app-projectinfocard title="ROI" value={{project?.ROI}}></app-projectinfocard>
+            
+                    <app-projectinfocard title="Carbon Reduced" value={{project?.carbon_reduced}}></app-projectinfocard>
+            
+                    <app-projectinfocard title="Year 1 Energy Yield" value={{project?.energy_yeild}}></app-projectinfocard>
+                
+                    <app-projectinfocard title="Investment End Date" value={{project?.end_date}}></app-projectinfocard>
+                
+                    <app-projectinfocard title="Current number of Investors" value={{project?.no_of_investors}}></app-projectinfocard>
+                
+                    <app-projectinfocard title="Total cell" value={{project?.total_cell}}></app-projectinfocard>
+                   
                 </div>
 
                 <div class="row mt-3">
@@ -87,13 +90,9 @@
 <div class="row">
     <div class="col-12">
         
-        <h4 class="mb-3">About Project</h4>
+        <h4 class="mb-3" id="about">About Project</h4>
 
-        <small class="mb-3">Read about this investment opportunity below.</small>
-        <br>
-        <small class="mb-">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus
-        </small>
+        {{project?.description}}
 
 
 

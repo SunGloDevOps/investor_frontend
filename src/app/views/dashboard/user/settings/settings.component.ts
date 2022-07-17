@@ -1,6 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { SettingService } from 'src/app/services/settings/setting.service';
+import { SettingService } from 'src/app/repositories/settings/setting.service';
 
 @Component({
   selector: 'app-settings',

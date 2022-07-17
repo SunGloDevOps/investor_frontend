@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersRepository } from 'src/app/repositories/users/users.service';
 
 @Component({
   selector: 'app-starter',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarterComponent implements OnInit {
 
-  constructor() { }
+  user: any = {}
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
+    
   }
+
 
 }

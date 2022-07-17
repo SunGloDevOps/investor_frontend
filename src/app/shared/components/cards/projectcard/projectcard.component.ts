@@ -8,25 +8,30 @@ import { Router } from '@angular/router';
 })
 export class ProjectcardComponent implements OnInit {
 
-  @Input() title: string = "Untitled Project";
+  @Input() title?: string;
 
-  @Input() description: string = "No description provided";
+  @Input() description?: string;
 
-  @Input() cost: string = "0.0";
+  @Input() cost?: string;
 
-  @Input() id: string = "jvufhviufhuubiuh biubf"
+  @Input() id?: string;
 
-  value: string = "~ USD " + this.cost;
+  @Input() thumbnail?: string;
+
+  @Input() status?: string;
+
+  value?: string;
 
   constructor(
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.value = "~ USD " + this.cost ;
   }
 
-  viewDetail(id: string): void {
-    this.router.navigate(['/app/projects/', id])
+  viewDetail(): void {
+    this.router.navigate(['/projects/', this.id])
   }
 
 }

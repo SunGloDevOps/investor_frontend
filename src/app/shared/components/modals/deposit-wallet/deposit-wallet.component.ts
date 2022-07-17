@@ -1,4 +1,5 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output} from '@angular/core';
+
 
 @Component({
   selector: 'app-deposit-wallet',
@@ -7,11 +8,12 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class DepositWalletComponent implements OnInit {
 
-  @Input() close: any;
+  
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+ 
 }

@@ -1,4 +1,5 @@
 export interface Login {
    token: string,
-   status: number
+   status: number,
+   message: string
 }

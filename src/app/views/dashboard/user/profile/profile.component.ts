@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { TokenService } from 'src/app/services/token/token.service';
-import { UsersService } from 'src/app/services/users/users.service';
+import IProfileRequest from 'src/app/models/Users/IProfileRequest';
+import { LocationService } from 'src/app/repositories/location/location.service';
+import { TokenService } from 'src/app/repositories/token/token.service';
+import { UsersRepository } from 'src/app/repositories/users/users.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +13,8 @@ import { UsersService } from 'src/app/services/users/users.service';
 
 export class ProfileComponent implements OnInit {
 
+  isUpdated: boolean = false;
+
   profileForm = this.fb.group({
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
@@ -18,22 +22,26 @@ export class ProfileComponent implements OnInit {
     phone: ['', Validators.required],
     city: ['', Validators.required],
     country: ['', Validators.required],
-    state: ['', Validators.required],
     address: ['', Validators.required]
   })
 
   user: any = {};
 
+  countries: any[] = [];
+
   constructor(
-    private userService: UsersService,
+    private userService: UsersRepository,
     private tokenService: TokenService,
+    private locationService: LocationService,
     private fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
 
     //get user id from token
-    this.user = this.tokenService.getTokenBody();
+    this.user = this.userService.getUser()
+
+    this.getCountry()
     
     if(this.user !== null){
       this.getUserDetails(this.user.id);
@@ -41,11 +49,19 @@ export class ProfileComponent implements OnInit {
     
   }
 
+  getCountry(){
+    this.locationService.getCountries().subscribe(
+      res => {
+        this.countries = res
+      }
+    )
+  }
+
   getUserDetails(id: string): void {
     this.userService.getUserDetails(id).subscribe(
       res => {
         if(res.status === 200) {
-          
+       
           this.profileForm.setValue({
             firstname: res.data.firstname,
             lastname: res.data.lastname,
@@ -53,8 +69,9 @@ export class ProfileComponent implements OnInit {
             phone: res.data.phone,
             country: res.data.country === null ? '': res.data.country,
             city: res.data.city  === null ? '': res.data.city,
-            address: res.data.address
+            address: res.data.address === null ? '' : res.data.address
           })
+
         }
       }
     );
@@ -63,12 +80,12 @@ export class ProfileComponent implements OnInit {
   updateProfile(): void {
 
     const id: string = this.user.id
-    const payload = this.profileForm.value;
+    const payload: IProfileRequest = this.profileForm.value;
 
     this.userService.updateProfile(id, payload).subscribe(
       res => {
           if(res.status === 200){
-            window.location.reload();
+            this.isUpdated = true;
           }
       }
     )

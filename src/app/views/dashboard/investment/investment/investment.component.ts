@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InvestmentService } from 'src/app/services/investment/investment.service';
+import { InvestmentService } from 'src/app/repositories/investment/investment.service';
+import { UsersRepository } from 'src/app/repositories/users/users.service';
 
 @Component({
   selector: 'app-investment',
@@ -8,8 +9,11 @@ import { InvestmentService } from 'src/app/services/investment/investment.servic
 })
 export class InvestmentComponent implements OnInit {
 
+  investments: any[] = []
+
   constructor(
-    private investmentService: InvestmentService
+    private investmentService: InvestmentService,
+    private userService: UsersRepository
   ) { }
 
   ngOnInit(): void {
@@ -17,7 +21,15 @@ export class InvestmentComponent implements OnInit {
   }
 
   getInvestments(): void {
-    // this.investmentService.getInvestments().subscribe()
+
+    const user = this.userService.getUser()
+    const id: string = user.indexOf.toString()
+
+    this.investmentService.getInvestments(id).subscribe(
+      res => {
+        this.investments = res.data
+      }
+    )
   }
 
 }

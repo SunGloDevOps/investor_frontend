@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectsService } from 'src/app/services/projects/projects.service';
+import { ActivatedRoute } from '@angular/router';
+import { IProject } from 'src/app/models/Projects/IProject';
+import { ProjectsService } from 'src/app/repositories/projects/projects.service';
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
@@ -7,12 +9,13 @@ import { ProjectsService } from 'src/app/services/projects/projects.service';
 })
 export class ProjectComponent implements OnInit {
 
-  project: any = {}
+  project?: IProject;
 
   projectsoldpercentage: number = 0;
 
   constructor(
     private projectService: ProjectsService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -20,7 +23,7 @@ export class ProjectComponent implements OnInit {
   }
 
   getProjectData(): void {
-    this.projectService.getProject("").subscribe(
+    this.projectService.getProject(this.route.snapshot.params['id']).subscribe(
       res => {
         if(res.status === 200) {
           this.project = res.data;
@@ -30,10 +33,12 @@ export class ProjectComponent implements OnInit {
     );
   }
 
+  //calculating percentage of sold projects
   soldProjectPercentage(sold: number, total: number): number {
     return (sold/total)*100
   }
 
+  //download information for porject
   downloadInformation(): void {
 
   }

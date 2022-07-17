@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectsService } from 'src/app/services/projects/projects.service';
-import { TokenService } from 'src/app/services/token/token.service';
-import { UsersService } from 'src/app/services/users/users.service';
+import IProjects from 'src/app/models/Projects/IProject';
+import IProject, { IProjectResponse } from 'src/app/models/Projects/IProject';
+import { ProjectsService } from 'src/app/repositories/projects/projects.service';
+import { TokenService } from 'src/app/repositories/token/token.service';
+import { UsersRepository } from 'src/app/repositories/users/users.service';
 
 @Component({
   selector: 'app-projects',
@@ -10,28 +12,30 @@ import { UsersService } from 'src/app/services/users/users.service';
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: any[] = [
-   
-  ];
-
-  user_id?: string;
+  projects: IProjects[] = [];
 
   constructor(
     private projectService: ProjectsService,
-    private userService: UsersService
+    private userService: UsersRepository
   ) { }
 
   ngOnInit(): void {
-    this.user_id = this.userService.user_id;
+    this.getProjects()
   }
 
   getProjects(): void {
+  
     this.projectService.getAllProject().subscribe(
-      res => {
+      (res: IProjectResponse) => {
+        
         if(res.status === 200) {
+            
           this.projects = res.data
+    
+            
         }
       }
+
     )
   }
 

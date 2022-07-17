@@ -1,0 +1,31 @@
+.fitcontent {
+    width: fit-content!important;
+}
+
+.parent {
+    width: 100% !important
+}
+
+/** desktop **/
+
+.primarybtnone-label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0B0B0B;
+}
+
+
+
+/** mobile **/
+@media screen and (max-width: 600px){
+    .primarybtnone {
+        padding: 8px 0px!important;
+    }
+    .primarybtnone-label {
+        font-size: 12px!important;
+        line-height: 18px!important;
+    }
+}

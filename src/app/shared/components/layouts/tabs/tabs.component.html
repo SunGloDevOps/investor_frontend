@@ -1,0 +1,17 @@
+<div class="container">
+    <nav>
+        <span (click)="showGeneralTab()" [class.active]="showGeneral">General <span class="count">2</span></span>
+        <span (click)="showImportantTab()"  [class.active]="showImportant">Important <span class="count">2</span></span>
+    </nav>
+    <main style="position: relative; height: 100%">
+        <div class="section"  *ngIf="showGeneral">
+            <app-tabsitem></app-tabsitem>
+            <app-tabsitem></app-tabsitem>
+        </div>
+        <div class="section" *ngIf="showImportant">
+            <app-tabsitem></app-tabsitem>
+            <app-tabsitem></app-tabsitem>
+            <app-tabsitem></app-tabsitem>
+        </div>
+    </main>
+</div>

@@ -148,15 +148,6 @@
     width: 18px;
 }
 
-#productcards #calltoaction .btn-primary {
-    padding: var(--s1) var(--s3) !important;
-    margin-right: var(--s2);
-    font-size: var(--f9) !important;
-    height: 100%!important;
-}
-
-
-
 .product-button {
     display: flex;
     flex-direction: row;

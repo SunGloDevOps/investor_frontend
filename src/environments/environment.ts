@@ -3,11 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  api_home_url: "http://localhost:5000/api/v1"
+  production: true,
+  api_home_url: "http://localhost:5000/api/v2/investor"
 };
 
-export const api_home_url = "http://localhost:5000/api/v1";
+export const api_home_url = "http://localhost:5000/api/v2/investor";
 
 
 /*

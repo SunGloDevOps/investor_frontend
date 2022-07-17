@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class IntevestmentcardComponent implements OnInit {
 
-  @Input() title: string = "untitled";
+  @Input() title?: string;
 
-  @Input() usd: string = "0.0";
+  @Input() cost?: number;
 
   @Input() ngn: string = "0.0";
 

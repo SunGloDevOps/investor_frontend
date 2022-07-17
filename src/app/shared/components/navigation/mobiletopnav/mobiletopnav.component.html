@@ -7,9 +7,11 @@
 
         <div class="menu-items">
             <img src="../../../../assets/images/icons/Setting.png" alt="settings">
-
-            <img src="../../../../assets/images/icons/Notification.png" alt="notification"/>
+            <span (click)="toggleModal()">
+                <span class="iconify" data-icon="system-uicons:bell" data-width="30" data-height="30"></span>
+            </span>
         </div>
 
     </div>
 </div>
+<app-notification [showNotification]="showModal"></app-notification>

@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MobiletopnavComponent implements OnInit {
 
+  showModal: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleModal(){
+    if(this.showModal){
+      this.showModal = false
+    }else{
+      this.showModal = true
+    }
   }
 
 }

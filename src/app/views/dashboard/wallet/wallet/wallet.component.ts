@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenService } from 'src/app/services/token/token.service';
-import { TransactionService } from 'src/app/services/transaction/transaction.service';
-import { UsersService } from 'src/app/services/users/users.service';
+import { TokenService } from 'src/app/repositories/token/token.service';
+import { TransactionService } from 'src/app/repositories/transaction/transaction.service';
+import { UsersRepository } from 'src/app/repositories/users/users.service';
 
 @Component({
   selector: 'app-wallet',
@@ -27,7 +27,7 @@ export class WalletComponent implements OnInit {
   showdepositModal: boolean = true;
 
   constructor(
-    private userService: UsersService,
+    private userService: UsersRepository,
     private tokenService: TokenService,
     private transactionService: TransactionService
   ) { }
@@ -56,19 +56,19 @@ export class WalletComponent implements OnInit {
     this.userService.getUserDetails(this.user.id).subscribe(
       res => {
         if(res.status == 200){
-          this.bank_balance = res.data.bank_balance;
-          this.crypto_balance = res.data.crypto_balance;
-          this.account_no = res.data.bank_account_no;
-          this.account_name = res.data.bank_account_name;
-          this.account_bank = res.data.bank_account_bank;
-          this.crypto_address = res.data.crypto_address;
+          // this.bank_balance = res.data.bank_balance;
+          // this.crypto_balance = res.data.crypto_balance;
+          // this.account_no = res.data.bank_account_no;
+          // this.account_name = res.data.bank_account_name;
+          // this.account_bank = res.data.bank_account_bank;
+          // this.crypto_address = res.data.crypto_address;
         }
       }
     )
   }
 
-  closeDepositModal(): void {
-    this.showdepositModal = false
+  closeDepositModal(data: boolean): void {
+    this.showdepositModal = data
   }
 
   openDepositModal(): void {

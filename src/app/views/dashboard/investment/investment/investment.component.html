@@ -51,22 +51,19 @@
     </div>
 </div>
 
-<div class="investment-container" *ngIf="false">
-    <div>
-        <app-intevestmentcard></app-intevestmentcard>
-    </div>
-    <div>
-        <app-intevestmentcard></app-intevestmentcard>
-    </div>
-    <div>
-        <app-intevestmentcard></app-intevestmentcard>
-    </div>
-    <div>
-        <app-intevestmentcard></app-intevestmentcard>
+<div class="investment-container" *ngIf="investments.length !== 0">
+    <div *ngFor="let investment of investments">
+        <app-intevestmentcard
+            title={{investment.title}}
+            
+            days={{investment}}
+            progress={{investment}}
+        ></app-intevestmentcard>
     </div>
 </div>
 
 <app-empty
+    *ngIf="investments.length === 0"
     label="Oops! you are yet to start investing"
     buttonLabel="Invest In Solar Cells Now"
     image="../../../../../assets/images/illustrations/empty.png"

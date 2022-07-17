@@ -18,6 +18,10 @@
     padding: 0px !important;
 }
 
+.project-details {
+    margin-bottom: 35px;
+}
+
 .project-details h5{
     padding-top: var(--f8)!important;
     font-size: var(--f7)!important;
@@ -30,46 +34,27 @@
 .information-cards {
     display: flex;
     flex-direction: column;
+    gap: 35px;
     padding-top: 24px;
-}
-
-.information-cards .stats-display {
-    display: flex;
-    flex-direction: row;
-    border: 0.5px solid rgba(11, 11, 11, 0.4);;
-    border-radius: 4px; 
-    line-height: 16px;
-    width: auto!important;
-    margin-bottom: 16px;
-}
-
-.information-cards .stats-display div:first-child {
-    background-color: #000;
-    color: #fff;
-    padding: 8px 12px;
-    font-size: 12px!important;
-
-}
-
-.information-cards .stats-display div:last-child {
-    padding: 8px 26px;
-    color: #000;
-    font-size: 12px!important;
 }
 
 .information-cards .btn-primary {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 16px !important;
+    width: fit-content!important;
+    padding: 11px 89px!important;
+    font-weight: 500!important;
+    font-size: 12px!important;
+    line-height: 14px;
 }
 
 .information-cards .btn-primary-outline {
     padding: 12px 19px !important;
-}
-
-.information-cards .btn-primary {
-    padding: 11px 0px !important;
+    width: fit-content!important;
+    font-weight: 500!important;
+    font-size: 12px!important;
+    line-height: 14px;
 }
 
 .information-cards .btn-black {
@@ -78,7 +63,9 @@
 
 #btn-opportunity img{
     transform: rotate(-90deg);
-    margin-left: var(--s2)
+    margin-left: var(--s2);
+    width: 13.04px;
+    height: 14.25px;
 }
 
 .info-title{
@@ -105,8 +92,27 @@
    margin-left: var(--s2)
 }
 
+.information-cards div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.counter-container {
+    text-align: center;
+    margin-top: 10px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 28px;
+}
 
 
+/** desktop **/
 @media only screen and (min-width: 600px) {
 
     #single-title {
@@ -135,6 +141,10 @@
        
     } 
 
+    .project-details {
+        margin-bottom: 45px;
+    }
+
     .project-details h5{
         padding-top: var(--f5)!important;
         font-size: var(--f7)!important;
@@ -150,7 +160,14 @@
         grid-template-columns: auto 55%;
     }
 
-    
+    .information-cards div:first-child {
+        gap: 18px;
+    }
+
+    .counter-container {
+        font-size: 14px;
+        line-height: 20px;
+    }
 
     #information-cards {
         margin-top: 0!important;
@@ -173,20 +190,6 @@
         display: none !important;
     }
 
-    .information-cards .stats-display {
-        
-        border-radius: 6px; 
-        margin-bottom: 18px;
-    }
-
-    .information-cards .stats-display div:first-child { 
-        padding: 10px 24px;
-        font-size: 16px!important;
-    }
-
-    .information-cards .stats-display div:last-child {
-        padding: 10px 20px;
-        font-size: 16px!important;
-    }
+ 
 
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { TokenService } from '../../services/token/token.service';
+import { TokenService } from '../../repositories/token/token.service';
 
 
 @Injectable({
@@ -18,7 +18,7 @@ export class AuthguardService implements CanActivate {
     
     //get token from browser
     const token = this.tokenService.get();
-
+    console.log(token)
     let isTokenExpired: boolean = true;
 
     if(token !== null){
