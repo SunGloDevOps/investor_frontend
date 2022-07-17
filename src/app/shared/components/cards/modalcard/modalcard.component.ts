@@ -11,6 +11,8 @@ export class ModalcardComponent implements OnInit  {
 
   @Input() title?: string;
 
+  @Input() position: boolean = false;
+
   @Output() close = new EventEmitter<boolean>();
   
   constructor(

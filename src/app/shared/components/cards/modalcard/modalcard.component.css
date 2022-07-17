@@ -1,6 +1,5 @@
 .card {
     background: #FFFFFF;
-    border: 1px solid rgba(11, 11, 11, 0.5);
     border-radius: 16px;
     width: fit-content;
 }
@@ -22,7 +21,7 @@
 
 @media screen and (max-width: 600px){
     .card {
-        width: 100vw
+       
     }
     .card-nav {
         padding: 24px;
@@ -30,8 +29,14 @@
         flex-direction: row;
         justify-content: space-between;
     }
-    .card-body {
-        padding: 0px 16px 115px 16px
+    .bottom {
+        padding: 0px 16px 115px 16px;
+        width: 100vw;
+    }
+
+    .center{
+        width: fit-content;
+        padding: 0px 16px 36px 16px;
     }
 }
 

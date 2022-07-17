@@ -121,12 +121,9 @@
 </app-modalcontainer>
 
 <!-- insufficient funds -->
-<app-modalcontainer [show]="showinvestModal">
-    <app-modalcard  (close)="closeInvestModal($event)">
-        <app-investmodal
-            (payBank)="updateTransactionStatus($event)"
-            (payCrypto)="updateTransactionStatus($event)"
-        >
-        </app-investmodal>
+<app-modalcontainer [position]="true" [show]="showInsufficientModal">
+    <app-modalcard [position]="true" (close)="closeInsufficientModal($event)">
+        <app-insufficientmodal>
+        </app-insufficientmodal>
     </app-modalcard>
 </app-modalcontainer>
