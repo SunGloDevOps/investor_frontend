@@ -22,10 +22,7 @@
 
 @media screen and (max-width: 600px){
     .button {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
+        font-size: 12px!important;
         line-height: 18px;
     }
 }

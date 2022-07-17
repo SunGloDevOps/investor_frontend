@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-secondarybtnone',
@@ -6,6 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./secondarybtnone.component.css']
 })
 export class SecondarybtnoneComponent implements OnInit {
+
+  @Input() label?: string;
+
+  @Input() icon?: string;
+
+  @Input() fullwidth?: boolean;
+
+  @Input() size1?: boolean;
+
+  @Input() size2?: boolean;
+
+  @Input() size3?: boolean;
 
   constructor() { }
 

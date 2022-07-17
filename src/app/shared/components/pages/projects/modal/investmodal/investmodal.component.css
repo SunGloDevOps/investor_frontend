@@ -1,0 +1,102 @@
+p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px!important;
+    line-height: 22px;
+    color: #0B0B0B;
+    margin-bottom: 35px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.bank-card, .crypto-card {
+    position: relative;
+    border-radius: 14px;
+    width: 301px;
+    height: 173px;
+    padding: 16px;
+}
+
+.content {
+    position:static;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    height: 100%;
+}
+
+.bank-card {
+    background: rgba(1, 255, 255, 0.38);
+}
+
+.crypto-card{
+    background: #0B0B0B;
+    color: #fff;
+}
+
+.label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px!important;
+    line-height: 24px;
+}
+
+.illustration {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.bank-img {
+    width: 208px;
+    height: 138.67px;
+}
+
+.crypto-img{
+    height: 140px;
+    width: 140px;
+}
+
+@media screen and (max-width: 600px){
+    p{
+        font-size: 12px!important;
+        line-height: 18px;
+        margin-bottom: 31px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .bank-card, .crypto-card {
+        border-radius: 14px;
+        height: 153px;
+        width: 100%;
+    }
+
+    .label {
+        font-weight: 500;
+        font-size: 12px!important;
+        line-height: 18px;
+    }
+
+    .bank-img {
+        width: 187px;
+        height: 124.67px;
+    }
+    
+    .crypto-img{
+        height: 140px;
+        width: 140px;
+    }
+}

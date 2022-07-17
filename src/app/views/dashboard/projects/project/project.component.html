@@ -104,7 +104,8 @@
 
 <!-- Invest Modal-->
 <app-modalcontainer [show]="showinvestModal">
-    <app-modalcard (close)="closeInvestModal($event)">
-        
+    <app-modalcard title="Invest" (close)="closeInvestModal($event)">
+        <app-investmodal>
+        </app-investmodal>
     </app-modalcard>
 </app-modalcontainer>

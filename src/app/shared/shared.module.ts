@@ -50,6 +50,7 @@ import { NotificationComponent } from './components/modals/notification/notifica
 import { TabsComponent } from './components/layouts/tabs/tabs.component';
 import { TabsitemComponent } from './components/layouts/tabsitem/tabsitem.component';
 import { SearchbarComponent } from './components/form/searchbar/searchbar.component';
+import { InvestmodalComponent } from './components/pages/projects/modal/investmodal/investmodal.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -98,7 +99,8 @@ export function tokenGetter() {
     NotificationComponent,
     TabsComponent,
     TabsitemComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    InvestmodalComponent
   ],
   imports: [
     CommonModule,
@@ -164,7 +166,8 @@ export function tokenGetter() {
     NotificationComponent,
     TabsComponent,
     TabsitemComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    InvestmodalComponent
   ]
 })
 export class SharedModule { }

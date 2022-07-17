@@ -2,7 +2,7 @@
     background: #FFFFFF;
     border: 1px solid rgba(11, 11, 11, 0.5);
     border-radius: 16px;
-    width: 453px;
+    width: fit-content;
 }
 
 .card-nav {
