@@ -17,6 +17,12 @@ export class ProjectComponent implements OnInit {
 
   showinvestModal: boolean = false;
 
+  showSuccessModal: boolean = false;
+
+  showInsufficientModal: boolean = false;
+
+  transactionStatus: boolean = false;
+
   constructor(
     private projectService: ProjectsService,
     private route: ActivatedRoute
@@ -58,6 +64,34 @@ export class ProjectComponent implements OnInit {
 
   openInvestModal(): void {
     this.showinvestModal = true
+  }
+
+  updateTransactionStatus(value: boolean){
+    this.transactionStatus = value;
+
+    if(this.transactionStatus === true){
+      this.closeInvestModal(false)
+      this.openSuccessModal()
+    } else {
+      this.closeInvestModal(false)
+      this.openInsufficientModal()
+    }
+  }
+
+  closeSuccessModal(data: boolean): void {
+    this.showSuccessModal = data
+  }
+
+  openSuccessModal(): void {
+    this.showSuccessModal = true
+  }
+
+  closeInsufficientModal(data: boolean): void {
+    this.showInsufficientModal = data
+  }
+
+  openInsufficientModal(): void {
+    this.showInsufficientModal = true
   }
 
 }

@@ -8,6 +8,7 @@
             <app-secondarybtnone
                 [size3]="true"
                 label="Pay Now"
+                (click)="payWithBank()"
             >
             </app-secondarybtnone>
         </div>
@@ -19,7 +20,9 @@
 
             <app-primarybtnone 
                 [size3]="true"
-                label="Pay Now">
+                label="Pay Now"
+                (click)="payWithCrypto()"
+                >
             </app-primarybtnone>
         </div>
         <img class="illustration crypto-img" src="../../../../../../../assets/images/illustrations/wallet/crypto.png" alt="crypto"/>

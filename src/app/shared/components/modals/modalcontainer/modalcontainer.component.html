@@ -1,3 +1,8 @@
-<div class="modal-container" *ngIf="show">
+<div 
+    [class.center]="position===true"
+    [class.bottom]="position===false"
+    class="modal-container" 
+    *ngIf="show"
+>
     <ng-content></ng-content>
 </div>

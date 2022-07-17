@@ -7,7 +7,9 @@ import { ModalService } from 'src/app/repositories/modals/modal.service';
 })
 export class ModalcontainerComponent implements OnInit {
 
-  @Input() show?: boolean;;
+  @Input() show?: boolean;
+
+  @Input() position?: boolean = false;
 
   constructor(
   ) { }

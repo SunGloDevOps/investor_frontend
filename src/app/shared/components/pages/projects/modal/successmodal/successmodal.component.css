@@ -1,0 +1,44 @@
+.container{
+    border-radius: 12px;
+    background-color: #fff;
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.illustration {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+.label {
+    margin-bottom: 46px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0B0B0B;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+@media screen and (max-width: 600px){
+
+    .illustration {
+        height: 130px;
+        width: 130px;
+        margin-bottom: 24px;
+    }
+
+    .label{
+        font-size: 12px;
+        line-height: 18px;
+    }
+}

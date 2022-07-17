@@ -104,8 +104,29 @@
 
 <!-- Invest Modal-->
 <app-modalcontainer [show]="showinvestModal">
-    <app-modalcard title="Invest" (close)="closeInvestModal($event)">
-        <app-investmodal>
+    <app-modalcard  (close)="closeInvestModal($event)">
+        <app-investmodal
+            (payBank)="updateTransactionStatus($event)"
+            (payCrypto)="updateTransactionStatus($event)"
+        >
+        </app-investmodal>
+    </app-modalcard>
+</app-modalcontainer>
+
+<!-- Successful transaction -->
+
+<app-modalcontainer [position]="true"  [show]="showSuccessModal">
+    <app-successmodal>
+    </app-successmodal>
+</app-modalcontainer>
+
+<!-- insufficient funds -->
+<app-modalcontainer [show]="showinvestModal">
+    <app-modalcard  (close)="closeInvestModal($event)">
+        <app-investmodal
+            (payBank)="updateTransactionStatus($event)"
+            (payCrypto)="updateTransactionStatus($event)"
+        >
         </app-investmodal>
     </app-modalcard>
 </app-modalcontainer>

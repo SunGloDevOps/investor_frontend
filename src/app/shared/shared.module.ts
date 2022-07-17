@@ -51,6 +51,7 @@ import { TabsComponent } from './components/layouts/tabs/tabs.component';
 import { TabsitemComponent } from './components/layouts/tabsitem/tabsitem.component';
 import { SearchbarComponent } from './components/form/searchbar/searchbar.component';
 import { InvestmodalComponent } from './components/pages/projects/modal/investmodal/investmodal.component';
+import { SuccessmodalComponent } from './components/pages/projects/modal/successmodal/successmodal.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -100,7 +101,8 @@ export function tokenGetter() {
     TabsComponent,
     TabsitemComponent,
     SearchbarComponent,
-    InvestmodalComponent
+    InvestmodalComponent,
+    SuccessmodalComponent
   ],
   imports: [
     CommonModule,
@@ -167,7 +169,8 @@ export function tokenGetter() {
     TabsComponent,
     TabsitemComponent,
     SearchbarComponent,
-    InvestmodalComponent
+    InvestmodalComponent,
+    SuccessmodalComponent
   ]
 })
 export class SharedModule { }
