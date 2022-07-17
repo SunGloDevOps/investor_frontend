@@ -7,23 +7,16 @@ import { ModalService } from 'src/app/repositories/modals/modal.service';
 })
 export class ModalcontainerComponent implements OnInit {
 
-  @Input() show: boolean = true;
+  @Input() show?: boolean;;
 
   constructor(
-    public modalService: ModalService,
   ) { }
 
   ngOnInit(): void {
-    this.show = this.modalService.showDepositModal
+  
   }
 
-  hideModal(): void {
-    this.modalService.hideDeposit()
-  }
 
-  showModal(): void {
-    this.show = true
-  }
 
   
 

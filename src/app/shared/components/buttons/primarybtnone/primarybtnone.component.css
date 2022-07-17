@@ -1,4 +1,31 @@
 .button {
     background-color: #01FFFF;
     border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px!important;
+    line-height: 24px;
+}
+
+.button:hover {
+    box-shadow: 9px 23px 34px rgba(5, 195, 221, 0.31);
+}
+
+.fitcontent {
+    width: fit-content!important;
+}
+
+.parent {
+    width: 100% !important
+}
+
+@media screen and (max-width: 600px){
+    .button {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+    }
 }

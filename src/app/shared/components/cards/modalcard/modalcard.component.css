@@ -6,13 +6,32 @@
 }
 
 .card-nav {
-    padding: 32px 46px;
+    padding: 24px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
+.card-nav div:last-child {
+    cursor: pointer
+}
+
 .card-body {
     padding: 0px 46px 46px 46px
+}
+
+@media screen and (max-width: 600px){
+    .card {
+        width: 100vw
+    }
+    .card-nav {
+        padding: 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .card-body {
+        padding: 0px 16px 115px 16px
+    }
 }
 

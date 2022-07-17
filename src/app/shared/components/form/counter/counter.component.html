@@ -1,5 +1,9 @@
 <div class="counter-container">
-    <button> < </button>
-    <div class="label">0</div>
-    <button> > </button>
+    <button (click)="decrease()"> 
+        <span class="iconify" data-icon="bxs:down-arrow" style="color: black;" data-width="12" data-height="12"></span>
+    </button>
+        <input type="text"  class="label" [value]="digit" #numberEntered disabled>
+    <button  (click)="increase()"> 
+        <span class="iconify" data-icon="bxs:up-arrow" style="color: black;" data-width="12" data-height="12"></span>
+    </button>
 </div>

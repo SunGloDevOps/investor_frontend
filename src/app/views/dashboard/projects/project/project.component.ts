@@ -13,6 +13,10 @@ export class ProjectComponent implements OnInit {
 
   projectsoldpercentage: number = 0;
 
+  number_of_cell: number = 1;
+
+  showinvestModal: boolean = false;
+
   constructor(
     private projectService: ProjectsService,
     private route: ActivatedRoute
@@ -41,6 +45,19 @@ export class ProjectComponent implements OnInit {
   //download information for porject
   downloadInformation(): void {
 
+  }
+
+  //getting number of cell from the counter
+  getpurchasedCells(amount: number){
+    this.number_of_cell = amount
+  }
+
+  closeInvestModal(data: boolean): void {
+    this.showinvestModal = data
+  }
+
+  openInvestModal(): void {
+    this.showinvestModal = true
   }
 
 }

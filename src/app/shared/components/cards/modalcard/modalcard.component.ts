@@ -9,9 +9,9 @@ import { ModalcontainerComponent } from '../../modals/modalcontainer/modalcontai
 })
 export class ModalcardComponent implements OnInit  {
 
-  @Input() title: string = "Untitled Modal";
+  @Input() title?: string;
 
-  @Output() close = new EventEmitter();
+  @Output() close = new EventEmitter<boolean>();
   
   constructor(
     private modalService: ModalService

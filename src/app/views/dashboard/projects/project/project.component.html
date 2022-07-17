@@ -40,20 +40,23 @@
 
                 <div class="counter-container">
                     <small>Enter number of cells to invest</small>
-                    <app-counter></app-counter>
+                    <app-counter
+                        [total_cells]=10
+                        (number)="getpurchasedCells($event)"
+                    ></app-counter>
                 </div>
-                
 
                 <div>
                     <app-primarybtntwo
                         label="Invest"
                         [fullwidth]="false"
                         [size1]="true"
+                        (click)="openInvestModal()"
                     ></app-primarybtntwo>
                 </div>
 
                 <div>
-                    <button type="button" href="#about" class="btn btn-primary-outline" id="btn-opportunity">About the opportunity  <img src="../../../../assets/images/icons/Arrow - Left.png"></button>
+                    <a  href="#about" class="btn btn-primary-outline" id="btn-opportunity">About the opportunity  <img src="../../../../assets/images/icons/Arrow - Left.png"></a>
                 </div>
 
             </div>
@@ -98,3 +101,10 @@
 
     </div>
 </div>
+
+<!-- Invest Modal-->
+<app-modalcontainer [show]="showinvestModal">
+    <app-modalcard (close)="closeInvestModal($event)">
+        
+    </app-modalcard>
+</app-modalcontainer>

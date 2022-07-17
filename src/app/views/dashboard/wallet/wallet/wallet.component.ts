@@ -28,13 +28,11 @@ export class WalletComponent implements OnInit {
 
   constructor(
     private userService: UsersRepository,
-    private tokenService: TokenService,
     private transactionService: TransactionService
   ) { }
 
   ngOnInit(): void {
-    this.user = this.tokenService.getTokenBody();
-    this.showdepositModal = false;
+  
   }
 
   getTransactionHistory(): void {

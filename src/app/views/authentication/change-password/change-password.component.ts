@@ -14,7 +14,7 @@ export class ChangePasswordComponent implements OnInit {
 
   passwordMatch: boolean = false
 
-  registerForm = this.fb.group({
+  changepasswordForm = this.fb.group({
     password: ['', Validators.required],
     password2: ['', Validators.required],
   })
@@ -29,13 +29,13 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   async changePassword(): Promise<void> {
-    if(this.registerForm.controls['password'].value !== this.registerForm.controls['password2'].value){
+    if(this.changepasswordForm.controls['password'].value !== this.changepasswordForm.controls['password2'].value){
       this.passwordMatch = true;
       return
     }
 
     const payload: IChangepasswordRequest = {
-      password: this.registerForm.controls['password'].value,
+      password: this.changepasswordForm.controls['password'].value,
     };
 
     (await this.userRepository.changePassword(payload)).subscribe(
