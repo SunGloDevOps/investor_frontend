@@ -1,11 +1,12 @@
 .button {
-    background: #01FFFF;
-    border: 1px solid rgba(6, 182, 202, 0.5);
+    background: #FFFFFF;
+    border: none;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
+    color: #0B0B0B
 }
 
 .px1 {

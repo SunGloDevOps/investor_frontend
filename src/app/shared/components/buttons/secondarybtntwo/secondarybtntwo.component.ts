@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-primarybtntwo',
-  templateUrl: './primarybtntwo.component.html',
-  styleUrls: ['./primarybtntwo.component.css']
+  selector: 'app-secondarybtntwo',
+  templateUrl: './secondarybtntwo.component.html',
+  styleUrls: ['./secondarybtntwo.component.css']
 })
-export class PrimarybtntwoComponent implements OnInit {
+export class SecondarybtntwoComponent implements OnInit {
 
   @Input() label?: string;
 

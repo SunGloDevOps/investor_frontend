@@ -53,6 +53,7 @@ import { SearchbarComponent } from './components/form/searchbar/searchbar.compon
 import { InvestmodalComponent } from './components/pages/projects/modal/investmodal/investmodal.component';
 import { SuccessmodalComponent } from './components/pages/projects/modal/successmodal/successmodal.component';
 import { InsufficientmodalComponent } from './components/pages/projects/modal/insufficientmodal/insufficientmodal.component';
+import { SecondarybtntwoComponent } from './components/buttons/secondarybtntwo/secondarybtntwo.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -104,7 +105,8 @@ export function tokenGetter() {
     SearchbarComponent,
     InvestmodalComponent,
     SuccessmodalComponent,
-    InsufficientmodalComponent
+    InsufficientmodalComponent,
+    SecondarybtntwoComponent
   ],
   imports: [
     CommonModule,
@@ -173,7 +175,8 @@ export function tokenGetter() {
     SearchbarComponent,
     InvestmodalComponent,
     SuccessmodalComponent,
-    InsufficientmodalComponent
+    InsufficientmodalComponent,
+    SecondarybtntwoComponent
   ]
 })
 export class SharedModule { }
