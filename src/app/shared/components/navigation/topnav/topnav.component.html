@@ -1,19 +1,20 @@
-<div class="row">
-    <div class="col-12 d-flex flex-row justify-content-end topnav">
 
-            <div class="search" *ngIf="showSearch">
-                <img src="../../../../assets/images/icons/Search.png"><input type="text" class="form-control" placeholder="Search Projects" >
+<div class="topnav">
+
+        <div>
+            <app-searchbar [show]="showSearch"></app-searchbar>
+        </div>
+        
+
+        <div class="notification-wrapper">
+            <div class="notification" (click)="toggleModal()">
+                <span class="iconify" data-icon="system-uicons:bell" data-width="30" data-height="30"></span>
             </div>
+            <app-notification
+                [showNotification]="showModal"
+            ></app-notification>
+        </div>
 
-            <div class="notification-wrapper">
-                <div class="notification" (click)="toggleModal()">
-                    <span class="iconify" data-icon="system-uicons:bell" data-width="30" data-height="30"></span>
-                </div>
-                <app-notification
-                    [showNotification]="showModal"
-                ></app-notification>
-            </div>
-
-    </div>
 </div>
+
 

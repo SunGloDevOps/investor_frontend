@@ -49,6 +49,7 @@ import { VerificationcardComponent } from './components/cards/verificationcard/v
 import { NotificationComponent } from './components/modals/notification/notification.component';
 import { TabsComponent } from './components/layouts/tabs/tabs.component';
 import { TabsitemComponent } from './components/layouts/tabsitem/tabsitem.component';
+import { SearchbarComponent } from './components/form/searchbar/searchbar.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -96,7 +97,8 @@ export function tokenGetter() {
     VerificationcardComponent,
     NotificationComponent,
     TabsComponent,
-    TabsitemComponent
+    TabsitemComponent,
+    SearchbarComponent
   ],
   imports: [
     CommonModule,
@@ -161,7 +163,8 @@ export function tokenGetter() {
     VerificationcardComponent,
     NotificationComponent,
     TabsComponent,
-    TabsitemComponent
+    TabsitemComponent,
+    SearchbarComponent
   ]
 })
 export class SharedModule { }

@@ -24,7 +24,7 @@ export class WalletComponent implements OnInit {
 
   transactions: any[] = [];
 
-  showdepositModal: boolean = true;
+  showdepositModal: boolean = false;
 
   constructor(
     private userService: UsersRepository,
@@ -34,6 +34,7 @@ export class WalletComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.tokenService.getTokenBody();
+    this.showdepositModal = false;
   }
 
   getTransactionHistory(): void {

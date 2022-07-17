@@ -1,3 +1,7 @@
+h4 {
+    font-size: 16px!important;
+}
+
 #profileform .two-column-desktop{
     display: flex;
     flex-direction: column;
@@ -40,6 +44,10 @@ input:focus {
 }
 
 @media screen and (min-width: 600px) {
+
+    h4 {
+        font-size: 24px!important;
+    }
 
     #profileform {
         width: 100%!important

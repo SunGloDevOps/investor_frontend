@@ -26,7 +26,7 @@
        
     
             <div id="footer">  
-                    <a href="#" class="btn">Fund Wallet</a>
+                    <button (click)="openDepositModal()"class="btn">Fund Wallet</button>
             </div>
     
         </div>
@@ -54,7 +54,7 @@
     
             <div  id="footer">
                  
-                <a href="#" class="btn">Fund Wallet</a>
+                <button (click)="openDepositModal()" class="btn">Fund Wallet</button>
                 
             </div>
     
@@ -194,7 +194,7 @@
 </div>
 
 <!-- Deposit Modal-->
-<app-modalcontainer [show]="showdepositModal">
+<!-- <app-modalcontainer [show]="false">
     <app-modalcard (close)="closeDepositModal($event)">
         <div>
             <h5>0.0 USD</h5>
@@ -213,4 +213,4 @@
             </div>
         </div>
     </app-modalcard>
-</app-modalcontainer>
+</app-modalcontainer> -->

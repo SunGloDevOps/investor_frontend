@@ -6,6 +6,10 @@
     padding: 0px var(--f8) !important;
 }
 
+h5{
+    font-size: 16px!important;
+}
+
 /** DESKTOP **/
 @media only screen and (min-width: 600px) {
 #project-grid {
@@ -17,6 +21,7 @@
 
 h5{
     margin-bottom: var(--S2)!important;
+    font-size: 24px!important;
 }
 
 }
