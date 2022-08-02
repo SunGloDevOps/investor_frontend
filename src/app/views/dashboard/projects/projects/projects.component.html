@@ -3,24 +3,46 @@
 <app-topnav [showSearch]="true"></app-topnav>
 
 <div class="row">
-    <div class="col-12">
-        <h5>All available projects</h5>
+    <div class="header">
+        <div class="options">
+            <button class="btn" [class.btnActive]="nowAvailable" (click)="viewNowAvailable()">Now Available</button>
+            <button class="btn" [class.btnActive]="nowGenerating" (click)="viewNowGenerating()">Now Generating</button>
+        </div>
     </div>
-
-    <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0">
-        <div *ngFor="let project of projects">
-            <app-projectcard 
-                [id]="project._id"
-                title={{project.title}}
-                description={{project.description}} 
-                [cost]="project.cost_per_cell"
-            ></app-projectcard>
-        </div>        
+    <div *ngIf="nowAvailable">
+        <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0">
+            <div *ngFor="let project of projects">
+                <app-projectcard 
+                    [id]="project._id"
+                    title={{project.title}}
+                    description={{project.description}} 
+                    [cost]="project.cost_per_cell"
+                ></app-projectcard>
+            </div>        
+        </div>
+        <div *ngIf="projects.length === 0">
+            <app-empty
+                label="No Project has been added yet"
+                image="../../../../../assets/images/illustrations/empty.png"
+            ></app-empty>
+        </div>
     </div>
-    <div *ngIf="projects.length === 0">
-        <app-empty
-            label="No Project has been added yet"
-            image="../../../../../assets/images/illustrations/empty.png"
-        ></app-empty>
+    <div *ngIf="nowGenerating">
+        <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0">
+            <div *ngFor="let project of projects">
+                <app-projectcard 
+                    [id]="project._id"
+                    title={{project.title}}
+                    description={{project.description}} 
+                    [cost]="project.cost_per_cell"
+                ></app-projectcard>
+            </div>        
+        </div>
+        <div *ngIf="projects.length === 0">
+            <app-empty
+                label="No Project has been added yet"
+                image="../../../../../assets/images/illustrations/empty.png"
+            ></app-empty>
+        </div>
     </div>
 </div>

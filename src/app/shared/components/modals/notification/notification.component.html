@@ -2,17 +2,23 @@
 <div class="notification-menu" *ngIf="showNotification">
   <!-- header -->
   <header>
+   
     <nav>
         <app-backbutton (click)="closeModal()"></app-backbutton>
     </nav>
     <div class="notification-header">
         <p class="notification-label">Notification</p>
 
-        <p class="notification-mark">Mark all us read</p>
+        <!-- <p class="notification-mark">Mark all us read</p> -->
     </div>
     
   </header>
 
-  <app-tabs></app-tabs>
+  <app-tabs
+    [generalCount]="unreadPersonal"
+    [personalCount]="unreadGeneral"
+    [generals]="general"
+    [personals]="personal"
+  ></app-tabs>
 
 </div>

@@ -21,7 +21,11 @@
 
                 <p>Invest today - Enjoy tomorrow with Sunglo</p>
 
+                <p *ngIf="accountCreated">Account created <a routerLink="/auth/login">Sign In</a></p>
+
                 <p *ngIf="accountExist">User account already exist</p>
+
+                <p *ngIf="phoneExist">Phone Number already exist</p>
 
                 <p *ngIf="passwordMatch">Password not matching</p>
 

@@ -4,86 +4,135 @@
 
 <h4>Investment</h4>
 
-<div class="row mt-4">
-    <div class="col-lg-6 col-md-12">
+<!-- thumbnail -->
+<div class="project-thumbnail">
+    <img src="#" alt="some text goes here" />
+</div>
+
+<div>
+    <span class="project-title desktop-only">{{investment.project.title}}</span>
+</div>
+
+<div class="investment-data mt-4">
+    <div class="left">
+        <div class="progress-section">
+
+            <app-circleprogress></app-circleprogress>
+
+            <div class="progress-right">
+                <div class="progress-days">
+                    <span *ngIf="investment.project.start_date !== undefined">{{days_left}} days left</span>
+                    <span *ngIf="investment.project.start_date === undefined">Now Installing</span>
+                </div>
+                <div class="mobile-only">
+                    <div>
+                        <span class="project-title">{{investment.project.title}}</span>
+                    </div>
+                    
+                    <app-investedamount
+                        [naira]="investment.capital"
+                    ></app-investedamount>
+                </div>
+                <app-primarybtntwo
+                    label="Energy Generated"
+                    [size4]="true"
+                ></app-primarybtntwo>
+            </div>
+
+        </div>
         <app-borderedcard
-            label="ROI"
-            value="20%"
+            label="Total Solar Cell Purchased"
+            [value]="investment.project.sold_cell"
         >
         </app-borderedcard>
         
         <app-borderedcard
             label="ROI Yield "
-            value="20%"
+            [value]="investment.project.ROI"
         >
         </app-borderedcard>
         <app-borderedcard
             label="Total Investment Made "
-            value="$200|| 100,000 naira"
+            [value]="investment.capital"
         >
         </app-borderedcard>
         <app-borderedcard
             label="Total Energy Generated "
-            value="2000kw"
+            [value]="investment.project.energy_generated"
         >
         </app-borderedcard>
 
-        <div>
-            <app-statsdisplay 
-                label="cost per cell" 
-                value=""
-                [fullwidth]="true"
-            ></app-statsdisplay>
-        </div>
+        <app-borderedcard
+        label="Total Number Of Investors "
+        [value]="investment.project.no_of_investors"
+    >
+    </app-borderedcard>
+
+        
 
         
     </div>
-    <div class="col-lg-6 col-md-12">
-        <div class="mt-2">
+
+    <div class="right">
+            <div class="desktop-only bordered-corner">
+                <app-investedamount></app-investedamount>
+            </div>
+
+            <app-statsdisplay 
+                label="Investment Interest" 
+                value=""
+                [fullwidth]="true"
+            ></app-statsdisplay>
+        
+            <app-borderedcard
+                label="Investment Date "
+                [value]="investment.created_at"
+            >
+            </app-borderedcard>
+
+            <app-borderedcard
+                label="Next Payout Date "
+                [value]="investment.project.next_payout_date"
+            >
+            </app-borderedcard>
+
+            <app-borderedcard
+                label="Solar Asset Status Contract "
+                value=""
+            >
+            </app-borderedcard>
+
+            <app-borderedcard
+                label="Total Reduced C02 "
+                [value]="investment.project.carbon_reduced"
+            >
+            </app-borderedcard>
+
+            <div>
                 <app-statsdisplay 
-                    label="Total Cell Bought" 
-                    value=""
+                    label="cost per cell" 
+                    [value]="investment.project.cost_per_cell"
                     [fullwidth]="true"
                 ></app-statsdisplay>
-            
-                <app-borderedcard
-                    label="Investment Date "
-                    value="1/01/2022"
-                >
-                </app-borderedcard>
-
-                <app-borderedcard
-                    label="Next Payout Date "
-                    value="20/08/2022"
-                >
-                </app-borderedcard>
-
-                <app-borderedcard
-                    label="Solar Asset Status Contract "
-                    value="Active"
-                >
-                </app-borderedcard>
-
-                <app-borderedcard
-                    label="Total Reduced C02 "
-                    value="~1500kg"
-                >
-                </app-borderedcard>
-          
-        </div>
+            </div>
+        
     </div>
+   
 </div>
 
 <div class="row mt-3" id="calltoaction">
     <div class="col-12">
-       <a routerLink="/app/projects/i" class="btn btn-primary">Reinvest</a>
+       <app-primarybtnone
+        [size3]="true"
+        label="Reinvest"
+       ></app-primarybtnone>
        <a class="btn btn-black-share">
         <img src="../../../../assets/images/icons/download.png">
         </a>
     </div>
 </div>
 
-<div class="row mt-5" id="energygenerated">
+<!-- <div class="row mt-5" id="energygenerated">
     <div class="col-12">
 
         <h4>Energy Generated</h4>
@@ -105,5 +154,5 @@
         <h5>500</h5>
         <p>Solar cells connected</p>
     </div>
-</div>
+</div> -->
 

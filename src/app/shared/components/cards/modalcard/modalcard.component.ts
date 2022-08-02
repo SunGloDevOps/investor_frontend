@@ -14,6 +14,10 @@ export class ModalcardComponent implements OnInit  {
   @Input() position: boolean = false;
 
   @Output() close = new EventEmitter<boolean>();
+
+  @Input() size1: boolean = false;
+
+
   
   constructor(
     private modalService: ModalService

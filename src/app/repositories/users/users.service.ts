@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import IChangepasswordRequest from 'src/app/models/Users/IChangepasswordRequest';
 import IChangepasswordResponse from 'src/app/models/Users/IChangepasswordResponse';
 import IProfileRequest from 'src/app/models/Users/IProfileRequest';
@@ -15,7 +15,9 @@ export class UsersRepository implements OnInit {
 
   user?: any = {};
 
-  api_url: string = `${api_home_url}/users`
+  api_url: string = `${api_home_url}/users`;
+
+  private _refreshRequired = new Subject<void>()
 
   constructor(
     private http: HttpClient,
@@ -37,6 +39,10 @@ export class UsersRepository implements OnInit {
     return user
   }
 
+  get refreshRequired(){
+    return this._refreshRequired;
+  }
+
   setUser(payload: any): void {
     localStorage.setItem('id',payload.id)
     localStorage.setItem('email', payload.email)
@@ -44,14 +50,20 @@ export class UsersRepository implements OnInit {
   }
 
   updateProfile(id: string, payload: IProfileRequest): Observable<IProfileResponse> {
-    return this.http.patch<IProfileResponse>(`${this.api_url}/${id}`, payload).pipe();
+    return this.http.patch<IProfileResponse>(`${this.api_url}/${id}`, payload).pipe(
+      tap(()=>{
+        this.refreshRequired.next();
+      })
+    );
   }
 
   getUserDetails(id: string): Observable<IProfileResponse> {
-    return this.http.get<IProfileResponse>(`${this.api_url}/${id}`).pipe();
+    return this.http.get<IProfileResponse>(`${this.api_url}/${id}`).pipe(
+      tap(()=>{
+        this.refreshRequired.next();
+      })
+    );
   }
 
-  changePassword(payload: IChangepasswordRequest): Observable<IChangepasswordResponse>{
-    return this.http.patch<IChangepasswordResponse>(`${this.api_url}`, payload).pipe()
-  }
+  
 }

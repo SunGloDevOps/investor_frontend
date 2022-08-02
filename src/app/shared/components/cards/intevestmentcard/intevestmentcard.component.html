@@ -1,25 +1,27 @@
 <div class="card" (click)="viewDetails">
     <img src="../../../../assets/images/thumbnail.jpg" alt="thumbnail"/>
     <div class="card-content">
-        <a class="title" routerLink="i">{{title}}</a>
+        <a class="title" [routerLink]="link" >{{title}}</a>
 
         <small class="invested">Invested Amount</small>
 
         <h5 class="USD">{{cost}} USD</h5>
 
-        <small class="NGN">{{ngn}} NGN</small>
+        <small class="NGN">{{cost}} NGN</small>
 
-        <small class="timeline"><b>{{days}}</b> days left</small>
+        <small class="timeline" *ngIf="start_date !== undefined"><b>{{days_left}}</b> days left</small>
+
+        <small class="timeline" *ngIf="start_date === undefined"> <b>Now Installing</b> </small>
 
         <div class="progress-area">
             <div class="progress-bar">
-                <div class="progress">
-    
-                </div>
+                <app-progressbar [progress]="progress">
+
+                </app-progressbar>
             </div>
 
             <div class="progress-label">
-                {{progress}}% completed
+              {{progress}} %
             </div>
         </div>
 

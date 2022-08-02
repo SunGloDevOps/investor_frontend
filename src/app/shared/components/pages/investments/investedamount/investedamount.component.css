@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    flex-direction: column
+}
+
+.label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #05C3DD;
+    margin-bottom: 24px;
+}
+
+.dollars {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: #0B0B0B;
+    margin-bottom: 8px;
+}
+
+.naira {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0B0B0B;
+    
+}
+
+@media screen and (max-width: 600px){
+    .container {
+        padding: 14px 0px;
+    }
+    .label {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 10px;
+        line-height: 14px;
+        color: #0B0B0B;
+        margin-bottom: 8px;
+    }
+    
+    .dollars {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #0B0B0B;
+        margin-bottom: 8px;
+    }
+    
+    .naira {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #0B0B0B;
+    }
+}

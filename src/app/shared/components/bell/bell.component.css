@@ -1,0 +1,21 @@
+.notification {
+    padding: var(--S1) var(--S3) !important;
+
+}
+
+.bell {
+    height: 200px;
+    width: 20px;
+    z-index: 30
+}
+
+.notification-icon{
+    position: relative;
+
+}
+
+.dot {
+    z-index: 31;
+    position: absolute;
+    right: 5
+}

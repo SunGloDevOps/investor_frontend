@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { IProjectResponse } from 'src/app/models/Projects/IProject';
 import { api_home_url } from 'src/environments/environment';
 import { TokenService } from '../token/token.service';
@@ -10,19 +10,33 @@ import { TokenService } from '../token/token.service';
 })
 export class ProjectsService {
 
-  api_url: string = `${api_home_url}/projects`
+  api_url: string = `${api_home_url}/projects`;
+
+  private _refreshRequired = new Subject<void>()
 
   constructor(
     private http: HttpClient,
     private tokenService: TokenService
   ) { }
 
+  get refreshRequired(){
+    return this._refreshRequired;
+  }
+
   getAllProject(): Observable<IProjectResponse> {
-    return this.http.get<IProjectResponse>(`${this.api_url}`).pipe()
+    return this.http.get<IProjectResponse>(`${this.api_url}`).pipe(
+      tap(()=>{
+        this.refreshRequired.next();
+      })
+    )
   }
 
   getProject(id: string): Observable<any> {
-    return this.http.get<any>(`${this.api_url}/${id}`).pipe();
+    return this.http.get<any>(`${this.api_url}/${id}`).pipe(
+      tap(()=>{
+        this.refreshRequired.next();
+      })
+    );
   }
 
   

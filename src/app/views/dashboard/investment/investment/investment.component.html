@@ -18,9 +18,9 @@
         <div class="card" id="money-invested">
             <h5>Money Invested</h5>
 
-            <h4>500,000</h4>
+            <h4>{{money_invested}}</h4>
 
-            <small>500,000 NGN</small>
+            <small>{{money_invested}} NGN</small>
         </div>
     </div>
 
@@ -30,7 +30,7 @@
                 <div class="card" id="active">
                     <p>Active Investment</p>
         
-                    <h4>2</h4>
+                    <h4>{{active_investment}}</h4>
                 </div>
             </div>
             <div class="col-6">
@@ -38,7 +38,7 @@
                     <p>completed
                          Investment</p>
         
-                    <h4>2</h4>
+                    <h4>{{completed_investment}}</h4>
                 </div>
             </div>
         </div>
@@ -53,12 +53,15 @@
 
 <div class="investment-container" *ngIf="investments.length !== 0">
     <div *ngFor="let investment of investments">
+
         <app-intevestmentcard
-            title={{investment.title}}
-            
-            days={{investment}}
-            progress={{investment}}
+            [id]="investment._id"
+            [title]="investment.project.title"
+            [cost]="investment.capital"
+            [start_date]="investment.project.start_date"
+            [end_date]="investment.project.end_date"
         ></app-intevestmentcard>
+
     </div>
 </div>
 

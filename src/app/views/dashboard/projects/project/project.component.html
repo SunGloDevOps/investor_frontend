@@ -56,7 +56,9 @@
                 </div>
 
                 <div>
-                    <a  href="#about" class="btn btn-primary-outline" id="btn-opportunity">About the opportunity  <img src="../../../../assets/images/icons/Arrow - Left.png"></a>
+                    <button (click)="scrollToAbout()" class="btn btn-primary-outline">
+                        About the opportunity  <img src="../../../../assets/images/icons/Arrow - Left.png">
+                    </button>
                 </div>
 
             </div>
@@ -90,10 +92,10 @@
         </div>
 </div>
 
-<div class="row">
+<div class="row" id="about">
     <div class="col-12">
         
-        <h4 class="mb-3" id="about">About Project</h4>
+        <h4 class="mb-3" >About Project</h4>
 
         {{project?.description}}
 
@@ -106,8 +108,10 @@
 <app-modalcontainer [show]="showinvestModal">
     <app-modalcard  (close)="closeInvestModal($event)">
         <app-investmodal
-            (payBank)="updateTransactionStatus($event)"
-            (payCrypto)="updateTransactionStatus($event)"
+            (payBank)="bankTransactionStatus($event)"
+            (payCrypto)="cryptoTransactionStatus($event)"
+            [price]="price_per_cell"
+            [no_of_cell]="number_of_cell"
         >
         </app-investmodal>
     </app-modalcard>
@@ -116,8 +120,16 @@
 <!-- Successful transaction -->
 
 <app-modalcontainer [position]="true"  [show]="showSuccessModal">
-    <app-successmodal>
+    <app-modalcard [position]="true" (close)="closeSuccessModal($event)">
+    <app-successmodal
+        text="Payment Successful"
+        leftBtn="View projects"
+        [leftRoute]="['/projects/home']"
+        rightBtn="Continue"
+        [rightRoute]="right_link"
+    >
     </app-successmodal>
+</app-modalcard>
 </app-modalcontainer>
 
 <!-- insufficient funds -->

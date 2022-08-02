@@ -50,6 +50,8 @@
     }
 
     .cost, .rate {
+        font-size: 12px!important;
+        line-height: 20px;
         padding: 8px 12px;
     }
 }

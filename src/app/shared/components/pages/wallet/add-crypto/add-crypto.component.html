@@ -1,0 +1,19 @@
+<form [formGroup]="addCryptoAddressForm">
+<div class="container">
+
+    <p>Crypto address</p>
+    <input 
+        type="text" 
+        class="form-control" 
+        formControlName="address"
+        
+    >
+
+</div>
+<div class="footer">
+    <button 
+    (click)="addAddress()"
+    [disabled]="addCryptoAddressForm.invalid"
+    >Save Changes</button>
+</div>
+</form>

@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { UsersRepository } from '../users/users.service';
 
 @Injectable({
@@ -17,9 +17,15 @@ export class SettingService implements OnInit {
 
   user_id?: string;
 
+  private _refreshRequired = new Subject<void>()
+
   constructor(
     private userService: UsersRepository
   ) { }
+
+  get refreshRequired(){
+    return this._refreshRequired;
+  }
 
   ngOnInit(): void {
     this.getUserSettings()
@@ -30,13 +36,10 @@ export class SettingService implements OnInit {
 
     const id = this.user_id ? this.user_id : ""
 
-    this.user = this.userService.getUserDetails(id).subscribe(
-      res => {
-        const data = res.data;
-        // this.isKYCVerified = data.bvn_verified;
-        // this.isPhoneVerified = data.phone_verified;
-        // this.isEmailVerified = data.email_verified;
-      }
+    this.user = this.userService.getUserDetails(id).pipe(
+      tap(()=>{
+        this.refreshRequired.next();
+      })
     )
   }
 

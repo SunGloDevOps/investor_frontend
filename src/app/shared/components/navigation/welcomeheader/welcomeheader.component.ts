@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { UsersRepository } from 'src/app/repositories/users/users.service';
 
 @Component({
   selector: 'app-welcomeheader',
@@ -11,17 +12,18 @@ export class WelcomeheaderComponent implements OnInit {
 
   showModal: boolean = false;
 
-  constructor() { }
+  user?: any;
+
+  constructor(
+    private userRepo: UsersRepository
+  ) { }
 
   ngOnInit(): void {
+    this.user = this.userRepo.getUser();
   }
 
-  toggleModal(){
-    if(this.showModal){
-      this.showModal = false
-    }else{
-      this.showModal = true
-    }
+  toggleModal(value: boolean){
+    this.showModal = value
   }
 
 }

@@ -54,6 +54,17 @@ import { InvestmodalComponent } from './components/pages/projects/modal/investmo
 import { SuccessmodalComponent } from './components/pages/projects/modal/successmodal/successmodal.component';
 import { InsufficientmodalComponent } from './components/pages/projects/modal/insufficientmodal/insufficientmodal.component';
 import { SecondarybtntwoComponent } from './components/buttons/secondarybtntwo/secondarybtntwo.component';
+import { TransactiontableComponent } from './components/pages/wallet/transactiontable/transactiontable.component';
+import { DepositbankComponent } from './components/pages/wallet/depositbank/depositbank.component';
+import { InputComponent } from './components/pages/wallet/input/input.component';
+import { VerifywithdrawalComponent } from './components/pages/wallet/verifywithdrawal/verifywithdrawal.component';
+import { AddBankComponent } from './components/pages/wallet/add-bank/add-bank.component';
+import { AddCryptoComponent } from './components/pages/wallet/add-crypto/add-crypto.component';
+import { BellComponent } from './components/bell/bell.component';
+import { SecondarybtnthreeComponent } from './components/buttons/secondarybtnthree/secondarybtnthree.component';
+import { ProgressbarComponent } from './components/progressbar/progressbar.component';
+import { CircleprogressComponent } from './components/circleprogress/circleprogress.component';
+import { InvestedamountComponent } from './components/pages/investments/investedamount/investedamount.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -106,7 +117,18 @@ export function tokenGetter() {
     InvestmodalComponent,
     SuccessmodalComponent,
     InsufficientmodalComponent,
-    SecondarybtntwoComponent
+    SecondarybtntwoComponent,
+    TransactiontableComponent,
+    DepositbankComponent,
+    InputComponent,
+    VerifywithdrawalComponent,
+    AddBankComponent,
+    AddCryptoComponent,
+    BellComponent,
+    SecondarybtnthreeComponent,
+    ProgressbarComponent,
+    CircleprogressComponent,
+    InvestedamountComponent
   ],
   imports: [
     CommonModule,
@@ -176,7 +198,17 @@ export function tokenGetter() {
     InvestmodalComponent,
     SuccessmodalComponent,
     InsufficientmodalComponent,
-    SecondarybtntwoComponent
+    SecondarybtntwoComponent,
+    TransactiontableComponent,
+    DepositbankComponent,
+    InputComponent,
+    VerifywithdrawalComponent,
+    AddBankComponent,
+    AddCryptoComponent,
+    BellComponent,
+    ProgressbarComponent,
+    CircleprogressComponent,
+    InvestedamountComponent   
   ]
 })
 export class SharedModule { }

@@ -77,19 +77,11 @@
     
 }
 
-.card .card-content .progress{
-    background-color: var(--primary);
-    position: absolute;
-    top:0;
-    left:0;
-    width: 30%;
-    height: 100%;
-    
-}
+
 
 .progress-area {
     display: grid;
-    grid-template-columns: 150px auto;
+    grid-template-columns: 200px auto;
     align-items: center;
 }
 

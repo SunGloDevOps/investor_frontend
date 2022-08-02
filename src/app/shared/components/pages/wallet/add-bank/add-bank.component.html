@@ -1,0 +1,32 @@
+<form [formGroup]="addBankDetailsForm">
+<div class="container" >
+    <p>Account Number</p>
+    <input 
+        type="number" 
+        class="form-control" 
+        formControlName="account_no"
+    >
+    {{bank_name}}
+    <p>Bank Name</p>
+    <input 
+        type="text" 
+        class="form-control" 
+        formControlName="bank_name"
+    >
+
+    <p>Account Name</p>
+    <input 
+        type="text" 
+        class="form-control" 
+        formControlName="account_name"
+    >
+</div>
+<div class="footer">
+    <button 
+    (click)="addDetails()"
+    [disabled]="addBankDetailsForm.invalid"
+    >
+        Save Changes
+    </button>
+</div>
+</form>

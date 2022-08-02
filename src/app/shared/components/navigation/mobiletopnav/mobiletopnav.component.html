@@ -8,10 +8,13 @@
         <div class="menu-items">
             <span class="settings">
                 <span class="iconify" data-icon="cil:settings"  data-width="30" data-height="30"></span>
+                
             </span>
             
             <span (click)="toggleModal()">
-                <span class="iconify" data-icon="system-uicons:bell" style="color: black;" data-width="30" data-height="30"></span>
+                <span *ngIf="notificationStatus === false"  class="iconify" data-icon="codicon:bell" data-width="30" data-height="30"></span>
+    <span *ngIf="notificationStatus === true" class="iconify" data-icon="codicon:bell-dot" data-width="30" data-height="30"></span>
+                <span class=" dot" data-icon="ci:dot-05-xl"></span>
             </span>
         </div>
 

@@ -1,15 +1,13 @@
 <div class="row" id="welcomenav">
     <div class="col-12 d-flex flex-row justify-content-between align-items-center">
-        <div class="d-flex flex-column" *ngIf="showSalution">
-            <h2>Hello Joe,</h2>
-            <h5>Welcome back</h5>
+        <div class="d-flex flex-row align-items-center" *ngIf="showSalution">
+            <h2>Hello {{user.firstname}},</h2>
+         
         </div>
 
         <div>
             <div class="notification-wrapper">
-                <div class="notification" (click)="toggleModal()">
-                    <span class="iconify" data-icon="system-uicons:bell" data-width="30" data-height="30"></span>
-                </div>
+                <app-bell (toggleModal)="toggleModal($event)"></app-bell>
                 <app-notification
                     [showNotification]="showModal"
                 ></app-notification>

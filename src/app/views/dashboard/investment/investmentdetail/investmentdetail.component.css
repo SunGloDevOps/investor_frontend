@@ -22,3 +22,119 @@
     border-radius: 8px;
     margin-bottom: 32px;
 }
+
+.project-thumbnail{
+    border-radius: 6px;
+    width: 100%;
+    height: 395px;
+    border: 1px solid #000;
+}
+
+.project-title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: #0B0B0B;
+}
+
+.investment-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+}
+
+.progress-section {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.progress-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.progress-days {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+}
+
+.bordered-corner {
+    border: 0.5px solid rgba(0, 73, 204, 0.3);
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.desktop-only {
+    display: flex;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media screen and (max-width: 600px){
+
+    .investment-data {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .left, .right {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-thumbnail{
+        height: 195px;
+    }
+
+    .project-title {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .progress-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .progress-right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .progress-days {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mobile-only .project-title {
+
+    }
+}

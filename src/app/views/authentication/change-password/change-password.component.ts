@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import IChangepasswordRequest from 'src/app/models/Users/IChangepasswordRequest';
 import { AuthRepository } from 'src/app/repositories/auth/auth.service';
 import { UsersRepository } from 'src/app/repositories/users/users.service';
@@ -12,7 +12,9 @@ import { UsersRepository } from 'src/app/repositories/users/users.service';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  passwordMatch: boolean = false
+  passwordMatch: boolean = false;
+
+  passwordChanged: boolean = false;
 
   changepasswordForm = this.fb.group({
     password: ['', Validators.required],
@@ -21,8 +23,9 @@ export class ChangePasswordComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private userRepository: UsersRepository,
-    private router: Router
+    private userRepository: AuthRepository,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -35,13 +38,14 @@ export class ChangePasswordComponent implements OnInit {
     }
 
     const payload: IChangepasswordRequest = {
+      id: this.route.snapshot.params["id"],
       password: this.changepasswordForm.controls['password'].value,
     };
 
     (await this.userRepository.changePassword(payload)).subscribe(
       res => {
         if(res.status === 200) {
-          this.router.navigate(['/auth/login']);
+          this.passwordChanged = true
         }
 
         if(res.status === 500) {

@@ -28,7 +28,7 @@ const routes: Routes = [
         component: ForgotpasswordComponent
       },
       {
-        path: 'changepassword',
+        path: 'changepassword/:id',
         component: ChangePasswordComponent
       }
     ]

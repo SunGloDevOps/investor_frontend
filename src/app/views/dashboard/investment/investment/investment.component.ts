@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InvestmentService } from 'src/app/repositories/investment/investment.service';
+import { ProjectsService } from 'src/app/repositories/projects/projects.service';
 import { UsersRepository } from 'src/app/repositories/users/users.service';
 
 @Component({
@@ -9,25 +10,68 @@ import { UsersRepository } from 'src/app/repositories/users/users.service';
 })
 export class InvestmentComponent implements OnInit {
 
-  investments: any[] = []
+  investments: any[] = [];
+
+  user?: any;
+
+  money_invested: number = 0;
+
+  active_investment: number = 0;
+
+  completed_investment: number = 0;
 
   constructor(
     private investmentService: InvestmentService,
+    private projectService: ProjectsService,
     private userService: UsersRepository
   ) { }
 
   ngOnInit(): void {
+   
+    this.user =  this.userService.getUser()
+    this.getInvestments()
+
     
+
   }
 
   getInvestments(): void {
 
-    const user = this.userService.getUser()
-    const id: string = user.indexOf.toString()
-
-    this.investmentService.getInvestments(id).subscribe(
+    this.investmentService.getInvestments(this.user.id).subscribe(
       res => {
-        this.investments = res.data
+        this.investments = res.data;
+        this.investments.map((e)=>{ this.money_invested += e.capital})
+
+        const completed = this.investments.filter((e)=>{
+
+          var time_left = new Date().getTime() - e.end_date.getTime();
+
+          let days_left = time_left / (1000 * 60 * 60 * 24)
+
+          return days_left <= 0
+        })
+
+        this.completed_investment = completed.length
+
+        const active = this.investments.filter((e)=>{
+
+          var time_left = new Date().getTime() - e.end_date.getTime();
+
+          let days_left = time_left / (1000 * 60 * 60 * 24)
+
+          return days_left > 0
+        })
+
+        this.completed_investment = active.length
+
+      }
+    )
+  }
+
+  getProjects(id: string): void {
+    this.projectService.getProject(id).subscribe(
+      res => {
+        return res
       }
     )
   }

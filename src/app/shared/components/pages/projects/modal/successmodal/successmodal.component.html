@@ -1,20 +1,27 @@
 <div class="container">
     <img class="illustration" src="../../../../../../../assets/images/illustrations/wallet/invested.png" alt="success" >
 
-    <div class="label">Payment Successful</div>
+    <div class="label">{{text}}</div>
 
     <div class="buttons">
-        <app-secondarybtnone
-            [size3]="true"
-            label="View Projects"
-            (click)="viewProjects()"
-        >
-        </app-secondarybtnone>
-        <app-primarybtnone
-            [size3]="true"
-            label="Continue"
-            (click)="continue()"
-        >
-        </app-primarybtnone>
+        <span *ngIf="leftBtn !== undefined">
+            <app-secondarybtnone
+                
+                [size3]="true"
+                [label]=leftBtn
+                (click)="viewProjects()"
+            >
+            </app-secondarybtnone>
+        </span>
+
+        <span *ngIf="rightBtn !== undefined">
+            <app-primarybtnone
+                
+                [size3]="true"
+                [label]=rightBtn
+                (click)="continue()"
+            >
+            </app-primarybtnone>
+        </span>
     </div>
 </div>

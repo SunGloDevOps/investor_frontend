@@ -1,0 +1,52 @@
+<div>
+    <h5>0.0 USD</h5>
+    <p>0 NGN</p>
+</div>
+<div class="container">
+    <nav>
+        <span (click)="showWalletTab()" [class.active]="showWallet">Sunglo Wallet </span>
+        <span (click)="showCryptoTab()"  [class.active]="showCrypto">Crypto Wallet </span>
+    </nav>
+    <main style="position: relative; height: 100%">
+        <div class="section"  *ngIf="showWallet">
+            <h5>0.0 USD</h5>
+            <p>0 NGN</p>
+            <div style="width: 100%">
+                <app-input 
+                type="number"
+                [textCenter]="true"
+                placeholder="Enter withdrawal amount">
+                </app-input>
+            </div>
+            <div class="max">
+                <span >Max: 0 USD</span>
+            </div>
+            <div style="width: 100%">
+                <app-primarybtntwo 
+                (click)="showverifyWithdrawal()"
+                label="Continue" 
+                [fullwidth]="true"></app-primarybtntwo>
+            </div>
+        </div>
+        <div class="section" *ngIf=" showCrypto">
+            <h5>0.0 USD</h5>
+            <p>0 NGN</p>
+            <div style="width: 100%">
+                <app-input 
+                type="number"
+                [textCenter]="true"
+                placeholder="Enter withdrawal amount">
+                </app-input>
+            </div>
+            <div class="max">
+                <span >Max: 0 USD</span>
+            </div>
+            <div style="width: 100%">
+                <app-primarybtntwo 
+                (click)="showverifyWithdrawal()"
+                label="Continue" 
+                [fullwidth]="true"></app-primarybtntwo>
+            </div>
+        </div>
+    </main>
+</div>

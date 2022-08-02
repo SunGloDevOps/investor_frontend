@@ -11,6 +11,8 @@ import { IForgotpasswordRequest, IForgotpasswordResponse, ILoginRequest } from '
 import { ILoginResponse } from 'src/app/models/Auth/ILoginResponse';
 import { IRegisterResponse } from 'src/app/models/Auth/IRegisterResponse';
 import { IRegisterRequest } from 'src/app/models/Auth/IRegisterRequest';
+import IChangepasswordRequest from 'src/app/models/Users/IChangepasswordRequest';
+import IChangepasswordResponse from 'src/app/models/Users/IChangepasswordResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +50,10 @@ export class AuthRepository {
       
     )
 
+  }
+
+  changePassword(payload: IChangepasswordRequest): Observable<IChangepasswordResponse>{
+    return this.http.patch<IChangepasswordResponse>(`${this.api_url}/changepassword/${payload.id}`, payload).pipe()
   }
 
   logout(): void {

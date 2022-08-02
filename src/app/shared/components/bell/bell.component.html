@@ -1,0 +1,7 @@
+<div class="notification" (click)="toggle()">
+    <span class="notification-icon" >
+    
+    <span *ngIf="notificationStatus === false"  class="iconify" data-icon="codicon:bell" data-width="30" data-height="30"></span>
+    <span *ngIf="notificationStatus === true" class="iconify" data-icon="codicon:bell-dot" data-width="30" data-height="30"></span>
+    </span>
+</div>

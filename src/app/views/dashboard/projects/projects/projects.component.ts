@@ -14,6 +14,10 @@ export class ProjectsComponent implements OnInit {
 
   projects: IProjects[] = [];
 
+  nowAvailable: boolean = true;
+
+  nowGenerating: boolean = false;
+
   constructor(
     private projectService: ProjectsService,
     private userService: UsersRepository
@@ -37,6 +41,20 @@ export class ProjectsComponent implements OnInit {
       }
 
     )
+  }
+
+  viewNowAvailable(){
+  
+    this.nowAvailable = true;
+    this.nowGenerating = false
+    
+  }
+
+  viewNowGenerating(){
+  
+    this.nowAvailable = false;
+    this.nowGenerating = true
+    
   }
 
 }

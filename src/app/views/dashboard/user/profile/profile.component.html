@@ -3,6 +3,9 @@
 
 
 <p *ngIf="isUpdated">Profile Update</p>
+<div *ngFor="let country of countries">
+    {{countries}}
+</div>
 <form [formGroup]="profileForm">
 <div class="pt-3" id="profileform">
     <div class="two-column-desktop">

@@ -16,11 +16,11 @@ export class InvestmentService {
     return this.http.get(`${this.api_url}/${id}`).pipe();
   }
 
-  invest(payload: any): Observable<any> {
-    return this.http.post(`${this.api_url}`, payload)
+  invest(id: string, payload: any): Observable<any> {
+    return this.http.post(`${this.api_url}/updatePortfolio/${id}`, payload)
   }
 
   viewInvestment(id: string): Observable<any> {
-    return this.http.get(`${this.api_url}/${id}`).pipe()
+    return this.http.get(`${this.api_url}/projects/${id}`).pipe()
   }
 }

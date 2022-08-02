@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,12 @@ import { Router } from '@angular/router';
 })
 export class SuccessmodalComponent implements OnInit {
 
+  @Input() leftBtn?: string;
+  @Input() rightBtn?: string;
+  @Input() text?: string;
+  @Input() leftRoute: any[] = [];
+  @Input() rightRoute: any[] = []
+
   constructor(
     private router: Router
   ) { }
@@ -16,11 +22,11 @@ export class SuccessmodalComponent implements OnInit {
   }
 
   viewProjects(){
-    this.router.navigate(['/projects/home'])
+    this.router.navigate(this.leftRoute)
   }
 
   continue(){
-    this.router.navigate(['/investments','hgj'])
+    this.router.navigate(this.rightRoute)
   }
 
 }

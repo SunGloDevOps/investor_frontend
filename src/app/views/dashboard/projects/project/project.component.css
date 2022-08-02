@@ -50,11 +50,15 @@
 }
 
 .information-cards .btn-primary-outline {
-    padding: 12px 19px !important;
+    padding: 8px 60px!important;
     width: fit-content!important;
     font-weight: 500!important;
-    font-size: 12px!important;
+    font-size: 14px;
     line-height: 14px;
+}
+
+.information-cards .btn-primary-outline img{
+    transform: rotate(-90deg);
 }
 
 .information-cards .btn-black {
@@ -175,7 +179,6 @@
         grid-template-columns: repeat(3, 1fr)!important;
         gap: var(--S1)!important;
         max-width: 100%!important;
-        
     }
 
     #information-cards div {
@@ -190,6 +193,12 @@
         display: none !important;
     }
 
- 
+    .information-cards .btn-primary-outline {
+        padding: 13px 65px !important;
+        width: fit-content!important;
+        font-weight: 500!important;
+        font-size: 14px!important;
+        line-height: 14px;
+    }
 
 }

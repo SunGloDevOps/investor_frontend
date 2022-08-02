@@ -40,19 +40,19 @@ export class ProfileComponent implements OnInit {
 
     //get user id from token
     this.user = this.userService.getUser()
-
-    this.getCountry()
     
     if(this.user !== null){
       this.getUserDetails(this.user.id);
     }
+
+    this.getCountry()
     
   }
 
   getCountry(){
     this.locationService.getCountries().subscribe(
       res => {
-        this.countries = res
+        console.log(res)
       }
     )
   }

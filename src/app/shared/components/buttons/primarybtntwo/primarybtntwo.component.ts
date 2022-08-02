@@ -21,6 +21,8 @@ export class PrimarybtntwoComponent implements OnInit {
 
   @Input() size4?: boolean;
 
+  @Input() disabled?: boolean;
+
   constructor() { }
 
   ngOnInit(): void {

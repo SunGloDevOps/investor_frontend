@@ -11,6 +11,8 @@ import { AuthRepository } from 'src/app/repositories/auth/auth.service';
 })
 export class ForgotpasswordComponent implements OnInit {
 
+  emailExist: boolean = false;
+
   forgotpasswordForm = this.fb.group({
     email: ['', Validators.required],
   })
@@ -32,15 +34,17 @@ export class ForgotpasswordComponent implements OnInit {
     (await this.authRepository.forgotpassword(payload)).subscribe(
       res => {
         if(res.status === 200) {
-          this.router.navigate(['/auth/changepassword']);
+          this.router.navigate(['/auth/changepassword', res.data._id]);
         }
 
         if(res.status === 500) {
 
         }
 
-        if(res.status === 401){
+        if(res.status === 404){
           // when user already exists
+
+          this.emailExist = true
         }
       }
     )

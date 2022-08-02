@@ -1,0 +1,42 @@
+.inner {
+    background: #FFFFFF;
+    box-shadow: 0px 6px 10px rgba(51, 57, 116, 0.3);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.mid {
+    background: rgba(244, 247, 254, 0.87);
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.outer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 152px;
+    height: 152px;
+    background-color:#CDE1EB;
+    position: relative;
+}
+
+.progress {
+    z-index: 2;
+    border-radius: 50%;
+    background-color: red;
+}
+
+@media screen and (max-width: 600px){
+    .outer {
+        align-self: center;
+    }
+}

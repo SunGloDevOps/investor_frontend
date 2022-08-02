@@ -8,6 +8,14 @@
     line-height: 24px;
 }
 
+.fitcontent {
+    width: fit-content!important;
+}
+
+.parent {
+    width: 100% !important
+}
+
 .px1 {
     padding-left: 122px;
     padding-right: 122px;

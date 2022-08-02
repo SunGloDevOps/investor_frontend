@@ -28,7 +28,9 @@
             <div id="footer">  
                     <app-secondarybtntwo
                         label="Fund"
-                        [size4]="true">
+                        [size4]="true"
+                        (click)="openDepositModal()"
+                        >
                     </app-secondarybtntwo>
             </div>
     
@@ -56,7 +58,7 @@
             
     
             <div  id="footer">
-                <app-primarybtntwo [size4]="true" label="Fund Wallet" (click)="openDepositModal()"></app-primarybtntwo>
+                <app-primarybtntwo [size4]="true" label="Fund" ></app-primarybtntwo>
                 
             </div>
     
@@ -86,6 +88,7 @@
         
         <div  id="footer">
             <app-secondarybtntwo
+                (click)="openDepositModal()"
                         label="Withdraw"
                         [size4]="true">
             </app-secondarybtntwo>
@@ -95,6 +98,7 @@
     
 </div>
 
+<!-- Bank account -->
 <div class="row mt-4">
     <div class="col-12">
         <h5> My Withdrawal Account </h5>
@@ -127,14 +131,18 @@
 
         <div class="row mt-3">
             <div class="col-lg-6">
-                <a href="#" *ngIf="account_no === undefined" class="btn btn-black-outline">Add Account</a>
-                <a href="#" *ngIf="account_no !== undefined" class="btn btn-black-outline">Edit Account</a>
+                <button 
+                    (click)="openaddBankModal()"
+                    *ngIf="account_no === undefined" 
+                    class="btn btn-black-outline">Add Account</button>
+                <button (click)="openaddBankModal()" *ngIf="account_no !== undefined" class="btn btn-black-outline">Edit Account</button>
             </div>
         </div>
 
     </div>
 </div>
 
+<!-- Crypto address -->
 <div class="row mt-4">
     <div class="col-12">
         <h5> Crypto Receiving Address </h5>
@@ -163,26 +171,24 @@
 
         <div class="row mt-3">
             <div class="col-lg-6">
-                <a href="#" *ngIf="crypto_address === undefined" class="btn btn-black-outline">Add Crypto Address</a>
-                <a href="#" *ngIf="crypto_address !== undefined" class="btn btn-black-outline">Edit Crypto Address</a>
+                <button (click)="openaddCryptoModal()" *ngIf="crypto_address === undefined" class="btn btn-black-outline">Add Crypto Address</button>
+                <button (click)="openaddCryptoModal()"  *ngIf="crypto_address !== undefined" class="btn btn-black-outline">Edit Crypto Address</button>
             </div>
         </div>
 
     </div>
 </div>
 
+<!-- Transaction history-->
 <div class="row" id="transaction">
-    <div class="col-12">
-        <div class="row">
-            <div class="col-12 d-flex flex-row justify-content-between align-items-center ">
-                <p>Transaction History</p>
+    <div class="transaction-header">
+        <p>Transaction History</p>
 
-                <div class="transaction-date">
-                    Jan / 2022
-                </div>
-            </div>
+        <div class="transaction-date">
+            Jan / 2022
         </div>
     </div>
+
     <div class="mobile-transaction-date">
         <div>
 
@@ -193,29 +199,57 @@
         </div>
     </div>
 
-    <div class="transaction-details">
-
+    <div class="col-12 transaction-details">
+        <!-- <app-transactiontable></app-transactiontable> -->
+        <app-empty
+            label="No transaction yet"
+            image="../../../../../assets/images/illustrations/empty.png"
+        ></app-empty>
     </div>
 </div>
 
-<!-- Deposit Modal-->
+<!-- Withdraw from wallet Modal-->
 <app-modalcontainer [show]="showdepositModal">
-    <app-modalcard (close)="closeDepositModal($event)">
-        <div>
-            <h5>0.0 USD</h5>
-            <p>0 NGN</p>
-        </div>
-        <div class="deposit-content">
-            <div class="deposit-amount">
-                <h5>0.0 USD</h5>
-                <p>0 NGN</p>
-            </div>
-            <div>
-                <form>
-                    <input type="text" class="form-controls" placeholder="Enter deposit amount"/>
-                    <button type="submit" class="btn btn-primary">Continue</button>
-                </form>
-            </div>
-        </div>
+    <app-modalcard [size1]="true"  title="Sunglo Withdrawal" (close)="closeDepositModal($event)">
+        <app-withdrawal
+            (verifyWithdrawal)="verifyWithdrawal()"
+        ></app-withdrawal>
     </app-modalcard>
+</app-modalcontainer>
+
+<!-- verify withdrawal -->
+<app-modalcontainer [show]="showverifyWithdrawalModal">
+    <app-modalcard [size1]="true"  title="Sunglo Withdrawal" (close)="closeDepositModal($event)">
+       <app-verifywithdrawal
+        (verifyWithdrawal)="withdraw($event)"
+       ></app-verifywithdrawal>
+    </app-modalcard>
+</app-modalcontainer>
+
+<!-- add bank details -->
+<app-modalcontainer [show]="showaddBankModal">
+    <app-modalcard [size1]="true"  title="Add Bank Details" (close)="closeaddBankModal($event)">
+        <app-add-bank 
+        [bank_name]= "account_bank"
+        [account_name]= "account_name"
+        [account_no]= "account_no"
+        (addBankaddress)="addBank($event)"></app-add-bank>
+    </app-modalcard>
+</app-modalcontainer>
+
+<!-- add crypto details -->
+<app-modalcontainer [show]="showaddCryptoModal">
+    <app-modalcard [size1]="true"  title="Add Crypto Address" (close)="closeaddCryptoModal($event)">
+        <app-add-crypto (addCryptoaddress)="addCrypto($event)" [address]="crypto_address"></app-add-crypto>
+    </app-modalcard>
+</app-modalcontainer>
+
+<!-- Successful transaction -->
+<app-modalcontainer [position]="true"  [show]="showSuccessModal">
+    <app-modalcard [position]="true" (close)="closeSuccessModal($event)"> 
+    <app-successmodal
+        [text]="successText"
+    >
+    </app-successmodal>
+</app-modalcard>
 </app-modalcontainer>

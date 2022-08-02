@@ -16,7 +16,11 @@ export class RegisterComponent implements OnInit {
 
   accountExist: boolean = false;
 
-  passwordMatch: boolean = false
+  phoneExist: boolean = false;
+
+  passwordMatch: boolean = false;
+
+  accountCreated: boolean = false;
 
   registerForm = this.fb.group({
     firstname: ['', Validators.required],
@@ -57,7 +61,7 @@ export class RegisterComponent implements OnInit {
     (await this.authRepository.register(payload)).subscribe(
       res => {
         if(res.status === 200) {
-          this.router.navigate(['/auth/login']);
+          this.accountCreated = true
         }
 
         if(res.status === 500) {
@@ -67,6 +71,10 @@ export class RegisterComponent implements OnInit {
         if(res.status === 401){
           // when user already exists
           this.accountExist = true;
+        }
+
+        if(res.status == 402){
+          this.phoneExist = true
         }
       }
     )
