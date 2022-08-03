@@ -9,8 +9,8 @@
             <button class="btn" [class.btnActive]="nowGenerating" (click)="viewNowGenerating()">Now Generating</button>
         </div>
     </div>
-    <div *ngIf="nowAvailable">
-        <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0">
+
+        <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0 && nowAvailable">
             <div *ngFor="let project of projects">
                 <app-projectcard 
                     [id]="project._id"
@@ -20,15 +20,14 @@
                 ></app-projectcard>
             </div>        
         </div>
-        <div *ngIf="projects.length === 0">
+        <div *ngIf="projects.length === 0 && nowAvailable">
             <app-empty
                 label="No Project has been added yet"
                 image="../../../../../assets/images/illustrations/empty.png"
             ></app-empty>
         </div>
-    </div>
-    <div *ngIf="nowGenerating">
-        <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0">
+ 
+        <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0 && nowGenerating">
             <div *ngFor="let project of projects">
                 <app-projectcard 
                     [id]="project._id"
@@ -38,11 +37,10 @@
                 ></app-projectcard>
             </div>        
         </div>
-        <div *ngIf="projects.length === 0">
+        <div *ngIf="projects.length === 0 && nowGenerating">
             <app-empty
                 label="No Project has been added yet"
                 image="../../../../../assets/images/illustrations/empty.png"
             ></app-empty>
         </div>
-    </div>
 </div>

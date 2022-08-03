@@ -22,6 +22,10 @@ export class ProjectcardComponent implements OnInit {
 
   value?: string;
 
+  shareLink: string = `products/${this.title}`;
+
+  showShareModal: boolean = false;
+
   constructor(
     private router: Router
   ) { }
@@ -32,6 +36,14 @@ export class ProjectcardComponent implements OnInit {
 
   viewDetail(): void {
     this.router.navigate(['/projects/', this.id])
+  }
+
+  closeShareModal(data: boolean): void {
+    this.showShareModal = data
+  }
+
+  openShareModal(): void {
+    this.showShareModal = true
   }
 
 }

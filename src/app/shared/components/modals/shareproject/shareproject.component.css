@@ -1,0 +1,39 @@
+.label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #0B0B0B;
+    margin-bottom: 28px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+input[type=text] {
+    background: #F9F9F9;
+    border: 1px solid rgba(11, 11, 11, 0.25);
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(11, 11, 11, 0.6);
+}
+
+button {
+    background: #0B0B0B;
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+}
+
+@media screen and (max-width: 900px) {
+    .label {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

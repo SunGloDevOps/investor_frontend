@@ -24,7 +24,7 @@
 
             <div class="product-button" id="calltoaction">
                 
-                    <div class="btn btn-black-share">
+                    <div class="btn btn-black-share" (click)="openShareModal()">
                         <img src="../../../../assets/images/icons/download.png">
                     </div>
                 
@@ -39,3 +39,10 @@
     
 
 </div>
+
+<!-- insufficient funds -->
+<app-modalcontainer [position]="true" [show]="showShareModal">
+    <app-modalcard [position]="true" (close)="closeShareModal($event)">
+       <app-shareproject></app-shareproject>
+    </app-modalcard>
+</app-modalcontainer>

@@ -18,6 +18,8 @@ export class ProjectsComponent implements OnInit {
 
   nowGenerating: boolean = false;
 
+  showInsufficientModal: boolean = false;
+
   constructor(
     private projectService: ProjectsService,
     private userService: UsersRepository
@@ -56,5 +58,7 @@ export class ProjectsComponent implements OnInit {
     this.nowGenerating = true
     
   }
+
+
 
 }

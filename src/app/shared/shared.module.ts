@@ -65,6 +65,7 @@ import { SecondarybtnthreeComponent } from './components/buttons/secondarybtnthr
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 import { CircleprogressComponent } from './components/circleprogress/circleprogress.component';
 import { InvestedamountComponent } from './components/pages/investments/investedamount/investedamount.component';
+import { ShareprojectComponent } from './components/modals/shareproject/shareproject.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -128,7 +129,8 @@ export function tokenGetter() {
     SecondarybtnthreeComponent,
     ProgressbarComponent,
     CircleprogressComponent,
-    InvestedamountComponent
+    InvestedamountComponent,
+    ShareprojectComponent
   ],
   imports: [
     CommonModule,
@@ -208,7 +210,8 @@ export function tokenGetter() {
     BellComponent,
     ProgressbarComponent,
     CircleprogressComponent,
-    InvestedamountComponent   
+    InvestedamountComponent,
+    ShareprojectComponent   
   ]
 })
 export class SharedModule { }
