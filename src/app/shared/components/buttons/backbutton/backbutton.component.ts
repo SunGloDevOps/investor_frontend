@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
 export class BackbuttonComponent implements OnInit {
 
   constructor(
-    private _location: Router
+    private _location: Location
   ) { }
 
   ngOnInit(): void {
   }
 
   backClicked() {
-    this._location.navigate(["../"]);
+    this._location.back();
   }
 
 }

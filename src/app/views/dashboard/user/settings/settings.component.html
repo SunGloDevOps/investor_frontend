@@ -4,11 +4,6 @@
     <div id="documentation">
         <h2>Documentation</h2>
         <div class="container">
-            <app-verificationcard >
-                <h5>KYC Verification</h5>
-                <p>Verify your identity with your BVN number</p>
-                <app-verify (click)="verifyBVN()" label="Verify BVN" verifiedlabel="BVN verified" [isVerified]="isBVNVerified ? isBVNVerified : false"></app-verify>
-            </app-verificationcard>
             <app-verificationcard>
                 <h5>Phone Number Verification</h5>
                 <p *ngIf="!isPhoneVerified">Generate OTP Code by clicking on verify phone number</p>
@@ -39,7 +34,7 @@
                     >
                         <div class="padding">
                             <h5>Next of kin</h5>
-                            <div id="nextkin-container" class="container">
+                            <div id="nextkin-container" class="container padding">
                             <div>
                                 <input class="form-field" type="text" placeholder="Full name">
                             </div>
@@ -63,7 +58,7 @@
                         [fullwidth]="true"
                     >
                         <div class="padding">
-                            <p>Change password</p>
+                            <h5>Change password</h5>
                             <div class="changepassword-container">
                                 <input type="text" placeholder="Enter current password">
                                 <input type="text" placeholder="Enter new password">
