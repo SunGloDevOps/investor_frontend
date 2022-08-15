@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-shareproject',
@@ -7,11 +9,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShareprojectComponent implements OnInit {
 
-  @Input() shareLink: string = ""
+  @Input() shareLink?: string;
 
-  constructor() { }
+  linkForm = this.fb.group({
+    link: [' ']
+  })
+
+  constructor(
+    private fb: FormBuilder,
+    private clipboardApi: ClipboardService
+  ) { }
 
   ngOnInit(): void {
+    this.linkForm.controls['link'].setValue({
+      link: this.shareLink
+    })
+  }
+
+  copyText() {
+    this.clipboardApi.copyFromContent(this.linkForm.controls['link'].value)
   }
 
 }

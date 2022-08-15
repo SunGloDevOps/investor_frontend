@@ -2,7 +2,7 @@
     Share projects with friends and family
 </div>
 
-<div class="container">
-    <input type="text" [value]="shareLink"/>
-    <button>Copy</button>
+<div class="container" [formGroup]="linkForm">
+    <input type="text" formControlName="link" [disabled]=true/>
+    <button (click)="copyText()">Copy</button>
 </div>

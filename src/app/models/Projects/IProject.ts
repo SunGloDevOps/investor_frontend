@@ -21,7 +21,7 @@ import { IResponse } from "../IResponse";
   }
 
   export interface IProject extends IProjects {
-    sold_cell: string,
+    sold_cell: number,
     ROI: string,
     carbon_reduced: number,
     energy_yeild: number,

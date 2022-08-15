@@ -14,6 +14,8 @@ export class ProjectsComponent implements OnInit {
 
   projects: IProjects[] = [];
 
+  activeProjects: IProjects[] = [];
+
   nowAvailable: boolean = true;
 
   nowGenerating: boolean = false;
@@ -36,7 +38,17 @@ export class ProjectsComponent implements OnInit {
         
         if(res.status === 200) {
             
-          this.projects = res.data
+          res.data.map((projects: any) => {
+          
+            if(projects.availability === "Now Available"){
+                this.projects.push(projects)
+            }
+
+            if(projects.availability !== "Now Available"){
+              this.activeProjects.push(projects)
+            }
+
+          })
     
             
         }

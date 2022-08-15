@@ -28,7 +28,7 @@
         </div>
  
         <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0 && nowGenerating">
-            <div *ngFor="let project of projects">
+            <div *ngFor="let project of activeProjects">
                 <app-projectcard 
                     [id]="project._id"
                     title={{project.title}}
@@ -37,7 +37,7 @@
                 ></app-projectcard>
             </div>        
         </div>
-        <div *ngIf="projects.length === 0 && nowGenerating">
+        <div *ngIf="activeProjects.length === 0 && nowGenerating">
             <app-empty
                 label="No Project has been added yet"
                 image="../../../../../assets/images/illustrations/empty.png"

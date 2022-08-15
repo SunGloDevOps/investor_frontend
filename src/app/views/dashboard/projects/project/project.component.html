@@ -41,7 +41,7 @@
                 <div class="counter-container">
                     <small>Enter number of cells to invest</small>
                     <app-counter
-                        [total_cells]=10
+                        [total_cells]=available_cells
                         (number)="getpurchasedCells($event)"
                     ></app-counter>
                 </div>

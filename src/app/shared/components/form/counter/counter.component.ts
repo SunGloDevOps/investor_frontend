@@ -34,7 +34,7 @@ export class CounterComponent implements OnInit {
   }
 
   increase(){
-    if(this.digit !== this.total_cells){
+    if(this.digit < (this.total_cells ? this.total_cells : 6)){
       
       this.digit++
       this.purchasedCells(this.digit)

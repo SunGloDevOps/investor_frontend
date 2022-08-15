@@ -13,7 +13,7 @@ import { UsersRepository } from 'src/app/repositories/users/users.service';
 export class ProjectComponent implements OnInit {
 
   project: IProject = {
-    sold_cell: '',
+    sold_cell: 0,
     ROI: '',
     carbon_reduced: 0,
     energy_yeild: 0,
@@ -28,6 +28,9 @@ export class ProjectComponent implements OnInit {
     cost_per_cell: '',
     thumbnail: ''
   };
+
+  //number of avaible cells to  buy
+  available_cells?: number;
 
   projectsoldpercentage: number = 0;
 
@@ -52,7 +55,6 @@ export class ProjectComponent implements OnInit {
     private userRepository: UsersRepository,
     private investment: InvestmentService,
     private route: ActivatedRoute,
-    private router: Router,
     private scroller: ViewportScroller,
   ) { }
 
@@ -60,6 +62,8 @@ export class ProjectComponent implements OnInit {
     this.getProjectData()
 
     this.user = this.userRepository.getUser()
+
+    this.available_cells = this.project.total_cell - this.project.sold_cell
   }
 
   //get all project data from server

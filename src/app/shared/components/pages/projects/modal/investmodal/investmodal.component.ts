@@ -44,7 +44,7 @@ export class InvestmodalComponent implements OnInit {
         this.bank_balance = res.data.wallet.bank_balance;
         this.crypto_balance = res.data.wallet.crypto_balance;
         console.log(this.bank_balance)
-
+        console.log(this.crypto_balance)
       }
     )
   }

@@ -22,7 +22,7 @@ export class ProjectcardComponent implements OnInit {
 
   value?: string;
 
-  shareLink: string = `products/${this.title}`;
+  shareLink?: string;
 
   showShareModal: boolean = false;
 
@@ -32,6 +32,7 @@ export class ProjectcardComponent implements OnInit {
 
   ngOnInit(): void {
     this.value = "~ USD " + this.cost ;
+    this.shareLink = `https://sunglo.io/products/${this.title}`
   }
 
   viewDetail(): void {
