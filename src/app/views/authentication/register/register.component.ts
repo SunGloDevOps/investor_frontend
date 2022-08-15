@@ -22,6 +22,9 @@ export class RegisterComponent implements OnInit {
 
   accountCreated: boolean = false;
 
+  //checking if the request is loading
+  isLoading: boolean = false;
+
   registerForm = this.fb.group({
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
@@ -42,11 +45,13 @@ export class RegisterComponent implements OnInit {
   }
 
   async register(): Promise<void> {
-    
+    this.isLoading = true;
+    this.accountExist = false;
+    this.passwordMatch = false;
     if(this.registerForm.controls['password'].value !== this.registerForm.controls['password2'].value){
       this.passwordMatch = true;
-      return
-    }
+      this.isLoading = false;
+    }else{
 
    
     const payload: IRegisterRequest = {
@@ -61,24 +66,28 @@ export class RegisterComponent implements OnInit {
     (await this.authRepository.register(payload)).subscribe(
       res => {
         if(res.status === 200) {
-          this.accountCreated = true
+          this.accountCreated = true;
+          this.isLoading = false;
         }
 
         if(res.status === 500) {
-
+          this.isLoading = false
         }
 
         if(res.status === 401){
           // when user already exists
           this.accountExist = true;
+          this.isLoading = false
         }
 
         if(res.status == 402){
+          //phone number already exist
           this.phoneExist = true
+          this.isLoading = false
         }
       }
     )
-    
+    }
   }
 
 }

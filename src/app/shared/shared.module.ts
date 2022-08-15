@@ -67,6 +67,8 @@ import { CircleprogressComponent } from './components/circleprogress/circleprogr
 import { InvestedamountComponent } from './components/pages/investments/investedamount/investedamount.component';
 import { ShareprojectComponent } from './components/modals/shareproject/shareproject.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import {CaptchaModule} from 'primeng/captcha';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -140,6 +142,8 @@ export function tokenGetter() {
     ButtonModule,
     HttpClientModule,
     ClipboardModule,
+    CaptchaModule,
+    ProgressSpinnerModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -214,7 +218,9 @@ export function tokenGetter() {
     CircleprogressComponent,
     InvestedamountComponent,
     ShareprojectComponent,
-    ClipboardModule 
+    ClipboardModule,
+    CaptchaModule,
+    ProgressSpinnerModule
   ]
 })
 export class SharedModule { }

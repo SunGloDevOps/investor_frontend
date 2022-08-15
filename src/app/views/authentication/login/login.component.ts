@@ -15,10 +15,16 @@ export class LoginComponent implements OnInit {
 
   inValidDetails: boolean = false;
 
+  //returns true when user takes recaptcha test
+  notRobot: boolean = false;
+
+  //handles api reuest status
+  isLoading: boolean = false
+
   loginForm = this.fb.group({
     email: [ ' ', Validators.required ],
     password: [ ' ', Validators.required ],
-  })
+  });
 
   constructor(
     private router: Router,
@@ -32,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
    async login(): Promise<void>{
-
+    this.isLoading = true;
     const email: string = this.loginForm.controls['email'].value;
     const password: string = this.loginForm.controls['password'].value;
 
@@ -46,7 +52,8 @@ export class LoginComponent implements OnInit {
       (data: ILoginResponse) =>{
        
         if(data.status === 401 || data.status === 500){
-          this.inValidDetails = true
+          this.inValidDetails = true;
+          this.isLoading = false;
         }
   
         if(data.status === 200){
@@ -62,14 +69,24 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/dashboard'])
           
         }
+        else{
+
+        }
       },
       error => {
         console.log(error)
+      },
+      () => {
+        this.isLoading = false
       }
     )
 
 
     
+  }
+
+  showResponse() {
+    this.notRobot = true
   }
 
 }

@@ -15,6 +15,8 @@ export class ChangePasswordComponent implements OnInit {
   passwordMatch: boolean = false;
 
   passwordChanged: boolean = false;
+  
+  isLoading: boolean = false;
 
   changepasswordForm = this.fb.group({
     password: ['', Validators.required],
@@ -32,8 +34,12 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   async changePassword(): Promise<void> {
+
+    this.isLoading = true;
+
     if(this.changepasswordForm.controls['password'].value !== this.changepasswordForm.controls['password2'].value){
       this.passwordMatch = true;
+      this.isLoading = false;
       return
     }
 
@@ -49,7 +55,7 @@ export class ChangePasswordComponent implements OnInit {
         }
 
         if(res.status === 500) {
-
+          this.isLoading = false
         }
       }
     )

@@ -3,10 +3,19 @@
     [class.px1]=size1
     [class.px2]=size2
     [class.px3]=size3
-    
     [class.fitcontent] = !fullwidth
-
+    [disabled]=disabled
     [class.parent] = fullwidth
 >
-{{label}}
+<span *ngIf="!notLoading">
+    {{label}} 
+</span>
+
+<p-progressSpinner
+[style]="{width: '15px', height: '15px'}" 
+styleClass="custom-spinner" 
+strokeWidth="8" 
+animationDuration=".5s"
+[class.loading]=!notLoading
+></p-progressSpinner>
 </button>

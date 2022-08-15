@@ -21,14 +21,9 @@
 
                 <p>Invest today - Enjoy tomorrow with Sunglo</p>
 
-                <p *ngIf="accountCreated">Account created <a routerLink="/auth/login">Sign In</a></p>
+                <p class="red" *ngIf="accountCreated">Account created <a routerLink="/auth/login">Sign In</a></p>
 
-                <p *ngIf="accountExist">User account already exist</p>
-
-                <p *ngIf="phoneExist">Phone Number already exist</p>
-
-                <p *ngIf="passwordMatch">Password not matching</p>
-
+               
                 <form method="post" [formGroup]="registerForm">
 
                     <div class="auth-form-border">
@@ -57,6 +52,7 @@
                         <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
                     </div>
                     </div>
+                    <small class="red" *ngIf="accountExist">User account already exist</small>
 
                     <div class="auth-form-border">
                     <div class="input-group">
@@ -66,6 +62,7 @@
                         <input type="number" class="form-control" placeholder="Phone Number" formControlName="phone" required>
                     </div>
                     </div>
+                    <small class="red" *ngIf="phoneExist">Phone Number already exist</small>
 
                     <div class="auth-form-border">
                     <div class="input-group">
@@ -75,6 +72,7 @@
                         <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
                     </div>
                     </div>
+                    <small class="red" *ngIf="passwordMatch">Passwords don't match</small>
 
                     <div class="auth-form-border">
                     <div class="input-group">
@@ -88,8 +86,14 @@
                     <div class="mt-3"></div>
 
                     <div>
-                        <input class="w-100 btn btn-primary" type="submit"  [disabled]="registerForm.invalid" (click)="register()" value="Sign Up">
-                        
+                        <app-primarybtnone
+                            label="Sign Up"
+                            [fullwidth]=true  
+                            [disabled]="registerForm.invalid"
+                            (click)="register()"
+                            [notLoading]=isLoading
+                        >
+                        </app-primarybtnone>
                     </div>
 
 

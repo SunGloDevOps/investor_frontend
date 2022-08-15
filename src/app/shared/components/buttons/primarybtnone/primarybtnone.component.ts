@@ -20,6 +20,10 @@ export class PrimarybtnoneComponent implements OnInit {
 
   @Input() size3?: boolean;
 
+  @Input() disabled?: boolean;
+
+  @Input() notLoading: boolean = false
+
   constructor() {
  
   }

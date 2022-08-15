@@ -175,6 +175,18 @@ input {
     padding: var(--s1) var(--s2)!important;
 }
 
+input:focus, input:active{
+    outline: none!important;
+    appearance: none !important;
+    box-shadow: none !important;
+    border: none!important;
+}
+
+.red {
+    color: red;
+    font-size: 14px!important;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

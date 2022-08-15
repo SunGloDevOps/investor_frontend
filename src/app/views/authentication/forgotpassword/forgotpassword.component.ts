@@ -13,6 +13,9 @@ export class ForgotpasswordComponent implements OnInit {
 
   emailExist: boolean = false;
 
+  //checking if request is loading
+  isLoading: boolean = false;
+
   forgotpasswordForm = this.fb.group({
     email: ['', Validators.required],
   })
@@ -27,6 +30,8 @@ export class ForgotpasswordComponent implements OnInit {
   }
 
   async submit(){
+    this.isLoading = true;
+
     const payload: IForgotpasswordRequest = {
       email: this.forgotpasswordForm.controls['email'].value,
     };
@@ -38,13 +43,13 @@ export class ForgotpasswordComponent implements OnInit {
         }
 
         if(res.status === 500) {
-
+          this.isLoading = false
         }
 
         if(res.status === 404){
           // when user already exists
-
-          this.emailExist = true
+          this.emailExist = true;
+          this.isLoading = false
         }
       }
     )
