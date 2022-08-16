@@ -32,7 +32,7 @@
 
                 <small *ngIf="inValidDetails" class="red">Email/Password is incorrect</small>
 
-                <form [formGroup]="loginForm">
+                <form [formGroup]="loginForm" autocomplete="off">
 
                     <div class="auth-form-border">
                         <div class="input-group">

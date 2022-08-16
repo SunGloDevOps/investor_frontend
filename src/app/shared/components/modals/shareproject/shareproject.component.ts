@@ -21,13 +21,19 @@ export class ShareprojectComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.linkForm.controls['link'].setValue({
-      link: this.shareLink
-    })
+    this.clipboardApi.copyResponse$.subscribe(re => {
+      if (re.isSuccess) {
+          alert('copy success!');
+      }
+  });
   }
 
-  copyText() {
-    this.clipboardApi.copyFromContent(this.linkForm.controls['link'].value)
+  callServiceToCopy() {
+    this.clipboardApi.copy('This is copy thru service copyFromContent directly');
+  }
+
+  onCopyFailure() {
+      alert('copy fail!');
   }
 
 }

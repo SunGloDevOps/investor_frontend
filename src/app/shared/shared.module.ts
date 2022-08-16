@@ -69,6 +69,7 @@ import { ShareprojectComponent } from './components/modals/shareproject/sharepro
 import { ClipboardModule } from 'ngx-clipboard';
 import {CaptchaModule} from 'primeng/captcha';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {SkeletonModule} from 'primeng/skeleton';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -144,6 +145,7 @@ export function tokenGetter() {
     ClipboardModule,
     CaptchaModule,
     ProgressSpinnerModule,
+    SkeletonModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -220,7 +222,8 @@ export function tokenGetter() {
     ShareprojectComponent,
     ClipboardModule,
     CaptchaModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    SkeletonModule,
   ]
 })
 export class SharedModule { }

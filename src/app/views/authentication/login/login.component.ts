@@ -35,6 +35,10 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.loginForm.setValue({
+      email: '',
+      password: ''
+    })
   }
 
    async login(): Promise<void>{

@@ -180,6 +180,7 @@ input:focus, input:active{
     appearance: none !important;
     box-shadow: none !important;
     border: none!important;
+    background-color: #fff;
 }
 
 .red {

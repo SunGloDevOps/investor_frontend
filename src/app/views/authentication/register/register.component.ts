@@ -41,7 +41,14 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    this.registerForm.setValue({
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
+      password: '',
+      password2: '',
+    })
   }
 
   async register(): Promise<void> {
