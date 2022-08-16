@@ -63,7 +63,7 @@ export class ProjectComponent implements OnInit {
 
     this.user = this.userRepository.getUser()
 
-    this.available_cells = this.project.total_cell - this.project.sold_cell
+    
   }
 
   //get all project data from server
@@ -74,7 +74,8 @@ export class ProjectComponent implements OnInit {
           this.project = res.data;
           this.price_per_cell = res.data.cost_per_cell
           this.projectsoldpercentage = this.soldProjectPercentage(res.data.sold_cell, res.data.total_cell);
-        
+          this.available_cells = this.project.total_cell - this.project.sold_cell
+          console.log(this.available_cells)
       }
     );
   }

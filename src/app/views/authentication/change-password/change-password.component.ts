@@ -52,6 +52,7 @@ export class ChangePasswordComponent implements OnInit {
       res => {
         if(res.status === 200) {
           this.passwordChanged = true
+          this.isLoading = false
         }
 
         if(res.status === 500) {
