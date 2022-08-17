@@ -1,0 +1,124 @@
+#project-grid {
+    display: flex!important;
+    flex-direction: column!important;
+    row-gap: var(--f8) !important;
+    min-width: 100% !important;
+}
+
+h5{
+    font-size: 16px!important;
+}
+
+.header{
+    padding: 0px 13.5px;
+    margin-bottom: 20px;
+}
+
+.options {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: #FFFFFF;
+    border: 1px solid rgba(5, 195, 221, 0.25);
+    box-shadow: -4px -4px 10px rgba(0, 73, 204, 0.08), 4px 4px 10px rgba(0, 73, 204, 0.08);
+    border-radius: 8px;
+    padding: 0px 5px;
+}
+
+.btn {
+    border-radius: 0px;
+    background-color: #fff;
+    padding: 13px 0px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 26px;
+    color: rgba(11, 11, 11, 0.7);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+.btn:focus {
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    outline: none;
+    box-shadow: none;
+}
+
+.btnActive {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #0B0B0B;
+    border-bottom: 2px solid #1EBDD0!important;
+}
+
+/** DESKTOP **/
+@media only screen and (min-width: 600px) {
+
+
+    .header{
+        padding: 0px ;
+        margin-bottom: 30px;
+    }
+
+.options {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+#project-grid {
+    display: grid!important;
+    grid-template-columns: repeat(2, 1fr)!important;
+    column-gap: var(--f5) !important;
+    row-gap: var(--f5) !important
+}
+
+.btn {
+    border-radius: 0px;
+    background-color: #fff;
+    padding: 10px 40px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(11, 11, 11, 0.7);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+.btn:focus {
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    outline: none;
+    box-shadow: none;
+}
+
+.btnActive {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0B0B0B;
+    border-bottom: 2px solid #1EBDD0!important;
+}
+
+
+h5{
+    margin-bottom: var(--S2)!important;
+    font-size: 24px!important;
+}
+
+}

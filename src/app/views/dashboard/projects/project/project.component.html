@@ -52,6 +52,7 @@
                         [fullwidth]="false"
                         [size1]="true"
                         (click)="openInvestModal()"
+                        [disabled]="project?.availability !== 'Now Available'"
                     ></app-primarybtntwo>
                 </div>
 
@@ -112,6 +113,8 @@
             (payCrypto)="cryptoTransactionStatus($event)"
             [price]="price_per_cell"
             [no_of_cell]="number_of_cell"
+            [cryptoisLoading]="cryptoLoading"
+            [bankisLoading]="bankLoading"
         >
         </app-investmodal>
     </app-modalcard>

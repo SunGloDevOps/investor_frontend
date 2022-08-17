@@ -22,11 +22,11 @@
     >
 </div>
 <div class="footer">
-    <button 
-    (click)="addDetails()"
-    [disabled]="addBankDetailsForm.invalid"
-    >
-        Save Changes
-    </button>
+    <app-primarybtnone
+        [size3]="true"
+        label="Save Changes"
+        (click)="addDetails()"
+        [disabled]="addBankDetailsForm.invalid"
+    ></app-primarybtnone>
 </div>
 </form>

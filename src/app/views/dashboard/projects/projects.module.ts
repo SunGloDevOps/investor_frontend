@@ -4,12 +4,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectComponent } from './project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
   declarations: [
     ProjectComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

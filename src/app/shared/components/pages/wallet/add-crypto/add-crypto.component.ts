@@ -14,6 +14,8 @@ export class AddCryptoComponent implements OnInit {
 
   @Input() address?: string;
 
+  isLoading: boolean = false;
+
   user?: any;
 
   addCryptoAddressForm = this.fb.group({
@@ -44,6 +46,8 @@ export class AddCryptoComponent implements OnInit {
 
   addAddress() {
 
+    this.isLoading = true
+
     const address: string = this.addCryptoAddressForm.controls['address'].value;
     
     const payload = {
@@ -54,10 +58,12 @@ export class AddCryptoComponent implements OnInit {
       res => {
         
         if(res.status === 200){  
+          this.isLoading = false
           this.addCryptoaddress.emit(true)
         }
 
         if(res.status === 500){
+          this.isLoading = false
           this.addCryptoaddress.emit(false)
         }
 

@@ -21,8 +21,9 @@
 
             <div class="progress-right">
                 <div class="progress-days">
-                    <span *ngIf="investment.project.start_date !== undefined">{{days_left}} days left</span>
-                    <span *ngIf="investment.project.start_date === undefined">Now Installing</span>
+                    <span *ngIf="investment.project.availability === 'Now Generating' ">{{days_left}} days left</span>
+                    <span *ngIf="investment.project.availability === 'Now Installing' ">Now Installing</span>
+                    <span *ngIf="investment.project.availability === 'Now Available' ">Funding</span>
                 </div>
                 <div class="mobile-only">
                     <div>
@@ -33,10 +34,10 @@
                         [naira]="investment.capital"
                     ></app-investedamount>
                 </div>
-                <app-primarybtntwo
+                <!-- <app-primarybtntwo
                     label="Energy Generated"
                     [size4]="true"
-                ></app-primarybtntwo>
+                ></app-primarybtntwo> -->
             </div>
 
         </div>
@@ -125,34 +126,20 @@
        <app-primarybtnone
         [size3]="true"
         label="Reinvest"
+        (click)="reInvest()"
        ></app-primarybtnone>
-       <a class="btn btn-black-share">
+       <a 
+        class="btn btn-black-share"
+        (click)="openShareModal()"
+       >
         <img src="../../../../assets/images/icons/download.png">
         </a>
     </div>
 </div>
 
-<!-- <div class="row mt-5" id="energygenerated">
-    <div class="col-12">
-
-        <h4>Energy Generated</h4>
-
-        <h5 class="mt-3">Live View Of Kuala University Solar Energy Generated</h5>
-
-        <img src="../../../../assets/images/thumbnail.jpg">
-    </div>
-
-    <div class="col-lg-4 col-md-12 text-center">
-        <h5>2000 kWh</h5>
-        <p>Energy generated</p>
-    </div>
-    <div class="col-lg-4 col-md-12 text-center">
-        <h5>~1500kg CO2</h5>
-        <p>Carbon reduced</p>
-    </div>
-    <div class="col-lg-4 col-md-12 text-center">
-        <h5>500</h5>
-        <p>Solar cells connected</p>
-    </div>
-</div> -->
-
+<!-- share link -->
+<app-modalcontainer [position]="true" [show]="showShareModal">
+    <app-modalcard [position]="true" (close)="closeShareModal($event)">
+       <app-shareproject shareLink="golden"></app-shareproject>
+    </app-modalcard>
+</app-modalcontainer>

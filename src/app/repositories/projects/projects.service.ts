@@ -39,5 +39,13 @@ export class ProjectsService {
     );
   }
 
+  searchProject(keyword: string): Observable<any> {
+    return this.http.post<any>(`${this.api_url}/search`, {keyword}).pipe(
+      tap(()=>{
+        this.refreshRequired.next();
+      })
+    );
+  }
+
   
 }

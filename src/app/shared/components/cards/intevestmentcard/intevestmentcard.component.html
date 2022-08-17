@@ -9,9 +9,11 @@
 
         <small class="NGN">{{cost}} NGN</small>
 
-        <small class="timeline" *ngIf="start_date !== undefined"><b>{{days_left}}</b> days left</small>
+        <small class="timeline" *ngIf="availability === 'Now Generating' "><b>{{days_left}}</b> days left</small>
 
-        <small class="timeline" *ngIf="start_date === undefined"> <b>Now Installing</b> </small>
+        <small class="timeline" *ngIf="availability === 'Now Installing'"> <b>Now Installing </b> </small>
+        
+        <small class="timeline" *ngIf="availability === 'Now Available'"> <b>Funding </b> </small>
 
         <div class="progress-area">
             <div class="progress-bar">

@@ -1,0 +1,24 @@
+<app-mobiletopnav></app-mobiletopnav>
+
+<app-topnav [showSearch]="true" [projectSearch]="true"></app-topnav>
+
+<div class="row">
+
+        <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0">
+            <div *ngFor="let project of projects">
+                <app-projectcard 
+                    [id]="project._id"
+                    title={{project.title}}
+                    description={{project.description}} 
+                    [cost]="project.cost_per_cell"
+                ></app-projectcard>
+            </div>        
+        </div>
+        <div *ngIf="projects.length">
+            <app-empty
+                label="No Project Found"
+                image="../../../../../assets/images/illustrations/empty.png"
+            ></app-empty>
+        </div>
+ 
+</div>

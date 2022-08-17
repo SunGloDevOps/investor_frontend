@@ -26,11 +26,18 @@ export class ProjectComponent implements OnInit {
     title: '',
     description: '',
     cost_per_cell: '',
-    thumbnail: ''
+    thumbnail: '',
+    availability: ''
   };
 
   //number of avaible cells to  buy
   available_cells?: number;
+
+  //crypto loading status
+  cryptoLoading: boolean = false
+
+  //bank loading status
+  bankLoading: boolean = false
 
   projectsoldpercentage: number = 0;
 
@@ -60,22 +67,17 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProjectData()
-
     this.user = this.userRepository.getUser()
-
-    
   }
 
   //get all project data from server
   getProjectData(): void {
     this.projectService.getProject(this.route.snapshot.params['id']).subscribe(
       res => {
-         
           this.project = res.data;
           this.price_per_cell = res.data.cost_per_cell
           this.projectsoldpercentage = this.soldProjectPercentage(res.data.sold_cell, res.data.total_cell);
           this.available_cells = this.project.total_cell - this.project.sold_cell
-          console.log(this.available_cells)
       }
     );
   }
@@ -104,25 +106,27 @@ export class ProjectComponent implements OnInit {
   }
 
   bankTransactionStatus(value: boolean){
-
+    this.bankLoading= true
     this.transactionStatus = value;
-
     const payload = {
       user: this.user.id,
       project: this.route.snapshot.params['id'],
       total_cells: this.number_of_cell,
-      capital: (this.number_of_cell * this.price_per_cell),
+      amount: (this.number_of_cell * this.price_per_cell),
       method: "BANK"
     }
 
     if(this.transactionStatus===false){
       this.closeInvestModal(false)
+      this.bankLoading = false
       this.openInsufficientModal()
     }else{
 
     this.investment.invest(this.project._id, payload).subscribe(
       res => {
+        
         if(res.status === 200){
+          this.bankLoading = false
           this.closeInvestModal(false)
           this.openSuccessModal()
         } 
@@ -132,19 +136,20 @@ export class ProjectComponent implements OnInit {
   }
 
   cryptoTransactionStatus(value: boolean){
-
+    this.cryptoLoading = true;
     this.transactionStatus = value;
 
     const payload = {
       user: this.user.id,
       project: this.route.snapshot.params['id'],
       total_cells: this.number_of_cell,
-      capital: (this.number_of_cell * this.price_per_cell),
+      amount: (this.number_of_cell * this.price_per_cell),
       method: "CRYPTO"
     }
 
     if(this.transactionStatus===false){
       this.closeInvestModal(false)
+      this.cryptoLoading = false
       this.openInsufficientModal()
     }else{
 
@@ -152,6 +157,7 @@ export class ProjectComponent implements OnInit {
       res => {
        
         if(res.status === 200){
+          this.cryptoLoading = false
           this.closeInvestModal(false)
           this.openSuccessModal()
         } 

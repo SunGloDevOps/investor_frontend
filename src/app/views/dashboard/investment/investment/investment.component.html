@@ -1,17 +1,6 @@
 <app-mobiletopnav></app-mobiletopnav>
 
-<app-topnav [showSearch]="true"></app-topnav>
-
-<!-- <div class="row" id="investment-header">
-    <div class="col-12">
-        <h4>Hy Joe,</h4>
-        <p>You have made 2 Solar investment with Sunglo. Check out what new project investments we have for you today.</p>
-
-        <button type="button" class="btn btn-primary">
-            Today's Project
-        </button>
-    </div>
-</div> -->
+<app-topnav [showSearch]="true" [investmentSearch]="true"></app-topnav>
 
 <div class="row">
     <div class="col-lg-4 col-md-12">
@@ -60,6 +49,7 @@
             [cost]="investment.capital"
             [start_date]="investment.project.start_date"
             [end_date]="investment.project.end_date"
+            [availability]="investment.project.availability"
         ></app-intevestmentcard>
 
     </div>

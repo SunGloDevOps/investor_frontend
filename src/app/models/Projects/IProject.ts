@@ -29,5 +29,6 @@ import { IResponse } from "../IResponse";
     no_of_investors: string,
     start_date: string,
     operator: string,
-    total_cell: number
+    total_cell: number,
+    availability: string
   }

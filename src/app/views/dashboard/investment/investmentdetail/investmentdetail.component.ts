@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { InvestmentService } from 'src/app/repositories/investment/investment.service';
 
@@ -16,9 +16,12 @@ export class InvestmentdetailComponent implements OnInit {
 
   progress: number = 0;
 
+  showShareModal: boolean = false;
+
   constructor(
     private investmentService: InvestmentService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -52,6 +55,18 @@ export class InvestmentdetailComponent implements OnInit {
         console.log(this.investment)
       }
     )
+  }
+
+  openShareModal(): void {
+    this.showShareModal = true
+  }
+
+  closeShareModal(data: boolean): void {
+    this.showShareModal = data
+  }
+
+  async reInvest(){
+    this.router.navigate(['/projects', this.investment.project._id])
   }
 
 }

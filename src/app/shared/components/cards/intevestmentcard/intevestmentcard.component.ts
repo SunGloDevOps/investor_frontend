@@ -22,6 +22,8 @@ export class IntevestmentcardComponent implements OnInit {
 
   @Input() progress: number = 100
 
+  @Input() availability?: string;
+
   link?: string;
 
   days_left?: number;

@@ -8,5 +8,14 @@
 
     [class.parent] = fullwidth
 >
-{{label}}
+<span >
+    {{label}} 
+</span>
+<p-progressSpinner
+[style]="{width: '15px', height: '15px'}" 
+styleClass="custom-spinner" 
+strokeWidth="8" 
+animationDuration=".5s"
+[class.loading]=!notLoading
+></p-progressSpinner>
 </button>

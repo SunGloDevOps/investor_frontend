@@ -19,6 +19,8 @@ export class SecondarybtnoneComponent implements OnInit {
 
   @Input() size3?: boolean;
 
+  @Input() notLoading: boolean = false
+
   constructor() { }
 
   ngOnInit(): void {

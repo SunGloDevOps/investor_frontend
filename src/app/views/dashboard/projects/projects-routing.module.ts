@@ -4,6 +4,7 @@ import { AuthguardService } from 'src/app/guards/authguard/authguard.service';
 import { StarterComponent } from 'src/app/shared/components/layouts/starter/starter.component';
 import { ProjectComponent } from './project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,11 @@ const routes: Routes = [
       {
         path: ':id',
         component: ProjectComponent,
+        // canActivate: [AuthguardService],
+      },
+      {
+        path: '/search/:keyword',
+        component: SearchComponent,
         // canActivate: [AuthguardService],
       },
     ]

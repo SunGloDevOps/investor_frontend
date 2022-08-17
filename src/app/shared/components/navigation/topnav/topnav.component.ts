@@ -11,6 +11,10 @@ export class TopnavComponent implements OnInit {
 
   showModal: boolean = false;
 
+  @Input() projectSearch: boolean = false;
+
+  @Input() investmentSearch: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

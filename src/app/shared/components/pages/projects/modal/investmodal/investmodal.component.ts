@@ -18,6 +18,12 @@ export class InvestmodalComponent implements OnInit {
 
   @Input() no_of_cell?: number;
 
+  //pay crypto loading status
+  @Input() cryptoisLoading: boolean = false
+
+  //pay crypto loading status
+  @Input() bankisLoading: boolean = false
+
   bank_balance: number = 0;
 
   crypto_balance: number = 0;
@@ -40,7 +46,7 @@ export class InvestmodalComponent implements OnInit {
   getWalletBalance(): void {
     this.wallet.getWalletDetails(this.user.id).subscribe(
       res => {
-        
+        console.log(res.data)
         this.bank_balance = res.data.wallet.bank_balance;
         this.crypto_balance = res.data.wallet.crypto_balance;
         console.log(this.bank_balance)
@@ -52,33 +58,29 @@ export class InvestmodalComponent implements OnInit {
   payWithBank() {
     //check balance 
     if(this.no_of_cell && this.price){
-    this.capital = this.price * this.no_of_cell
-      if(this.capital> this.bank_balance){
+      this.capital = this.price * this.no_of_cell
+      if(this.capital > this.bank_balance){
         this.payBank.emit(false)
       }
       else{
-        //withdraw from balance 
-       
+        //prompt investing
         this.payBank.emit(true)
-          
-        
       }
     }
   }
 
   payWithCrypto(){
-
     //check balance 
     if(this.no_of_cell && this.price){
       const capital = this.price * this.no_of_cell
         if(capital> this.crypto_balance){
           this.payCrypto.emit(false)
+         
         }
         else{
           //withdraw from balance 
-          
           this.payCrypto.emit(true)
-            
+          
         }
     }
   }

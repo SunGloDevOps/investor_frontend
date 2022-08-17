@@ -9,6 +9,7 @@
                 [size3]="true"
                 label="Pay Now"
                 (click)="payWithBank()"
+                [notLoading]="bankisLoading"
             >
             </app-secondarybtnone>
         </div>
@@ -22,6 +23,7 @@
                 [size3]="true"
                 label="Pay Now"
                 (click)="payWithCrypto()"
+                [notLoading]="cryptoisLoading"
                 >
             </app-primarybtnone>
         </div>
