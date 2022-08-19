@@ -32,20 +32,40 @@
                         borderRadius="4px"
                         [fullwidth]="true"
                     >
-                        <div class="padding">
+                        <div class="padding" [formGroup]="nextkinForm">
                             <h5>Next of kin</h5>
                             <div id="nextkin-container" class="container padding">
                             <div>
-                                <input class="form-field" type="text" placeholder="Full name">
+                                <input 
+                                    class="form-field" 
+                                    type="text" 
+                                    placeholder="Full name"
+                                    formControlName="fullname"
+                                    >
                             </div>
                             <div>
-                                <input class="form-field" type="text" placeholder="Phone number">
+                                <input 
+                                    class="form-field" 
+                                    type="tel" 
+                                    placeholder="Phone number"
+                                    formControlName="phone"
+                                >
                             </div>
                             <div>
-                                <input class="form-field" type="email" placeholder="Email">
+                                <input 
+                                    class="form-field" 
+                                    type="email" 
+                                    placeholder="Email"
+                                    formControlName="email"
+                                >
                             </div>
                             <div>
-                                <input class="form-field" type="text" placeholder="Home address">
+                                <input 
+                                    class="form-field" 
+                                    type="text" 
+                                    placeholder="Home address"
+                                    formControlName="address"
+                                >
                             </div>
                             </div>
                         </div>
@@ -57,17 +77,29 @@
                         borderRadius="4px"
                         [fullwidth]="true"
                     >
-                        <div class="padding">
+                        <div class="padding" [formGroup]="changePassword" >
                             <h5>Change password</h5>
-                            <div class="changepassword-container">
-                                <input type="text" placeholder="Enter current password">
-                                <input type="text" placeholder="Enter new password">
-                            </div>
+                            <form [autocomplete]="false">
+                                <div class="changepassword-container">
+                                    <input 
+                                        type="password" 
+                                        placeholder="Enter new password"
+                                        formControlName="password"
+                                        [autocomplete]="false"
+                                    >
+                                    <input 
+                                        type="password" 
+                                        placeholder="Confirm password"
+                                        formControlName="confirmPassword"
+                                        [autocomplete]="false"
+                                    >
+                                </div>
+                            </form>
                         </div>
                     </app-card>
                 </div>
                 <div class="buttons-container">
-                    <a routerLink="#" class="btn-help">Need help?</a> <button type="submit" class="btn btn-primary"> Save</button>
+                    <a routerLink="#" class="btn-help">Need help?</a> <button type="submit" class="btn btn-primary" (click)="submit()"> Save</button>
                 </div>
                 <div class="buttons-container">
                     <button type="submit" class="btn btn-black">Logout</button>

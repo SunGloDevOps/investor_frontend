@@ -27,6 +27,7 @@
         label="Save Changes"
         (click)="addDetails()"
         [disabled]="addBankDetailsForm.invalid"
+        [notLoading]=isLoading
     ></app-primarybtnone>
 </div>
 </form>

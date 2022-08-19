@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-withdrawal',
@@ -13,7 +14,13 @@ export class DepositbankComponent implements OnInit {
 
   @Output() verifyWithdrawal = new EventEmitter<boolean>()
 
-  constructor() { }
+  cryptoWithdrawalForm = this.fb.group({
+    amount: [' ', Validators.required]
+  })
+
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
   }
@@ -23,8 +30,7 @@ export class DepositbankComponent implements OnInit {
   }
 
   showWalletTab(): void{
-    this.showCrypto = false;
-    this.showWallet = true;
+    this.showWallet = !this.showWallet;
   }
 
   showCryptoTab(): void{

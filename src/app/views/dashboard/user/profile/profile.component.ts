@@ -29,6 +29,8 @@ export class ProfileComponent implements OnInit {
 
   countries: any[] = [];
 
+  states: any[] = []
+
   constructor(
     private userService: UsersRepository,
     private tokenService: TokenService,
@@ -40,6 +42,13 @@ export class ProfileComponent implements OnInit {
 
     //get user id from token
     this.user = this.userService.getUser()
+
+    //get all countries
+    this.locationService.getCountries().subscribe(
+      res => {
+        console.log(res)
+      }
+    )
     
     if(this.user !== null){
       this.getUserDetails(this.user.id);

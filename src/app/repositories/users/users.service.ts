@@ -65,5 +65,21 @@ export class UsersRepository implements OnInit {
     );
   }
 
+  updateNextKin(id: string, payload: any): Observable<any> {
+    return this.http.patch<any>(`${api_home_url}/otps/updateNextkin/${id}`, payload).pipe(
+      tap(()=>{
+        this.refreshRequired.next();
+      })
+    );
+  }
+
+  getNextKin(user: string): Observable<any> {
+    return this.http.get<any>(`${api_home_url}/otps/getNextkin/${user}`).pipe(
+      tap(()=>{
+        this.refreshRequired.next();
+      })
+    );
+  }
+
   
 }

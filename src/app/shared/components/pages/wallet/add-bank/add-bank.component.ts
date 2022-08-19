@@ -14,6 +14,8 @@ export class AddBankComponent implements OnInit {
 
   user?: any;
 
+  isLoading: boolean = false;
+
   @Input() bank_name?: string;
   @Input() account_name?: string;
   @Input() account_no?: string;
@@ -43,6 +45,7 @@ export class AddBankComponent implements OnInit {
   }
 
   addDetails() {
+    this.isLoading = true
     const account_name: string = this.addBankDetailsForm.controls['account_name'].value;
     const account_no: string = this.addBankDetailsForm.controls['account_no'].value;
     const bank_name: string = this.addBankDetailsForm.controls['bank_name'].value;
@@ -57,10 +60,12 @@ export class AddBankComponent implements OnInit {
       res => {
 
         if(res.status === 200){
+          this.isLoading = false
           this.addBankaddress.emit(true)
         }
 
         if(res.status === 500){
+          this.isLoading = false
           this.addBankaddress.emit(false)
         }
 
