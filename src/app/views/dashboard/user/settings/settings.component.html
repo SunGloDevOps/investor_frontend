@@ -5,6 +5,15 @@
         <h2>Documentation</h2>
         <div class="container">
             <app-verificationcard>
+                <h5>ID Verification</h5>
+                <p *ngIf="!isPhoneVerified">Upload any identification Card</p>
+                <p *ngIf="isPhoneVerified">ID Card uploaded</p>
+                
+                <input type="file" class="file-field" />
+
+                <app-verify (click)="verifyPhone()" label="Verify Phone Number" verifiedlabel="Phone Number verified" [isVerified]="isPhoneVerified ? isPhoneVerified : false"></app-verify>
+            </app-verificationcard>
+            <app-verificationcard>
                 <h5>Phone Number Verification</h5>
                 <p *ngIf="!isPhoneVerified">Generate OTP Code by clicking on verify phone number</p>
                 <p *ngIf="isPhoneVerified">Your phone number (09023456789) has been verified</p>

@@ -45,6 +45,15 @@ form{
 }
 
 
+.file-field {
+    width: 100%!important;
+    border: 0.5px solid #05C3DD!important;
+    border-radius: 8px !important;
+    font-weight: 400;
+    font-size: 14px!important;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
 
 .form-field {
     width: 60%!important;
