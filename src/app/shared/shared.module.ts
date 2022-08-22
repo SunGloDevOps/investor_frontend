@@ -70,6 +70,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import {CaptchaModule} from 'primeng/captcha';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {SkeletonModule} from 'primeng/skeleton';
+import { ActivitycardComponent } from './components/cards/activitycard/activitycard.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -134,7 +135,8 @@ export function tokenGetter() {
     ProgressbarComponent,
     CircleprogressComponent,
     InvestedamountComponent,
-    ShareprojectComponent
+    ShareprojectComponent,
+    ActivitycardComponent
   ],
   imports: [
     CommonModule,
@@ -224,6 +226,7 @@ export function tokenGetter() {
     CaptchaModule,
     ProgressSpinnerModule,
     SkeletonModule,
+    ActivitycardComponent
   ]
 })
 export class SharedModule { }

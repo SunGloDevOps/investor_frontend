@@ -1,15 +1,19 @@
+#wallet-balance, #earnings, #porjects, #cells {
+    height: 100%;
+}
+
 #wallet-balance p, #earnings p, #projects p, #cells p {
-    font-size: var(--f9)
+    font-size: var(--f9)!important
 }
 
 #wallet-balance h5, #earnings h5, #projects h5, #cells h5 {
-    font-size: var(--f9);
+    font-size: var(--f9)!important;
     font-weight: 500;
     line-height: 28px;
 }
 
 #wallet-balance small, #earnings small, #projects small, #cells small{
-    font-size: var(--f9);
+    font-size: var(--f9)!important;
     line-height: 20px;
 }
 
@@ -25,14 +29,14 @@
     }
 
     #wallet-balance p, #earnings p, #projects p, #cells p {
-        font-size: var(--f9)
+        font-size: var(--f9)!important
     }
 
     #wallet-balance h5, #earnings h5, #projects h5, #cells h5 {
-        font-size: var(--f7)
+        font-size: var(--f7)!important
     }
 
     #wallet-balance small, #earnings small, #projects small, #cells small {
-        font-size: var(--f9)
+        font-size: var(--f9)!important
     }
 }

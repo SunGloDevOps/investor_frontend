@@ -56,6 +56,12 @@ html {
     
 }
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 /** radius **/
 .r1 {
     border-radius: 12px!important;
@@ -702,12 +708,6 @@ input:focus {
     margin-top: var(--s3) !important;
 }
 
-#bottom-cards {
-    display: grid!important;
-    grid-template-columns: repeat(2, 1fr)!important;
-    gap: var(--f9)
-}
-
 #bottom-cards div {
     height: 100%;
 }
@@ -744,9 +744,26 @@ input:focus {
       font-size: var(--f7) !important
   }
 
+.stat-cards {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+
+#top-cards {
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 20px;
+}
+
+#bottom-cards {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /** DESKTOP **/
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
 
     .navigation .nav-link .nav-link-label{
         display: flex !important;
@@ -757,20 +774,32 @@ input:focus {
         margin-top: 0px!important;
     }
 
+    .stat-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--f6);
+        
+    }
+
+    .active-projects {
+        display: flex;
+        flex-direction: column
+    }
+
     #top-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--f6) !important;
-      height: 209px;
       margin-bottom: var(--f4);
+      height: 100%!important;
     }
 
     #bottom-cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr) !important;
+        grid-template-columns: 1fr !important;
         gap: var(--f7) !important;
         margin-bottom: var(--S4);
-        height: 209px;
+        height: 100%!important;
     }
 
     #setprofile{
@@ -797,61 +826,13 @@ input:focus {
         min-height: 100% !important;
     }
 
-    #activity {
-        padding: var(--f10)  !important;
-        background-color: var(--black);
-        color: var(--white);
-        margin-bottom: 0px!important;
-        display: flex!important;
-        height: 209px !important;
-    }
     
-    #activity .title {
-        font-size: var(--f7) !important;
-        font-weight: 500 !important;
-        line-height: 24px !important;
-    }
-    
-    #activity .date {
-        font-size: var(--f10) !important;
-        font-weight: 400 !important;
-        line-height: 18px !important;
-    }
-
-    #activity-header {
-        margin-bottom: var(--f10) !important;
-    }
-    
-    #activity ul {
-        list-style: none;
-        padding: 0;
-      
-    }
-
     #wallet-balance {
         margin-bottom: 0px!important;
         min-height: 100%;
     }
     
-    #activity ul li {
-        border-bottom: 1px solid var(--white) !important;
-        padding-bottom: 3px !important;
-        margin-bottom: 5px !important;
-    }
     
-    #activity ul li:last-child {
-        border-bottom: none !important;
-        margin-bottom: 0px !important;
-        padding-bottom: 0px !important;
-    }
-    
-    #activity a{
-        color: var(--white) !important;
-        border: none!important;
-        font-weight: 400 !important;
-        line-height: 20px !important;
-        font-size: var(--f9)!important;
-    }
 
     #cells {
         min-height: 100% !important;
