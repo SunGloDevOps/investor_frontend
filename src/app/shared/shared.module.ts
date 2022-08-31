@@ -72,6 +72,7 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {SkeletonModule} from 'primeng/skeleton';
 import { ActivitycardComponent } from './components/cards/activitycard/activitycard.component';
 import { PageloaderComponent } from './components/loaders/pageloader/pageloader.component';
+import { QuestiontabComponent } from './components/pages/faqs/questiontab/questiontab.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -138,7 +139,8 @@ export function tokenGetter() {
     InvestedamountComponent,
     ShareprojectComponent,
     ActivitycardComponent,
-    PageloaderComponent
+    PageloaderComponent,
+    QuestiontabComponent
   ],
   imports: [
     CommonModule,
@@ -229,7 +231,8 @@ export function tokenGetter() {
     ProgressSpinnerModule,
     SkeletonModule,
     ActivitycardComponent,
-    PageloaderComponent
+    PageloaderComponent,
+    QuestiontabComponent
   ]
 })
 export class SharedModule { }
