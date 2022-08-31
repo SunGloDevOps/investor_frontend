@@ -1,11 +1,12 @@
 <app-mobiletopnav></app-mobiletopnav>
+
+<app-pageloader [isLoading]="pageLoading"></app-pageloader>
+
 <h4>Profile Settings</h4>
 
 
 <p *ngIf="isUpdated">Profile Update</p>
-<div *ngFor="let country of countries">
-    {{countries}}
-</div>
+
 <form [formGroup]="profileForm">
 <div class="pt-3" id="profileform">
     <div class="two-column-desktop">
@@ -29,13 +30,17 @@
     </div>
     <div class="two-column-desktop">
         <div>
-            <select formControlName="country">
-                <option>Country</option>
+            <select formControlName="country" (ngModelChange)="onCountrySelected($event)" >
+                <option *ngFor="let country of countries" [value]="country.iso2" >
+                    {{country.name}}
+                </option>
             </select>
         </div>
         <div>
-            <select formControlName="city">
-                <option>City</option>
+            <select formControlName="city" >
+                <option *ngFor="let state of states" [value]="state.iso2">
+                    {{state.name}}
+                </option>
             </select>
         </div>
     </div>

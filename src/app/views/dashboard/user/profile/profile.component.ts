@@ -13,6 +13,9 @@ import { UsersRepository } from 'src/app/repositories/users/users.service';
 
 export class ProfileComponent implements OnInit {
 
+  //page loading status
+  pageLoading: boolean = false;
+
   isUpdated: boolean = false;
 
   profileForm = this.fb.group({
@@ -27,9 +30,17 @@ export class ProfileComponent implements OnInit {
 
   user: any = {};
 
+  //variable to store countries data
   countries: any[] = [];
 
-  states: any[] = []
+  //variable to store states of selectd country
+  states: any[] = [];
+
+  //selected country
+  selectedCountry: string = 'NG';
+
+  //selected state
+  selectedState!: string;
 
   constructor(
     private userService: UsersRepository,
@@ -40,33 +51,41 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //starting page loader
+    this.pageLoading = false
+
     //get user id from token
     this.user = this.userService.getUser()
 
-    //get all countries
-    this.locationService.getCountries().subscribe(
-      res => {
-        console.log(res)
-      }
-    )
+    this.getCountry()
     
     if(this.user !== null){
       this.getUserDetails(this.user.id);
     }
 
-    this.getCountry()
-    
   }
 
+  //this function fetches all country data
   getCountry(){
-    this.locationService.getCountries().subscribe(
+    this.locationService.getCountry().subscribe(
       res => {
-        console.log(res)
+        this.countries = res;
+    
+      }
+    )
+  }
+
+  //this function fetches all states belonging to the selected country
+  onCountrySelected(countryIso: any){
+    this.locationService.getStateOfSelectedCountry(countryIso).subscribe(
+      res => {
+        this.states = res;
       }
     )
   }
 
   getUserDetails(id: string): void {
+    console.log(this.countries)
     this.userService.getUserDetails(id).subscribe(
       res => {
         if(res.status === 200) {
@@ -76,18 +95,23 @@ export class ProfileComponent implements OnInit {
             lastname: res.data.lastname,
             email: res.data.email,
             phone: res.data.phone,
-            country: res.data.country === null ? '': res.data.country,
-            city: res.data.city  === null ? '': res.data.city,
-            address: res.data.address === null ? '' : res.data.address
+            address: res.data.address === null ? '' : res.data.address,
+            country: res.data.country === null ? "NG" : res.data.country,
+            city: res.data.city === null ? "FC" : res.data.city,
           })
 
+        
+
         }
+      },
+      complete => {
+        this.pageLoading = false
       }
     );
   }
 
   updateProfile(): void {
-
+    this.isUpdated = false;
     const id: string = this.user.id
     const payload: IProfileRequest = this.profileForm.value;
 

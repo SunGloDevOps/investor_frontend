@@ -13,6 +13,9 @@ import { UsersRepository } from 'src/app/repositories/users/users.service';
 })
 export class SettingsComponent implements OnInit {
 
+  //handles page loading 
+  pageLoading: boolean = false
+
   isEmailVerified?: boolean;
   isPhoneVerified?: boolean;
   isBVNVerified?: boolean;
@@ -46,6 +49,9 @@ export class SettingsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    //starting page loaders
+    this.pageLoading = false
 
     this.user = this.usersRepository.getUser()
 

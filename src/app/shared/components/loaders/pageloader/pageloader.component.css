@@ -1,0 +1,15 @@
+.wrapper {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 900;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}

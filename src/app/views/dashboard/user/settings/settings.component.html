@@ -1,3 +1,5 @@
+<app-pageloader [isLoading]="pageLoading"></app-pageloader>
+
 <!-- settings -->
 <div class="main-container">
     <!-- Documentation -->
@@ -11,7 +13,7 @@
                 
                 <input type="file" class="file-field" />
 
-                <app-verify (click)="verifyPhone()" label="Verify Phone Number" verifiedlabel="Phone Number verified" [isVerified]="isPhoneVerified ? isPhoneVerified : false"></app-verify>
+                <app-verify (click)="verifyPhone()" label="Verify Identity" verifiedlabel="Phone Number verified" [isVerified]="isPhoneVerified ? isPhoneVerified : false"></app-verify>
             </app-verificationcard>
             <app-verificationcard>
                 <h5>Phone Number Verification</h5>

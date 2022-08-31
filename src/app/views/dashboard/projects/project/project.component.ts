@@ -39,6 +39,9 @@ export class ProjectComponent implements OnInit {
   //bank loading status
   bankLoading: boolean = false
 
+  //page loading status
+  pageLoading: boolean = false
+
   projectsoldpercentage: number = 0;
 
   number_of_cell: number = 1;
@@ -68,6 +71,7 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {
     this.getProjectData()
     this.user = this.userRepository.getUser()
+    this.pageLoading = true
   }
 
   //get all project data from server
@@ -78,6 +82,9 @@ export class ProjectComponent implements OnInit {
           this.price_per_cell = res.data.cost_per_cell
           this.projectsoldpercentage = this.soldProjectPercentage(res.data.sold_cell, res.data.total_cell);
           this.available_cells = this.project.total_cell - this.project.sold_cell
+      },
+      complete => {
+        this.pageLoading = false
       }
     );
   }

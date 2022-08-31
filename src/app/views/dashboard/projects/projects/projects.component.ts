@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { concatMap } from 'rxjs';
 import IProjects from 'src/app/models/Projects/IProject';
 import IProject, { IProjectResponse } from 'src/app/models/Projects/IProject';
 import { ProjectsService } from 'src/app/repositories/projects/projects.service';
@@ -22,6 +23,9 @@ export class ProjectsComponent implements OnInit {
 
   showInsufficientModal: boolean = false;
 
+  //current loading status of page
+  pageLoading: boolean = false;
+
   constructor(
     private projectService: ProjectsService,
     private userService: UsersRepository
@@ -29,6 +33,8 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProjects()
+
+    this.pageLoading = true
   }
 
   getProjects(): void {
@@ -52,6 +58,9 @@ export class ProjectsComponent implements OnInit {
     
             
         }
+      },
+      complete => {
+        this.pageLoading = false
       }
 
     )

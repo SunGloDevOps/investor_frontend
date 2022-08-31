@@ -289,7 +289,7 @@ input:focus, input:active{
     min-width: 100% !important;
     min-height: 100vh !important;
     padding: var(--s3) var(--s2) var(--s5) var(--s2) !important;
-    
+    position: relative;
 }
 
 #mobiletopnav {

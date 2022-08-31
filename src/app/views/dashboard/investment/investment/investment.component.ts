@@ -20,6 +20,9 @@ export class InvestmentComponent implements OnInit {
 
   completed_investment: number = 0;
 
+  //current loading status of page
+  pageLoading: boolean = false;
+
   constructor(
     private investmentService: InvestmentService,
     private projectService: ProjectsService,
@@ -27,12 +30,9 @@ export class InvestmentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-   
     this.user =  this.userService.getUser()
     this.getInvestments()
-
-    
-
+    this.pageLoading = true;
   }
 
   getInvestments(): void {
@@ -64,6 +64,9 @@ export class InvestmentComponent implements OnInit {
 
         this.completed_investment = active.length
 
+      },
+      complete => {
+        this.pageLoading = false
       }
     )
   }

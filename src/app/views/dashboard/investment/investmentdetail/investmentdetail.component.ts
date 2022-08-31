@@ -18,6 +18,9 @@ export class InvestmentdetailComponent implements OnInit {
 
   showShareModal: boolean = false;
 
+  //page loading status
+  pageLoading: boolean = false;
+
   constructor(
     private investmentService: InvestmentService,
     private route: ActivatedRoute,
@@ -25,6 +28,9 @@ export class InvestmentdetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.pageLoading = true;
+
     this.getInvestment()
 
     if(this.investment.project.start_date && this.investment.project.end_date){
@@ -52,7 +58,9 @@ export class InvestmentdetailComponent implements OnInit {
     this.investmentService.viewInvestment(id).subscribe(
       res => {
         this.investment = res.data
-        console.log(this.investment)
+      },
+      complete => {
+        this.pageLoading = false
       }
     )
   }
