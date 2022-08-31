@@ -34,7 +34,7 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.getProjects()
 
-    this.pageLoading = true
+    this.pageLoading = false
   }
 
   getProjects(): void {
@@ -58,9 +58,10 @@ export class ProjectsComponent implements OnInit {
     
             
         }
+        this.pageLoading = false
       },
       complete => {
-        this.pageLoading = false
+        
       }
 
     )
