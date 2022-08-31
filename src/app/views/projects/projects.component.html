@@ -1,0 +1,24 @@
+<app-mainlayout>
+    <header>
+        <h2 class="main-header">Projects</h2>
+        <p class="sub-header">All Available projects to invest.</p>
+    </header>
+    <main>
+        <div class="grid-layout" *ngIf="availableProjects.length !== 0">
+            <div *ngFor="let project of availableProjects">
+                <app-projectcard 
+                    [id]="project._id"
+                    title={{project.title}}
+                    description={{project.description}} 
+                    [cost]="project.cost_per_cell"
+                ></app-projectcard>
+            </div>        
+        </div>
+        <div *ngIf="availableProjects.length === 0">
+            <app-empty
+                label="No Project has been added yet"
+                image="../../../../../assets/images/illustrations/empty.png"
+            ></app-empty>
+        </div>
+    </main>
+</app-mainlayout>

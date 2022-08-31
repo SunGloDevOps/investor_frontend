@@ -9,12 +9,12 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
-    path: 'projects',
+    path: 'app/projects',
     component: StarterComponent,
     children: [
       {
         path: '',
-        redirectTo: '/projects/home',
+        redirectTo: 'app/projects/home',
         pathMatch: 'full'
       },
       {

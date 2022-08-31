@@ -10,17 +10,17 @@ import { WalletRoutingModule } from './wallet/wallet-routing.module';
 
 const routes: Routes = [
   {
-    path: 'dashboard',
+    path: 'app',
     component: StarterComponent,
     
     children: [
       {
-        path: '',
-        redirectTo: '/dashboard/overview',
+        path: 'app',
+        redirectTo: '/app/dashboard',
         pathMatch: 'full'
       },
       {
-        path: 'overview',
+        path: 'dashboard',
         component: DashboardComponent,
         // canActivate: [AuthguardService],
       },

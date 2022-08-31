@@ -4,6 +4,7 @@ import { DashboardRoutingModule } from './views/dashboard/dashboard-routing.modu
 import { HomeComponent } from './views/home/home.component';
 import { AuthenticationRoutingModule } from './views/authentication/authentication-routing.module';
 import { FaqsComponent } from './views/faqs/faqs.component';
+import { ProjectsComponent } from './views/projects/projects.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'faqs',
     component: FaqsComponent
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent
   },
   {
     path: 'auth',

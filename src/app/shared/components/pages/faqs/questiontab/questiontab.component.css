@@ -8,7 +8,7 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 16.28px 0px;
+    padding: 0px 0px 16.28px 0px ;
     font-weight: 600;
     font-size: 20px!important;
     line-height: 28px;
@@ -33,7 +33,7 @@ main {
 /** mobile viewport **/
 @media screen and (max-width: 900px){
 header {
-    padding: 12.12px 0px;
+    padding: 0px 0px 12.12px 0px;
     font-weight: 500;
     font-size: 14px!important;
     line-height: 20px;
