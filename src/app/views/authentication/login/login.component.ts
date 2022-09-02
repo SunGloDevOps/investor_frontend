@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
 
           this.tokenService.save(data.data.token)
 
-          this.router.navigate(['/dashboard'])
+          this.router.navigate(['/app/dashboard'])
           
         }
         else{

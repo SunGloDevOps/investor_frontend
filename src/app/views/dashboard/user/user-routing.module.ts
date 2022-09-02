@@ -7,21 +7,21 @@ import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
-    path: 'user',
+    path: 'app',
     component: StarterComponent,
     children: [
       {
         path: '',
-        redirectTo: '/user/profile',
+        redirectTo: '/app/user/profile',
         pathMatch: 'full'
       },
       {
-        path: 'profile',
+        path: 'user/profile',
         component: ProfileComponent,
         // canActivate: [AuthguardService],
       },
       {
-        path: 'settings',
+        path: 'user/settings',
         component: SettingsComponent,
         // canActivate: [AuthguardService],
       }

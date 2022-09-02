@@ -31,17 +31,16 @@ export class InvestmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.user =  this.userService.getUser()
-    this.getInvestments()
+    this.getInvestments(this.user.id)
     this.pageLoading = true;
   }
 
-  getInvestments(): void {
-
-    this.investmentService.getInvestments(this.user.id).subscribe(
+  getInvestments(id: string): void {
+    this.investmentService.getInvestments(id).subscribe(
       res => {
         this.investments = res.data;
         this.investments.map((e)=>{ this.money_invested += e.capital})
-
+        this.pageLoading = false
         const completed = this.investments.filter((e)=>{
 
           var time_left = new Date().getTime() - e.end_date.getTime();
@@ -63,10 +62,7 @@ export class InvestmentComponent implements OnInit {
         })
 
         this.completed_investment = active.length
-
-      },
-      complete => {
-        this.pageLoading = false
+    
       }
     )
   }

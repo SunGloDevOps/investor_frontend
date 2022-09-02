@@ -73,6 +73,7 @@ import {SkeletonModule} from 'primeng/skeleton';
 import { ActivitycardComponent } from './components/cards/activitycard/activitycard.component';
 import { PageloaderComponent } from './components/loaders/pageloader/pageloader.component';
 import { QuestiontabComponent } from './components/pages/faqs/questiontab/questiontab.component';
+import { BlogcardComponent } from './components/pages/blog/blogcard/blogcard.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -140,7 +141,8 @@ export function tokenGetter() {
     ShareprojectComponent,
     ActivitycardComponent,
     PageloaderComponent,
-    QuestiontabComponent
+    QuestiontabComponent,
+    BlogcardComponent
   ],
   imports: [
     CommonModule,
@@ -232,7 +234,8 @@ export function tokenGetter() {
     SkeletonModule,
     ActivitycardComponent,
     PageloaderComponent,
-    QuestiontabComponent
+    QuestiontabComponent,
+    BlogcardComponent
   ]
 })
 export class SharedModule { }

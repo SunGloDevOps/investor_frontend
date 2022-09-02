@@ -7,23 +7,23 @@ import { InvestmentdetailComponent } from './investmentdetail/investmentdetail.c
 
 const routes: Routes = [
   {
-    path: 'investments',
+    path: 'app',
     component: StarterComponent,
     children: [
       {
         path: '',
-        redirectTo: '/investments/home',
+        redirectTo: '/app/investments',
         pathMatch: 'full'
       },
       {
-        path: 'home',
+        path: 'investments',
         component: InvestmentComponent,
-        // canActivate: [AuthguardService],
+        canActivate: [AuthguardService],
       },
       {
-        path: ':id',
+        path: 'investments/:id',
         component: InvestmentdetailComponent,
-        // canActivate: [AuthguardService],
+        canActivate: [AuthguardService],
       },
     ]
   }

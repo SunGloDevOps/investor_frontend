@@ -5,6 +5,8 @@ import { HomeComponent } from './views/home/home.component';
 import { AuthenticationRoutingModule } from './views/authentication/authentication-routing.module';
 import { FaqsComponent } from './views/faqs/faqs.component';
 import { ProjectsComponent } from './views/projects/projects.component';
+import { BlogComponent } from './views/blog/blog/blog.component';
+import { BlogsComponent } from './views/blogs/blogs.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,14 @@ const routes: Routes = [
   {
     path: 'app',
     loadChildren: () => import('../app/views/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
+    path: 'blogs',
+    component: BlogsComponent
+  },
+  {
+    path: 'blogs/:id',
+    component: BlogComponent
   }
 ];
 

@@ -9,7 +9,7 @@ import { FaqsComponent } from './views/faqs/faqs.component';
 import { JwtModule, JwtHelperService, JwtModuleOptions } from '@auth0/angular-jwt';
 import { api_home_url } from 'src/environments/environment';
 import { ProjectsComponent } from './views/projects/projects.component';
-
+import { BlogsComponent } from './views/blogs/blogs.component';
 export function tokenGetter() {
   return localStorage.getItem("token");
 }
@@ -20,6 +20,7 @@ export function tokenGetter() {
     HomeComponent,
     FaqsComponent,
     ProjectsComponent,
+    BlogsComponent
   ],
   imports: [
     BrowserModule,

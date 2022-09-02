@@ -48,7 +48,7 @@ export class IntevestmentcardComponent implements OnInit {
       this.progress = 0
     }
     //setting investment card links
-    this.link = "../"+this.id
+    this.link = "../investments/"+this.id
   }
 
   viewDetails(){

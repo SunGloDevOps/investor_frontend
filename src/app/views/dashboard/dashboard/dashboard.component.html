@@ -2,7 +2,7 @@
 
 <app-welcomeheader [showSalution]="true"></app-welcomeheader>
 
-
+<app-pageloader [isLoading]="pageLoading"></app-pageloader>
 
 <div class="main-container">
     <section class="stat-cards">
@@ -20,7 +20,7 @@
                     0.00 NGN
                 </small>
 
-                <a class="btn btn-black" routerLink="/wallet/home"><small> Fund Wallet  </small> </a>
+                <a class="btn btn-black" routerLink="/app/wallet/home"><small> Fund Wallet  </small> </a>
             </div>
 
             <div class="card" id="earnings">
@@ -37,7 +37,7 @@
                     0.00 NGN
                 </small>
 
-                <a class="btn btn-primary-light" routerLink="/projects/home"> Invest Now </a>
+                <a class="btn btn-primary-light" routerLink="/app/projects/home"> Invest Now </a>
             </div>
 
             <div class="card" id="projects">
@@ -48,7 +48,7 @@
                     {{total_projects}}
                 </h5>
 
-                <a class="btn btn-black" routerLink="/projects/home"> View projects</a>
+                <a class="btn btn-black" routerLink="/app/projects/home"> View projects</a>
             </div>
 
             <div class="card" id="cells">
@@ -56,7 +56,7 @@
 
                 <h5>{{total_cells}}</h5>
 
-                <a class="btn btn-primary-light" routerLink="/investments/home"> View projects</a>
+                <a class="btn btn-primary-light" routerLink="/app/investments"> View projects</a>
             </div>
         </div>
 

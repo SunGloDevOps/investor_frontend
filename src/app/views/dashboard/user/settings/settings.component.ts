@@ -110,6 +110,7 @@ export class SettingsComponent implements OnInit {
       }
       this.usersRepository.updateNextKin(this.user.id, payload).subscribe(
         res => {
+          console.log(res)
           if(res.status === 200){
 
           }
@@ -128,6 +129,7 @@ export class SettingsComponent implements OnInit {
       }
       this.authRepository.changePassword(payload).subscribe(
         res => {
+          console.log("password change", res)
           if(res.status === 200){
 
           }

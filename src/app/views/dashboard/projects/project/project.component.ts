@@ -71,7 +71,7 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {
     this.getProjectData()
     this.user = this.userRepository.getUser()
-    this.pageLoading = true
+    this.pageLoading = false
   }
 
   //get all project data from server
@@ -131,7 +131,7 @@ export class ProjectComponent implements OnInit {
 
     this.investment.invest(this.project._id, payload).subscribe(
       res => {
-        
+        console.log(res)
         if(res.status === 200){
           this.bankLoading = false
           this.closeInvestModal(false)

@@ -31,6 +31,7 @@
     <div class="two-column-desktop">
         <div>
             <select formControlName="country" (ngModelChange)="onCountrySelected($event)" >
+                <option value="">Select Country</option>
                 <option *ngFor="let country of countries" [value]="country.iso2" >
                     {{country.name}}
                 </option>
@@ -38,6 +39,7 @@
         </div>
         <div>
             <select formControlName="city" >
+                <option value="">Select City</option>
                 <option *ngFor="let state of states" [value]="state.iso2">
                     {{state.name}}
                 </option>

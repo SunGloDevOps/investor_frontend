@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { InvestmentService } from 'src/app/repositories/investment/investment.service';
 
 @Component({
@@ -33,33 +32,15 @@ export class InvestmentdetailComponent implements OnInit {
 
     this.getInvestment()
 
-    if(this.investment.project.start_date && this.investment.project.end_date){
-
-      var time_difference = this.investment.project.start_date.getTime() - this.investment.project.end_date.getTime();
-
-      var total_period = time_difference/(1000 * 60 * 60 * 24)
-
-      var time_left = new Date().getTime() - this.investment.project.end_date.getTime();
-
-      this.days_left = time_left / (1000 * 60 * 60 * 24)
-
-      this.progress = (this.days_left/total_period)*100
-
-    }else {
-      this.progress = 0
-    }
-
   }
 
-  async getInvestment(): Promise<void> {
+  getInvestment() {
 
     const id = this.route.snapshot.params['id']
 
     this.investmentService.viewInvestment(id).subscribe(
       res => {
-        this.investment = res.data
-      },
-      complete => {
+        this.investment = res.data;
         this.pageLoading = false
       }
     )
@@ -74,7 +55,7 @@ export class InvestmentdetailComponent implements OnInit {
   }
 
   async reInvest(){
-    this.router.navigate(['/projects', this.investment.project._id])
+    this.router.navigate(['app/projects/home', this.investment.project._id])
   }
 
 }

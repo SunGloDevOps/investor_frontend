@@ -52,7 +52,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
 
     //starting page loader
-    this.pageLoading = false
+    this.pageLoading = true
 
     //get user id from token
     this.user = this.userService.getUser()
@@ -70,7 +70,6 @@ export class ProfileComponent implements OnInit {
     this.locationService.getCountry().subscribe(
       res => {
         this.countries = res;
-    
       }
     )
   }
@@ -85,7 +84,6 @@ export class ProfileComponent implements OnInit {
   }
 
   getUserDetails(id: string): void {
-    console.log(this.countries)
     this.userService.getUserDetails(id).subscribe(
       res => {
         if(res.status === 200) {
@@ -95,16 +93,11 @@ export class ProfileComponent implements OnInit {
             lastname: res.data.lastname,
             email: res.data.email,
             phone: res.data.phone,
-            address: res.data.address === null ? '' : res.data.address,
-            country: res.data.country === null ? "NG" : res.data.country,
-            city: res.data.city === null ? "FC" : res.data.city,
+            address: res.data.address ? res.data.address : "",
+            country: res.data.country ? res.data.country : "",
+            city: res.data.city ? res.data.city : "",
           })
-
-        
-
         }
-      },
-      complete => {
         this.pageLoading = false
       }
     );

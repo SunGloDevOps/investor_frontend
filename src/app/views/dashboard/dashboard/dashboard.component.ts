@@ -26,6 +26,8 @@ export class DashboardComponent implements OnInit {
 
   total_projects: number = 0;
 
+  pageLoading: boolean = false;
+
   constructor(
     private router: Router,
     private projectService: ProjectsService,
@@ -35,22 +37,23 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getProjects()
+    this.pageLoading = true;
+    this.getProjects();
     this.user = this.userService.getUser();
     this.getWalletDetails(this.user.id)
     this.getInvestmentDetails(this.user.id)
   }
 
   gotoWallet(): void {
-    this.router.navigate(['/wallet/home'])
+    this.router.navigate(['/app/wallet/home'])
   }
 
   gotoProfile(): void {
-    this.router.navigate(['/app/profile'])
+    this.router.navigate(['/app/user/profile'])
   }
 
   gotoProjects(): void {
-    this.router.navigate(['/projects/home'])
+    this.router.navigate(['/app/projects/home'])
   }
 
   getProjects(): void {
@@ -78,11 +81,13 @@ export class DashboardComponent implements OnInit {
   getInvestmentDetails(id: string): void {
     this.investmentService.getInvestments(id).subscribe(
       res => {
-        res.data.map((investment: any)=>{
-            this.total_cells += investment.total_cell;
-            this.total_projects += 1;
+        let cells = 0;
+        res.data.map((investment: any)=>{  
+            this.total_projects++ 
+            cells =+ investment.total_cell
         })
-        console.log(res.data)
+        this.total_cells = cells
+        this.pageLoading = false
       }
     )
   }

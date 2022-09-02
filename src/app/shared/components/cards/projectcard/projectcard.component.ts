@@ -36,7 +36,7 @@ export class ProjectcardComponent implements OnInit {
   }
 
   viewDetail(): void {
-    this.router.navigate(['/projects/', this.id])
+    this.router.navigate(['/app/projects/', this.id])
   }
 
   closeShareModal(data: boolean): void {
