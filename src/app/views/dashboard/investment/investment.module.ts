@@ -4,10 +4,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { InvestmentRoutingModule } from './investment-routing.module';
 import { InvestmentComponent } from './investment/investment.component';
 import { InvestmentdetailComponent } from './investmentdetail/investmentdetail.component';
+import { SearchComponent } from './search/search.component';
 @NgModule({
   declarations: [
     InvestmentComponent,
-    InvestmentdetailComponent
+    InvestmentdetailComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

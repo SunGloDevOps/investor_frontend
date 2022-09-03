@@ -4,7 +4,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { WalletRoutingModule } from './wallet-routing.module';
 import { WalletComponent } from './wallet/wallet.component';
 
-
 @NgModule({
   declarations: [
     WalletComponent
@@ -15,4 +14,5 @@ import { WalletComponent } from './wallet/wallet.component';
     SharedModule
   ]
 })
+
 export class WalletModule { }

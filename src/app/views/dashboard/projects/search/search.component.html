@@ -1,10 +1,9 @@
 <app-mobiletopnav></app-mobiletopnav>
 
 <app-topnav [showSearch]="true" [projectSearch]="true"></app-topnav>
-
+<app-pageloader [isLoading]="pageLoading"></app-pageloader>
 <div class="row">
-
-        <div class="mt-2" id="project-grid" *ngIf="projects.length !== 0">
+        <div class="mt-2" id="project-grid" *ngIf="projects.length">
             <div *ngFor="let project of projects">
                 <app-projectcard 
                     [id]="project._id"
@@ -14,11 +13,10 @@
                 ></app-projectcard>
             </div>        
         </div>
-        <div *ngIf="projects.length">
+        <div *ngIf="!projects.length">
             <app-empty
                 label="No Project Found"
                 image="../../../../../assets/images/illustrations/empty.png"
             ></app-empty>
         </div>
- 
 </div>

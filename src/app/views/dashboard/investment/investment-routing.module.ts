@@ -4,10 +4,11 @@ import { AuthguardService } from 'src/app/guards/authguard/authguard.service';
 import { StarterComponent } from 'src/app/shared/components/layouts/starter/starter.component';
 import { InvestmentComponent } from './investment/investment.component';
 import { InvestmentdetailComponent } from './investmentdetail/investmentdetail.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
-    path: 'app',
+    path: 'app/investments',
     component: StarterComponent,
     children: [
       {
@@ -16,14 +17,19 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'investments',
+        path: '',
         component: InvestmentComponent,
-        canActivate: [AuthguardService],
+        // canActivate: [AuthguardService],
       },
       {
-        path: 'investments/:id',
+        path: ':id',
         component: InvestmentdetailComponent,
-        canActivate: [AuthguardService],
+        // canActivate: [AuthguardService],
+      },
+      {
+        path: 'search/:keyword',
+        component: SearchComponent,
+        // canActivate: [AuthguardService],
       },
     ]
   }

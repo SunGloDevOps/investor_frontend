@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import IProject from 'src/app/models/Projects/IProject';
+import { InvestmentService } from 'src/app/repositories/investment/investment.service';
 import { ProjectsService } from 'src/app/repositories/projects/projects.service';
 
 @Component({
@@ -10,14 +10,14 @@ import { ProjectsService } from 'src/app/repositories/projects/projects.service'
 })
 export class SearchComponent implements OnInit {
 
-  projects: IProject[] = [];
+  investments: any[] = [];
 
   //page loading status
   pageLoading: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
-    private projectService: ProjectsService
+    private investmentService: InvestmentService
   ) { }
 
   ngOnInit(): void {
@@ -25,11 +25,11 @@ export class SearchComponent implements OnInit {
     this.searchProjects(this.route.snapshot.params['keyword'])
   }
 
-   //search projects 
-   searchProjects(keyword: string){
-    this.projectService.searchProject(keyword).subscribe(
+  //search projects 
+  searchProjects(keyword: string){
+    this.investmentService.searchInvestments(keyword).subscribe(
       res => {
-        this.projects = res.data
+        this.investments = res.data
         this.pageLoading = false
       }
     )

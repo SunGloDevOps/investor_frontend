@@ -28,7 +28,7 @@ const routes: Routes = [
         // canActivate: [AuthguardService],
       },
       {
-        path: '/search/:keyword',
+        path: 'search/:keyword',
         component: SearchComponent,
         // canActivate: [AuthguardService],
       },

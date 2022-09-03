@@ -61,10 +61,10 @@ export class SettingsComponent implements OnInit {
     this.usersRepository.getNextKin(this.user.id).subscribe(
       res => {
         this.nextkinForm.setValue({
-          fullname: res.data.next_of_kin_fullname,
-          phone: res.data.next_of_kin_phone,
-          email: res.data.next_of_kin_email,
-          address: res.data.next_of_kin_address
+          fullname: res.data.next_of_kin_fullname ? res.data.next_of_kin_fullname : '',
+          phone: res.data.next_of_kin_phone ? res.data.next_of_kin_phone : '',
+          email: res.data.next_of_kin_email ? res.data.next_of_kin_email : '',
+          address: res.data.next_of_kin_address ? res.data.next_of_kin_address : ''
         })
       }
     )
@@ -111,13 +111,6 @@ export class SettingsComponent implements OnInit {
       this.usersRepository.updateNextKin(this.user.id, payload).subscribe(
         res => {
           console.log(res)
-          if(res.status === 200){
-
-          }
-
-          if(res.status === 500){
-
-          }
         }
       )
     }
@@ -129,7 +122,7 @@ export class SettingsComponent implements OnInit {
       }
       this.authRepository.changePassword(payload).subscribe(
         res => {
-          console.log("password change", res)
+          console.log(res)
           if(res.status === 200){
 
           }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
-import { api_home_url } from '../../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { TokenService } from '../token/token.service';
 import { Router } from '@angular/router';
 import { Login } from '../../models/Login';
@@ -19,7 +19,7 @@ import IChangepasswordResponse from 'src/app/models/Users/IChangepasswordRespons
 })
 export class AuthRepository {
 
-  api_url: string = `${api_home_url}/auth`;
+  api_url: string = `${environment.api_home_url}/auth`;
 
   constructor(
     private http: HttpClient,

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, tap } from 'rxjs';
 import { IProjectResponse } from 'src/app/models/Projects/IProject';
-import { api_home_url } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { TokenService } from '../token/token.service';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { TokenService } from '../token/token.service';
 })
 export class ProjectsService {
 
-  api_url: string = `${api_home_url}/projects`;
+  api_url: string = `${environment.api_home_url}/projects`;
 
   private _refreshRequired = new Subject<void>()
 
@@ -40,7 +40,7 @@ export class ProjectsService {
   }
 
   searchProject(keyword: string): Observable<any> {
-    return this.http.post<any>(`${this.api_url}/search`, {keyword}).pipe(
+    return this.http.post<any>(`${this.api_url}/search/${keyword}`,{}).pipe(
       tap(()=>{
         this.refreshRequired.next();
       })

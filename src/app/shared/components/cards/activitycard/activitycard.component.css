@@ -44,7 +44,6 @@
 }
 
 #activity ul li:last-child {
-    border-bottom: none !important;
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;
 }
@@ -55,6 +54,14 @@
     font-weight: 400 !important;
     line-height: 20px !important;
     font-size: var(--f9)!important;
+}
+
+.done {
+    color: rgb(21, 106, 8)
+}
+
+.undone {
+    color: red;
 }
 
 

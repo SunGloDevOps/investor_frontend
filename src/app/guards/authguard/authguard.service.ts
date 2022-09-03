@@ -18,14 +18,12 @@ export class AuthguardService implements CanActivate {
     
     //get token from browser
     const token = this.tokenService.get();
-    console.log(token)
-    let isTokenExpired: boolean = true;
-
+   
     if(token !== null){
-       isTokenExpired = this.tokenService.isTokenExpired(token);
+      //  isTokenExpired = this.tokenService.isTokenExpired(token);
     }
 
-    if(token === null || isTokenExpired === true) {
+    if(token === null) {
       this.router.navigate(['/auth/login'])
     }
 

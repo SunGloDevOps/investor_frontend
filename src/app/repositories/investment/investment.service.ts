@@ -1,16 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { api_home_url } from 'src/environments/environment';
+import { Observable, Subject, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvestmentService {
 
-  api_url: string = `${api_home_url}/investments`
+  api_url: string = `${environment.api_home_url}/investments`;
+
+  private _refreshRequired = new Subject<void>()
 
   constructor(private http: HttpClient) { }
+
+  get refreshRequired(){
+    return this._refreshRequired;
+  }
 
   getInvestments(id: string): Observable<any> {
     return this.http.get(`${this.api_url}/${id}`).pipe();
@@ -22,5 +28,13 @@ export class InvestmentService {
 
   viewInvestment(id: string): Observable<any> {
     return this.http.get(`${this.api_url}/projects/${id}`).pipe()
+  }
+
+  searchInvestments(keyword: string): Observable<any> {
+    return this.http.post<any>(`${this.api_url}/search/${keyword}`,{}).pipe(
+      tap(()=>{
+        this.refreshRequired.next();
+      })
+    );
   }
 }

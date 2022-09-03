@@ -4,7 +4,7 @@
         <p class="sub-header">All Available projects to invest.</p>
     </header>
     <main>
-        <div class="grid-layout" *ngIf="availableProjects.length !== 0">
+        <div class="grid-layout" *ngIf="availableProjects">
             <div *ngFor="let project of availableProjects">
                 <app-projectcard 
                     [id]="project._id"
@@ -14,11 +14,11 @@
                 ></app-projectcard>
             </div>        
         </div>
-        <div *ngIf="availableProjects.length === 0">
+        <!-- <div *ngIf="availableProjects.length === 0">
             <app-empty
                 label="No Project has been added yet"
                 image="../../../../../assets/images/illustrations/empty.png"
             ></app-empty>
-        </div>
+        </div> -->
     </main>
 </app-mainlayout>

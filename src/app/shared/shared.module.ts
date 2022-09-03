@@ -6,8 +6,6 @@ import { ButtonModule } from 'primeng/button';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthguardService } from '../guards/authguard/authguard.service';
 import { AuthService } from '../interceptor/auth/auth.service';
-import { JwtModule, JwtHelperService, JwtModuleOptions } from '@auth0/angular-jwt';
-import { api_home_url } from 'src/environments/environment';
 import { MainlayoutComponent } from './components/layouts/mainlayout/mainlayout.component';
 import { EmptyComponent } from './components/empty/empty.component';
 import { ModalcardComponent } from './components/cards/modalcard/modalcard.component';
@@ -67,17 +65,14 @@ import { CircleprogressComponent } from './components/circleprogress/circleprogr
 import { InvestedamountComponent } from './components/pages/investments/investedamount/investedamount.component';
 import { ShareprojectComponent } from './components/modals/shareproject/shareproject.component';
 import { ClipboardModule } from 'ngx-clipboard';
-import {CaptchaModule} from 'primeng/captcha';
-import {ProgressSpinnerModule} from 'primeng/progressspinner';
-import {SkeletonModule} from 'primeng/skeleton';
+import { CaptchaModule} from 'primeng/captcha';
+import { ProgressSpinnerModule} from 'primeng/progressspinner';
+import { SkeletonModule} from 'primeng/skeleton';
 import { ActivitycardComponent } from './components/cards/activitycard/activitycard.component';
 import { PageloaderComponent } from './components/loaders/pageloader/pageloader.component';
 import { QuestiontabComponent } from './components/pages/faqs/questiontab/questiontab.component';
 import { BlogcardComponent } from './components/pages/blog/blogcard/blogcard.component';
 
-export function tokenGetter() {
-  return localStorage.getItem("token");
-}
 
 @NgModule({
   declarations: [
@@ -154,17 +149,10 @@ export function tokenGetter() {
     CaptchaModule,
     ProgressSpinnerModule,
     SkeletonModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: tokenGetter,
-        allowedDomains: [api_home_url],
-      },
-    }),
   ],
   providers: [
     AuthguardService,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true},
-    JwtHelperService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true}
   ],
   exports: [
     TopnavComponent,
@@ -193,7 +181,6 @@ export function tokenGetter() {
     LandingsolarassetComponent,
     LandingbankComponent,
     LandingfooterComponent,
-    JwtModule,
     BorderedcardComponent,
     VerifyComponent,
     DepositWalletComponent,

@@ -1,0 +1,31 @@
+<app-mobiletopnav></app-mobiletopnav>
+
+<app-topnav [showSearch]="true" [investmentSearch]="true"></app-topnav>
+<app-pageloader [isLoading]="pageLoading"></app-pageloader>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <h4 class="investment-title">Investment Search Result</h4>
+    </div>
+</div>
+
+<div class="investment-container" *ngIf="investments.length">
+    <div *ngFor="let investment of investments">
+
+        <app-intevestmentcard
+            [id]="investment._id"
+            [title]="investment.project.title"
+            [cost]="investment.capital"
+            [start_date]="investment.project.start_date"
+            [end_date]="investment.project.end_date"
+            [availability]="investment.project.availability"
+        ></app-intevestmentcard>
+
+    </div>
+</div>
+
+<app-empty
+    *ngIf="!investments.length"
+    label="Oops! No result was found"
+    image="../../../../../assets/images/illustrations/empty.png"
+></app-empty>

@@ -5,6 +5,7 @@ import { InvestmentService } from 'src/app/repositories/investment/investment.se
 import { ProjectsService } from 'src/app/repositories/projects/projects.service';
 import { UsersRepository } from 'src/app/repositories/users/users.service';
 import { WalletService } from 'src/app/repositories/wallet/wallet.service';
+import { dollarToNaira } from 'src/app/utils/CurrencyConverter'
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +22,8 @@ export class DashboardComponent implements OnInit {
   bank_balance: number = 0;
 
   crypto_balance: number = 0;
+
+  wallet_balance_naira = 0;
 
   total_cells: number = 0;
 
@@ -42,6 +45,8 @@ export class DashboardComponent implements OnInit {
     this.user = this.userService.getUser();
     this.getWalletDetails(this.user.id)
     this.getInvestmentDetails(this.user.id)
+
+
   }
 
   gotoWallet(): void {
@@ -73,7 +78,9 @@ export class DashboardComponent implements OnInit {
       res => {
         this.bank_balance = res.data.wallet.bank_balance;
         this.crypto_balance = res.data.wallet.crypto_balance;
-        console.log(res.data)
+        
+        const total = this.bank_balance+this.crypto_balance;
+        this.wallet_balance_naira = dollarToNaira(total)
       }
     )
   }

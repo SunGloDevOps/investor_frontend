@@ -16,7 +16,7 @@ export class SearchbarComponent implements OnInit {
   @Input() investment: boolean = false;
 
   searchKeyword = this.fb.group({
-    keyword: [' ', Validators.required]
+    keyword: ['', Validators.required]
   })
 
   constructor(
@@ -28,24 +28,17 @@ export class SearchbarComponent implements OnInit {
 
   }
 
- 
-
-  //searchInvestments
-  searchInvestments(keyword: string){
-
-  }
-
   //onSubmit
   search(){
 
-    const keyword = this.searchKeyword.controls['keyword'].value
+    const keyword = this.searchKeyword.controls['keyword'].value.toString().trim()
 
     if(this.investment === true){
-      // this.router.navigate[`/search/${keyword}`]
+      this.router.navigate(['/app/investments/search/', keyword])
     }
 
     if(this.project === true){
-       // this.router.navigate[`/search/${keyword}`]
+      this.router.navigate(['/app/projects/search/', keyword])
     }
   }
 

@@ -5,7 +5,7 @@ import IChangepasswordRequest from 'src/app/models/Users/IChangepasswordRequest'
 import IChangepasswordResponse from 'src/app/models/Users/IChangepasswordResponse';
 import IProfileRequest from 'src/app/models/Users/IProfileRequest';
 import IProfileResponse from 'src/app/models/Users/IProfileResponse';
-import { api_home_url } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { TokenService } from '../token/token.service';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class UsersRepository implements OnInit {
 
   user?: any = {};
 
-  api_url: string = `${api_home_url}/users`;
+  api_url: string = `${environment.api_home_url}/users`;
 
   private _refreshRequired = new Subject<void>()
 
@@ -66,7 +66,7 @@ export class UsersRepository implements OnInit {
   }
 
   updateNextKin(id: string, payload: any): Observable<any> {
-    return this.http.patch<any>(`${api_home_url}/otps/updateNextkin/${id}`, payload).pipe(
+    return this.http.patch<any>(`${environment.api_home_url}/otps/updateNextkin/${id}`, payload).pipe(
       tap(()=>{
         this.refreshRequired.next();
       })
@@ -74,7 +74,7 @@ export class UsersRepository implements OnInit {
   }
 
   getNextKin(user: string): Observable<any> {
-    return this.http.get<any>(`${api_home_url}/otps/getNextkin/${user}`).pipe(
+    return this.http.get<any>(`${environment.api_home_url}/otps/getNextkin/${user}`).pipe(
       tap(()=>{
         this.refreshRequired.next();
       })

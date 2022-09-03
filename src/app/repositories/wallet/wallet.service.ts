@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, pipe, Subject, tap } from 'rxjs';
-import { api_home_url } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WalletService {
 
-  api_url: string= `${api_home_url}/wallets`;
+  api_url: string= `${environment.api_home_url}/wallets`;
 
   constructor(
     private http: HttpClient

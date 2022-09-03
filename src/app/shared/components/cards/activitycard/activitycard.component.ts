@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivitycardComponent implements OnInit {
 
+  isVerified: boolean = false;
+
+  idVerified: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

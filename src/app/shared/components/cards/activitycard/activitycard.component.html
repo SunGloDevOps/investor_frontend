@@ -4,10 +4,10 @@
                 Activity
             </div>
             <div class="date">
-                12-04-2022
+                
             </div>
     </div>
-    <ul class="activity-main">
+    <ul class="activity-main" *ngIf="isVerified">
         <li><a routerLink="../projects/i">Kuala University Solar panel 187.92 sold out at 23.10 USD</a></li>
         <li><a routerLink="../projects/i">Kuala University Solar panel 187.92 added to available project 3 secs ago at 23.10 USD</a></li>
         <li><a routerLink="../projects/i">You bought 5 cells of Lagos state university solar project at 230 USD</a></li>
@@ -19,4 +19,68 @@
         <li><a routerLink="../projects/i">You bought 5 cells of Lagos state university solar project at 230 USD</a></li>
         
     </ul>
+    <ul class="activity-main" *ngIf="!isVerified">
+        <li><a routerLink="/app/user/settings">
+            <span 
+                *ngIf="idVerified"  
+                class="iconify done" 
+                data-icon="bi:check" 
+                data-width="15" 
+                data-height="15">
+            </span>
+            <span 
+                *ngIf="!idVerified"  
+                class="iconify undone" 
+                data-icon="ci:close-small" 
+                data-width="15" 
+                data-height="15">
+            </span>
+            
+                Provide ID card
+            </a>
+        </li>
+        <li><a routerLink="/app/user/settings">
+            <span 
+                *ngIf="true"  
+                class="iconify done" 
+                data-icon="bi:check" 
+                data-width="15" 
+                data-height="15">
+            </span>
+            Verify Phone Number
+        </a></li>
+        <li><a routerLink="/app/user/settings">
+            <span 
+                *ngIf="true"  
+                class="iconify done" 
+                data-icon="bi:check" 
+                data-width="15" 
+                data-height="15">
+            </span>
+            Verify Email Address
+        </a></li>
+        <li><a routerLink="/app/user/settings">
+            <span 
+                *ngIf="true"  
+                class="iconify done" 
+                data-icon="bi:check" 
+                data-width="15" 
+                data-height="15">
+            </span>
+            Provide Nextkin
+        </a></li>
+        <li><a routerLink="/app/user/profile">
+            <span 
+                *ngIf="true"  
+                class="iconify done" 
+                data-icon="bi:check" 
+                data-width="15" 
+                data-height="15">
+            </span>
+            Complete Profile
+        </a></li>
+    </ul>
+
 </div>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
