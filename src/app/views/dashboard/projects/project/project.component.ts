@@ -5,6 +5,8 @@ import { IProject } from 'src/app/models/Projects/IProject';
 import { InvestmentService } from 'src/app/repositories/investment/investment.service';
 import { ProjectsService } from 'src/app/repositories/projects/projects.service';
 import { UsersRepository } from 'src/app/repositories/users/users.service';
+import { dollarToNaira } from 'src/app/utils/CurrencyConverter';
+
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
@@ -42,6 +44,12 @@ export class ProjectComponent implements OnInit {
   //page loading status
   pageLoading: boolean = false
 
+  //text showing for cost per cell
+  cost: string = "";
+
+  //text to show when end date isn't set
+  pending: string = "Not Started"
+
   projectsoldpercentage: number = 0;
 
   number_of_cell: number = 1;
@@ -71,7 +79,7 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {
     this.getProjectData()
     this.user = this.userRepository.getUser()
-    this.pageLoading = false
+    this.pageLoading = true
   }
 
   //get all project data from server
@@ -79,12 +87,12 @@ export class ProjectComponent implements OnInit {
     this.projectService.getProject(this.route.snapshot.params['id']).subscribe(
       res => {
           this.project = res.data;
-          this.price_per_cell = res.data.cost_per_cell
+          this.project.end_date = res.data.end_date ? res.data.end_date : this.pending
+          this.price_per_cell = res.data.cost_per_cell;
+          this.cost = "USD " + res.data.cost_per_cell + "/ NGN " + dollarToNaira(res.data.cost_per_cell);
           this.projectsoldpercentage = this.soldProjectPercentage(res.data.sold_cell, res.data.total_cell);
           this.available_cells = this.project.total_cell - this.project.sold_cell
-      },
-      complete => {
-        this.pageLoading = false
+          this.pageLoading = false
       }
     );
   }

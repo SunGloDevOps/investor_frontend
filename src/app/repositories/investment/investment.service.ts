@@ -30,8 +30,11 @@ export class InvestmentService {
     return this.http.get(`${this.api_url}/projects/${id}`).pipe()
   }
 
-  searchInvestments(keyword: string): Observable<any> {
-    return this.http.post<any>(`${this.api_url}/search/${keyword}`,{}).pipe(
+  searchInvestments(user: string, keyword: string): Observable<any> {
+    const payload = {
+      user: user
+    }
+    return this.http.post<any>(`${this.api_url}/search/${keyword}`, payload).pipe(
       tap(()=>{
         this.refreshRequired.next();
       })

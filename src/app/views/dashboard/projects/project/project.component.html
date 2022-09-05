@@ -23,20 +23,20 @@
 </div>
 
 <div class="project-details">
-        <h5>{{project?.title}}</h5>
-        <small>{{project?.operator}}</small>
+        <h5>{{project.title}}</h5>
+        <small>{{project.operator}}</small>
         <div class="information-cards">
             <div>
            
                 <app-statsdisplay 
                     label="Cost per cell" 
-                    value={{project?.cost_per_cell}}
+                    value={{cost}}
                     [fitcontent]="true"
                 ></app-statsdisplay>
              
                 <app-statsdisplay 
                     label="Total Cell Bought" 
-                    value={{project?.sold_cell}}
+                    value={{project.sold_cell}}
                     [fitcontent]="true"
                 ></app-statsdisplay>
 
@@ -72,17 +72,17 @@
 
                 <div id="information-cards" >
                     
-                    <app-projectinfocard title="ROI" value={{project?.ROI}}></app-projectinfocard>
+                    <app-projectinfocard title="ROI" value={{project.ROI}}></app-projectinfocard>
             
-                    <app-projectinfocard title="Carbon Reduced" value={{project?.carbon_reduced}}></app-projectinfocard>
+                    <app-projectinfocard title="Carbon Reduced" value={{project.carbon_reduced}}></app-projectinfocard>
             
-                    <app-projectinfocard title="Year 1 Energy Yield" value={{project?.energy_yeild}}></app-projectinfocard>
+                    <app-projectinfocard title="Year 1 Energy Yield" value={{project.energy_yeild}}></app-projectinfocard>
                 
-                    <app-projectinfocard title="Investment End Date" value={{project?.end_date}}></app-projectinfocard>
+                    <app-projectinfocard title="Investment End Date" value={{project.end_date}}></app-projectinfocard>
                 
-                    <app-projectinfocard title="Current number of Investors" value={{project?.no_of_investors}}></app-projectinfocard>
+                    <app-projectinfocard title="Current number of Investors" value={{project.no_of_investors}}></app-projectinfocard>
                 
-                    <app-projectinfocard title="Total cell" value={{project?.total_cell}}></app-projectinfocard>
+                    <app-projectinfocard title="Total cell" value={{project.total_cell}}></app-projectinfocard>
                    
                 </div>
 

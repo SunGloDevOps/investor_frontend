@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import IProject from 'src/app/models/Projects/IProject';
 import { ProjectsService } from 'src/app/repositories/projects/projects.service';
+import { UsersRepository } from 'src/app/repositories/users/users.service';
 
 @Component({
   selector: 'app-search',
@@ -15,19 +16,24 @@ export class SearchComponent implements OnInit {
   //page loading status
   pageLoading: boolean = false;
 
+  //users detail
+  user?: any;
+
   constructor(
     private route: ActivatedRoute,
-    private projectService: ProjectsService
+    private projectService: ProjectsService,
+    private userService: UsersRepository
   ) { }
 
   ngOnInit(): void {
     this.pageLoading = true;
-    this.searchProjects(this.route.snapshot.params['keyword'])
+    this.user = this.userService.getUser()
+    this.searchProjects(this.user.id, this.route.snapshot.params['keyword'])
   }
 
    //search projects 
-   searchProjects(keyword: string){
-    this.projectService.searchProject(keyword).subscribe(
+   searchProjects(user: string, keyword: string){
+    this.projectService.searchProject(user, keyword).subscribe(
       res => {
         this.projects = res.data
         this.pageLoading = false

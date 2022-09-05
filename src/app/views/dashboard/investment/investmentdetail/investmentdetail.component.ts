@@ -55,7 +55,7 @@ export class InvestmentdetailComponent implements OnInit {
   }
 
   async reInvest(){
-    this.router.navigate(['app/projects/home', this.investment.project._id])
+    this.router.navigate(['/app/projects/', this.investment.project._id])
   }
 
 }

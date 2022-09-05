@@ -39,8 +39,13 @@ export class ProjectsService {
     );
   }
 
-  searchProject(keyword: string): Observable<any> {
-    return this.http.post<any>(`${this.api_url}/search/${keyword}`,{}).pipe(
+  searchProject(user: string, keyword: string): Observable<any> {
+
+    const payload = {
+      user: user
+    }
+    
+    return this.http.post<any>(`${this.api_url}/search/${keyword}`, payload).pipe(
       tap(()=>{
         this.refreshRequired.next();
       })

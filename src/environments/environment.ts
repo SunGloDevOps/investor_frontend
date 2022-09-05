@@ -8,7 +8,7 @@ export const environment = {
   naira: 701
 };
 
-
+export const naira = 701;
 
 /*
  * For easier debugging in development mode, you can import the following file
